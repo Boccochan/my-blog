@@ -1,22 +1,22 @@
-import { graphql, PageRendererProps, useStaticQuery } from "gatsby"
-import React from "react"
-import styled from "styled-components"
-import { Bio } from "../components/bio"
-import { Layout } from "../components/layout"
-import { FadeLink } from "../components/link"
-import { SEO } from "../components/seo"
-import { MarkdownRemark } from "../graphql-types"
-import { rhythm } from "../utils/typography"
+import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
+import React from "react";
+import styled from "styled-components";
+import { Bio } from "../components/bio";
+import { Layout } from "../components/layout";
+import { FadeLink } from "../components/link";
+import { SEO } from "../components/seo";
+import { MarkdownRemark } from "../graphql-types";
+import { rhythm } from "../utils/typography";
 
 const StyledLink = styled(FadeLink)`
   box-shadow: none;
-`
+`;
 
 const Title = styled.h3`
   margin-bottom: ${rhythm(1 / 4)};
-`
+`;
 
-type Props = PageRendererProps
+type Props = PageRendererProps;
 
 const BlogIndex = (props: Props) => {
   const data = useStaticQuery(graphql`
@@ -42,10 +42,10 @@ const BlogIndex = (props: Props) => {
         }
       }
     }
-  `)
+  `);
 
-  const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+  const siteTitle = data.site.siteMetadata.title;
+  const posts = data.allMarkdownRemark.edges;
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -55,12 +55,13 @@ const BlogIndex = (props: Props) => {
       />
       <Bio />
       {posts.map(({ node }: { node: MarkdownRemark }) => {
-        const frontmatter = node!.frontmatter!
-        const fields = node!.fields!
-        const slug = fields.slug!
-        const excerpt = node!.excerpt!
+        const frontmatter = node!.frontmatter!;
+        const fields = node!.fields!;
+        const slug = fields.slug!;
+        console.log(slug);
+        const excerpt = node!.excerpt!;
 
-        const title = frontmatter.title || fields.slug
+        const title = frontmatter.title || fields.slug;
         return (
           <div key={slug}>
             <Title>
@@ -73,10 +74,10 @@ const BlogIndex = (props: Props) => {
               }}
             />
           </div>
-        )
+        );
       })}
     </Layout>
-  )
-}
+  );
+};
 
-export default BlogIndex
+export default BlogIndex;
