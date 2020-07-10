@@ -57,8 +57,9 @@ export const Bio = () => {
         imgStyle={{ borderRadius: "50%" }}
       />
       <p>
-        Written by <strong>{author}</strong> who lives and works in Japan.
-        {` `}
+        Written by <strong>{author}</strong>
+        <br />
+        Software engineer
       </p>
     </Content>
   );

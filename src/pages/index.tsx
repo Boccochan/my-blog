@@ -53,12 +53,12 @@ const BlogIndex = (props: Props) => {
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      <Bio />
+      {/* <Bio /> */}
       {posts.map(({ node }: { node: MarkdownRemark }) => {
         const frontmatter = node!.frontmatter!;
         const fields = node!.fields!;
         const slug = fields.slug!;
-        console.log(slug);
+
         const excerpt = node!.excerpt!;
 
         const title = frontmatter.title || fields.slug;
