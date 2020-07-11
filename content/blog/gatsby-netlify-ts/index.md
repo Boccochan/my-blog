@@ -18,8 +18,6 @@ It's easy to deploy Gatsby with Typescript to Netlify. You just need to follow t
 npm install -g gatsby-cli
 ```
 
-Then,
-
 ```bash
 gatsby new your-project-name https://github.com/gperl27/Gatsby-Starter-Blog-Typescript
 cd your-project-name
@@ -57,8 +55,6 @@ git init
 git add .
 git commit -m "Initial commit"
 ```
-
-Then,
 
 ```bash
 git remote add origin https://github.com/yourname/your-blog-name.git

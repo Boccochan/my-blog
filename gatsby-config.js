@@ -107,6 +107,15 @@ module.exports = {
               escapeEntities: {},
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1500,
+              withWebp: true,
+              showCaptions: false,
+              quality: 100,
+            },
+          },
         ],
       },
     },
