@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Yasuhiro's blog]]></title><description><![CDATA[Introducing technology, Japanese culture and so forth.]]></description><link>https://yas-ito.com</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 11 Jul 2020 04:48:16 GMT</lastBuildDate><item><title><![CDATA[Deploy Gatsby with Typescript to Netlify]]></title><description><![CDATA[It's easy to deploy Gatsby with Typescript to Netlify. You just need to follow the steps below: Getting gatsby cli and starter kid Creating…]]></description><link>https://yas-ito.com/gatsby-netlify-ts/</link><guid isPermaLink="false">https://yas-ito.com/gatsby-netlify-ts/</guid><pubDate>Fri, 10 Jul 2020 21:40:32 GMT</pubDate><content:encoded>&lt;p&gt;It&apos;s easy to deploy Gatsby with Typescript to Netlify. You just need to follow the steps below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Getting gatsby cli and starter kid&lt;/li&gt;
+&lt;li&gt;Creating your repository on Github, Gitlab or Bitbucket&lt;/li&gt;
+&lt;li&gt;Creating your Netlify account and deploying to it&lt;/li&gt;
+&lt;li&gt;Uploading your blog&lt;/li&gt;
+&lt;li&gt;Using custom domain&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Getting gatsby cli and starter kid&lt;/h2&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;75100744576214400000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`npm install -g gatsby-cli`, `75100744576214400000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; -g gatsby-cli&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;80792020973319160000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`gatsby new your-project-name https://github.com/gperl27/Gatsby-Starter-Blog-Typescript
+cd your-project-name
+gatsby develop`, `80792020973319160000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;gatsby new your-project-name https://github.com/gperl27/Gatsby-Starter-Blog-Typescript
+&lt;span class=&quot;token builtin class-name&quot;&gt;cd&lt;/span&gt; your-project-name
+gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Cleanup module packages if you can&apos;t run gatsby develop&lt;/h3&gt;
+&lt;p&gt;You might encounter some errors when you run &apos;gatsby develop&apos;. In that case, you should cleanup packages.&lt;/p&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;71461137774372176000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`rm -rf node_modules
+rm yarn.lock
+yarn install
+yarn upgrade --latest
+gatsby develop`, `71461137774372176000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; -rf node_modules
+&lt;span class=&quot;token function&quot;&gt;rm&lt;/span&gt; yarn.lock
+&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;yarn&lt;/span&gt; upgrade --latest
+gatsby develop&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Creating your repository on Github, Gitlab or Bitbucket&lt;/h2&gt;
+&lt;p&gt;You can use Github, Gitlab or Bitbucket to manage and deploy your blog. It&apos;s free to use. You need to create your account on one of them first.&lt;/p&gt;
+&lt;p&gt;This time, I&apos;m using Github here.&lt;/p&gt;
+&lt;h3&gt;Creating a repository&lt;/h3&gt;
+&lt;p&gt;You need to create repository for your project. If you don&apos;t know how to do it, please see &lt;a href=&quot;https://docs.github.com/en/enterprise/2.13/user/articles/creating-a-new-repository#:~:text=In%20the%20upper%2Dright%20corner,repository%20either%20public%20or%20private.&quot;&gt;Creating a new repository&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Pushing your source code to the repository&lt;/h3&gt;
+&lt;p&gt;In your project directory,&lt;/p&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;29876222663833810000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`git init
+git add .
+git commit -m &amp;quot;Initial commit&amp;quot;`, `29876222663833810000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; init
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; &lt;span class=&quot;token builtin class-name&quot;&gt;.&lt;/span&gt;
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; commit -m &lt;span class=&quot;token string&quot;&gt;&quot;Initial commit&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;37890834898864140000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`git remote add origin https://github.com/yourname/your-blog-name.git
+git push -u origin master`, `37890834898864140000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; remote &lt;span class=&quot;token function&quot;&gt;add&lt;/span&gt; origin https://github.com/yourname/your-blog-name.git
+&lt;span class=&quot;token function&quot;&gt;git&lt;/span&gt; push -u origin master&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Creating your Netlify account and deploying to it&lt;/h2&gt;
+&lt;p&gt;You can create your Netlify account &lt;a href=&quot;https://app.netlify.com/&quot;&gt;here&lt;/a&gt;. Then, click &quot;New site from Git button&quot;.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1205px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/39368/create-new-site-button.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 12%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAACABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAIEBf/EABYBAQEBAAAAAAAAAAAAAAAAAAEAAv/aAAwDAQACEAMQAAAB1JEVQ4//xAAaEAACAgMAAAAAAAAAAAAAAAACAwABERIT/9oACAEBAAEFAqUvHJcJYbf/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAZEAACAwEAAAAAAAAAAAAAAAAAAgEikTP/2gAIAQEABj8Cii4c1wmi4f/EABgQAAIDAAAAAAAAAAAAAAAAAABRAWHx/9oACAEBAAE/IalqZsgsEP/aAAwDAQACAAMAAAAQ+C//xAAWEQEBAQAAAAAAAAAAAAAAAAAAATH/2gAIAQMBAT8QXX//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAbEAEAAgIDAAAAAAAAAAAAAAABACFRccHR8P/aAAgBAQABPxB7LKLcGp6ziGYQUDqn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/e922d/create-new-site-button.webp 375w,
+/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/3ea8a/create-new-site-button.webp 750w,
+/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/213b7/create-new-site-button.webp 1205w&quot;
+          sizes=&quot;(max-width: 1205px) 100vw, 1205px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/8a6f5/create-new-site-button.jpg 375w,
+/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/d0f75/create-new-site-button.jpg 750w,
+/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/39368/create-new-site-button.jpg 1205w&quot;
+          sizes=&quot;(max-width: 1205px) 100vw, 1205px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/6a0ccaeb88a0a0ec7a1ff49f32cbefe2/39368/create-new-site-button.jpg&quot;
+          alt=&quot;Netlify&quot;
+          title=&quot;Netlify&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;I am going to deploy from Github, so I should select Github. But if you are using Gitlab and Bitbucket, you should select them.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 815px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/467b60df508f3699035d1df9a8f66453/9bf9d/netlify-select-git.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 48.53333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAgMAAAAAAAAAAAAAAAAAAAMBAgX/xAAUAQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIQAxAAAAHcstoEh//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEAAQUCX//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8BP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8BP//EABQQAQAAAAAAAAAAAAAAAAAAACD/2gAIAQEABj8CX//EABgQAAIDAAAAAAAAAAAAAAAAAAEQESFB/9oACAEBAAE/IanWX//aAAwDAQACAAMAAAAQ8w//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/ED//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAQQDAAAAAAAAAAAAAAABMQAQESFBUfD/2gAIAQEAAT8QAQl1QnDZOHfs0Rb/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/467b60df508f3699035d1df9a8f66453/e922d/netlify-select-git.webp 375w,
+/static/467b60df508f3699035d1df9a8f66453/3ea8a/netlify-select-git.webp 750w,
+/static/467b60df508f3699035d1df9a8f66453/58a39/netlify-select-git.webp 815w&quot;
+          sizes=&quot;(max-width: 815px) 100vw, 815px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/467b60df508f3699035d1df9a8f66453/8a6f5/netlify-select-git.jpg 375w,
+/static/467b60df508f3699035d1df9a8f66453/d0f75/netlify-select-git.jpg 750w,
+/static/467b60df508f3699035d1df9a8f66453/9bf9d/netlify-select-git.jpg 815w&quot;
+          sizes=&quot;(max-width: 815px) 100vw, 815px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/467b60df508f3699035d1df9a8f66453/9bf9d/netlify-select-git.jpg&quot;
+          alt=&quot;Netlify&quot;
+          title=&quot;Netlify&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Select your repository which you have created.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 866px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/334b40c2c328789a8259308112400940/ca4b7/netlify-select-repository.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 63.46666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHcslAX/8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQABBQJf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAGBAAAgMAAAAAAAAAAAAAAAAAEEEAATH/2gAIAQEAAT8hblDD/9oADAMBAAIAAwAAABDHz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABwQAQABBAMAAAAAAAAAAAAAAAERABAhMUFRgf/aAAgBAQABPxBgSE56pqc+ltpozmLf/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/334b40c2c328789a8259308112400940/e922d/netlify-select-repository.webp 375w,
+/static/334b40c2c328789a8259308112400940/3ea8a/netlify-select-repository.webp 750w,
+/static/334b40c2c328789a8259308112400940/addc7/netlify-select-repository.webp 866w&quot;
+          sizes=&quot;(max-width: 866px) 100vw, 866px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/334b40c2c328789a8259308112400940/8a6f5/netlify-select-repository.jpg 375w,
+/static/334b40c2c328789a8259308112400940/d0f75/netlify-select-repository.jpg 750w,
+/static/334b40c2c328789a8259308112400940/ca4b7/netlify-select-repository.jpg 866w&quot;
+          sizes=&quot;(max-width: 866px) 100vw, 866px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/334b40c2c328789a8259308112400940/ca4b7/netlify-select-repository.jpg&quot;
+          alt=&quot;Netlify&quot;
+          title=&quot;Netlify&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Click deploy site.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 726px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/fc96eff2c5c7262624e2cd854ceaa83a/6e04a/netlify-deploy.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 123.73333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAZABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAEDBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHuW1AWXHdAX//EABcQAAMBAAAAAAAAAAAAAAAAAAEDECD/2gAIAQEAAQUC0Ku//8QAFREBAQAAAAAAAAAAAAAAAAAAEAH/2gAIAQMBAT8BIf/EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABcQAAMBAAAAAAAAAAAAAAAAAAIQMHH/2gAIAQEABj8CiWv/xAAdEAACAgEFAAAAAAAAAAAAAAABEQAQITFBYYGh/9oACAEBAAE/IcPePnydwHNkC1euz//aAAwDAQACAAMAAAAQRMQA/8QAFhEAAwAAAAAAAAAAAAAAAAAAARAR/9oACAEDAQE/EEVFX//EABURAQEAAAAAAAAAAAAAAAAAABAB/9oACAECAQE/ECn/xAAeEAACAgICAwAAAAAAAAAAAAABEQAhEDFRYYGRof/aAAgBAQABPxAh17cGBtG+4AKtvEAwuMd+oC4UAmjd5+ln/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/fc96eff2c5c7262624e2cd854ceaa83a/e922d/netlify-deploy.webp 375w,
+/static/fc96eff2c5c7262624e2cd854ceaa83a/b0d8b/netlify-deploy.webp 726w&quot;
+          sizes=&quot;(max-width: 726px) 100vw, 726px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/fc96eff2c5c7262624e2cd854ceaa83a/8a6f5/netlify-deploy.jpg 375w,
+/static/fc96eff2c5c7262624e2cd854ceaa83a/6e04a/netlify-deploy.jpg 726w&quot;
+          sizes=&quot;(max-width: 726px) 100vw, 726px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/fc96eff2c5c7262624e2cd854ceaa83a/6e04a/netlify-deploy.jpg&quot;
+          alt=&quot;Netlify&quot;
+          title=&quot;Netlify&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Now, you can see your blog site.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 669px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/04a3259772c8229d6f1a6c9197603de1/baca6/netlify-deployed.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 29.06666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAGABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAIF/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAAB2rCAf//EABcQAQADAAAAAAAAAAAAAAAAAAABEjH/2gAIAQEAAQUCbFH/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAQ/9oACAEBAAY/An//xAAaEAEAAQUAAAAAAAAAAAAAAAABACExQVHw/9oACAEBAAE/IevEo7gTM//aAAwDAQACAAMAAAAQ8A//xAAWEQEBAQAAAAAAAAAAAAAAAAAAARH/2gAIAQMBAT8QbX//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAZEAADAQEBAAAAAAAAAAAAAAAAARExIYH/2gAIAQEAAT8QqicYvO8aLJ14f//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/04a3259772c8229d6f1a6c9197603de1/e922d/netlify-deployed.webp 375w,
+/static/04a3259772c8229d6f1a6c9197603de1/6c81e/netlify-deployed.webp 669w&quot;
+          sizes=&quot;(max-width: 669px) 100vw, 669px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/04a3259772c8229d6f1a6c9197603de1/8a6f5/netlify-deployed.jpg 375w,
+/static/04a3259772c8229d6f1a6c9197603de1/baca6/netlify-deployed.jpg 669w&quot;
+          sizes=&quot;(max-width: 669px) 100vw, 669px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/04a3259772c8229d6f1a6c9197603de1/baca6/netlify-deployed.jpg&quot;
+          alt=&quot;Netlify&quot;
+          title=&quot;Netlify&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;h2&gt;Uploading your blog&lt;/h2&gt;
+&lt;p&gt;There are already a couple of sample blogs under content/blog. You can add a new blog there. But be careful, you should not delete those sample blogs yet. Probably, it will cause some errors.&lt;/p&gt;
+&lt;p&gt;I&apos;m going to figure it out.&lt;/p&gt;
+&lt;h2&gt;Using custom domain&lt;/h2&gt;
+&lt;p&gt;If you want to use your cool URL, you can use it.
+I am going to explain how to do it by the other blog post. Coming soon!&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://yas-ito.com/hi-folks/</link><guid isPermaLink="false">https://yas-ito.com/hi-folks/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+right at the coast of the Semantics, a large language ocean. A small river named
+Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
+&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
+&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
+Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
+didn’t listen. She packed her seven versalia, put her initial into the belt and
+made herself on the way.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;This however showed weasel&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Well uncritical so misled&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;this is very interesting&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
+view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
+&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
+Lane. Pityful a rethoric question ran over her cheek, then she continued her
+way. On her way she met a copy.&lt;/p&gt;
+&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
+&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
+few insidious Copy Writers ambushed her, made her drunk with
+&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
+they abused her for their projects again and again. And if she hasn’t been
+rewritten, then they are still using her.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
+right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
+mouth. Even the all-powerful Pointing has no control about the blind texts it is
+an almost unorthographic life One day however a small line of blind text by the
+name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
+&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
+&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
+Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
+didn’t listen. She packed her seven versalia, put her initial into the belt and
+made herself on the way.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;So baboon this&lt;/li&gt;
+&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
+&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
+&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
+impassive fruitlessly shut&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
+back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
+Village and the subline of her own road, the Line Lane. Pityful a rethoric
+question ran over her cheek, then she continued her way. On her way she met a
+copy.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
+been rewritten a thousand times and everything that was left from its origin
+would be the word &quot;and&quot; and the Little Blind Text should turn around and
+return to its own, safe country.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
+few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
+and dragged her into their agency, where they abused her for their projects
+again and again. And if she hasn’t been rewritten, then they are still using
+her. Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts.&lt;/p&gt;
+&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
+&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
+large language ocean. A small river named Duden flows by their place and
+supplies it with the necessary regelialia. It is a paradisematic country, in
+which roasted parts of sentences fly into your mouth.&lt;/p&gt;
+&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
+almost unorthographic life One day however a small line of blind text by the
+name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
+advised her not to do so, because there were thousands of bad Commas, wild
+Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
+&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
+&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
+the way. When she reached the first hills of the Italic Mountains, she had a
+last view back on the skyline of her hometown Bookmarksgrove, the headline of
+Alphabet Village and the subline of her own road, the Line Lane. Pityful a
+rethoric question ran over her cheek, then she continued her way. On her way she
+met a copy.&lt;/p&gt;
+&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
+&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
+been rewritten a thousand times and everything that was left from its origin
+would be the word &quot;and&quot; and the Little Blind Text should turn around and return
+to its own, safe country. But nothing the copy said could convince her and so it
+didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
+with Longe and Parole and dragged her into their agency, where they abused her
+for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
+chicken eggs, though the…]]></description><link>https://yas-ito.com/my-second-post/</link><guid isPermaLink="false">https://yas-ito.com/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
+&lt;p&gt;Did you know that &quot;despite its name, salted duck eggs can also be made from
+chicken eggs, though the taste and texture will be somewhat different, and the
+egg yolk will be less rich.&quot;?
+(&lt;a href=&quot;http://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://yas-ito.com/hello-world/</link><guid isPermaLink="false">https://yas-ito.com/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;I&apos;m sure I&apos;ll write a lot more interesting things in the future.&lt;/p&gt;
+&lt;p&gt;Oh, and here&apos;s a great quote from this Wikipedia on
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
+eggs in brine, or packing each egg in damp, salted charcoal. In Asian
+supermarkets, these eggs are sometimes sold covered in a thick layer of salted
+charcoal paste. The eggs may also be sold with the salted paste removed,
+wrapped in plastic, and vacuum packed. From the salt curing process, the
+salted duck eggs have a briny aroma, a gelatin-like egg white and a
+firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1500px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/09658/salty_egg.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 74.93333333333332%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMB/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABgik0dXC//8QAGRABAAMBAQAAAAAAAAAAAAAAAQACEhEy/9oACAEBAAEFAkqW2DlnRj73yf/EABcRAQADAAAAAAAAAAAAAAAAAAAREkH/2gAIAQMBAT8B1WX/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQL/2gAIAQIBAT8Bi6f/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIRISIxMv/aAAgBAQAGPwK9GNocyS8hCj//xAAbEAADAQADAQAAAAAAAAAAAAABESEAMUGBof/aAAgBAQABPyGxNMfrLHmCDZmAzzvJJDjEQCHv/9oADAMBAAIAAwAAABDIL//EABYRAQEBAAAAAAAAAAAAAAAAAAERAP/aAAgBAwEBPxARhylZv//EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/EFoktI//xAAdEAEBAAICAwEAAAAAAAAAAAABEQAxIWFBcYHh/9oACAEBAAE/EEbMLQ0fMHDVaPIXyI4pk4JUnWacNCtO8ojDE9TGIYES7/Jn/9k=&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/e922d/salty_egg.webp 375w,
+/static/8058f3f26913fea3b6a89a73344fe94a/3ea8a/salty_egg.webp 750w,
+/static/8058f3f26913fea3b6a89a73344fe94a/8717d/salty_egg.webp 1500w,
+/static/8058f3f26913fea3b6a89a73344fe94a/96d48/salty_egg.webp 2048w&quot;
+          sizes=&quot;(max-width: 1500px) 100vw, 1500px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/8a6f5/salty_egg.jpg 375w,
+/static/8058f3f26913fea3b6a89a73344fe94a/d0f75/salty_egg.jpg 750w,
+/static/8058f3f26913fea3b6a89a73344fe94a/e3932/salty_egg.jpg 1500w,
+/static/8058f3f26913fea3b6a89a73344fe94a/09658/salty_egg.jpg 2048w&quot;
+          sizes=&quot;(max-width: 1500px) 100vw, 1500px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/8058f3f26913fea3b6a89a73344fe94a/e3932/salty_egg.jpg&quot;
+          alt=&quot;Chinese Salty Egg&quot;
+          title=&quot;Chinese Salty Egg&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
