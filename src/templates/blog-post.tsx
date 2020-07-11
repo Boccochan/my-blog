@@ -7,6 +7,8 @@ import { FadeLink } from "../components/link";
 import { SEO } from "../components/seo";
 import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
+// import PostStyles from "./blog-post-style.scss";
+import "./blog-post-style.scss";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -40,16 +42,17 @@ const BlogPostTemplate = (props: Props) => {
   const html = post.html!;
   const siteTitle = data.site!.siteMetadata!.title!;
   const { previous, next } = props.pageContext;
-  console.log(html);
 
   return (
     <Layout location={props.location} title={siteTitle}>
+      {/* <div className={PostStyles.content}> */}
       <SEO
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-      <h1>{post.frontmatter!.title}</h1>
+
       <Date>{frontmatter.date}</Date>
+      <h1>{post.frontmatter!.title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <Divider />
       <Bio />
@@ -69,6 +72,7 @@ const BlogPostTemplate = (props: Props) => {
           )}
         </li>
       </PostNavigator>
+      {/* </div> */}
     </Layout>
   );
 };

@@ -18,24 +18,24 @@ It's easy to deploy Gatsby with Typescript to Netlify. You just need to follow t
 npm install -g gatsby-cli
 ```
 
-## Getting gatsby + typescript
+## Getting starter kit
 
 ```bash
 gatsby new your-project-name https://github.com/gperl27/Gatsby-Starter-Blog-Typescript
 ```
 
-If you encounter "Command failed with exit code 1: yarnpkg" error, you should downgrade your node version for now. You can upgrade node version later, don't worry. In my case, node version 10.21.0 worked. Then, please retry getting starter kid. Okay, let's check it out.
+If you encounter "Command failed with exit code 1: yarnpkg" error, you should downgrade your node version for now. You can upgrade node version later, don't worry. In my case, node version 10.21.0 worked. Then, please retry to get starter kid.
+
+## Let's check it out.
 
 ```bash
 cd your-project-name
 gatsby develop
 ```
 
-You will see sample blogs by accessing to http://localhost:8000 on your browser.
-
 ![localhost](./localhost-8000.jpg)
 
-If you downgraded node version to 10.x and want to use node version over 12.x, you should upgrade node version to 12.x, then:
+If you downgraded node version to 10.x and want to use node version over 12.x, you can upgrade node version to 12.x, then:
 
 ```bash
 rm -rf node_modules yarn.lock
