@@ -1,4 +1,200 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Yasuhiro's blog]]></title><description><![CDATA[Introducing technology, Japanese culture and so forth.]]></description><link>https://yas-ito.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Jul 2020 10:24:16 GMT</lastBuildDate><item><title><![CDATA[How to add copy icon to code blocks of markdown for Gatsby with Typescript]]></title><description><![CDATA[Installing a plugin Adding plugin to gatsby-config.js You might be better to put "gatsby-remark-code-buttons" before "gatsby-remark-prismjs…]]></description><link>https://yas-ito.com/copy-icon-code/</link><guid isPermaLink="false">https://yas-ito.com/copy-icon-code/</guid><pubDate>Sat, 11 Jul 2020 21:40:32 GMT</pubDate><content:encoded>&lt;h2&gt;Installing a plugin&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Yasuhiro's blog]]></title><description><![CDATA[Introducing technology, Japanese culture and so forth.]]></description><link>https://yas-ito.com</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Jul 2020 14:28:50 GMT</lastBuildDate><item><title><![CDATA[Use original URL on Netlify]]></title><description><![CDATA[If you don't set custom domain, the URL will be something like https://amazing-nobel-819f94.netlify.app. You can use original domain name. I…]]></description><link>https://yas-ito.com/custom-domain/</link><guid isPermaLink="false">https://yas-ito.com/custom-domain/</guid><pubDate>Sun, 12 Jul 2020 21:40:32 GMT</pubDate><content:encoded>&lt;p&gt;If you don&apos;t set custom domain, the URL will be something like &lt;a href=&quot;https://amazing-nobel-819f94.netlify.app&quot;&gt;https://amazing-nobel-819f94.netlify.app&lt;/a&gt;. You can use original domain name. I am going to tell you how to do it.&lt;/p&gt;
+&lt;p&gt;First of all, you need to buy a domain name. I found a clouple of sites for buying domain.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://sg.godaddy.com/offers/domains/godaddy-domains?isc=gofkgjp01&amp;#x26;countryview=1&amp;#x26;currencyType=jpy&amp;#x26;gclid=Cj0KCQjw6ar4BRDnARIsAITGzlAKaaPMdXp48GZKQZtvfRbYBqlWYtljjLA4rz-cAbGd6liCPdPRhlcaAtLAEALw_wcB&amp;#x26;gclsrc=aw.ds&quot;&gt;GoDaddy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.namecheap.com/&quot;&gt;namecheap.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, you can buy a domain in the other web site.&lt;/p&gt;
+&lt;h2&gt;Adding custom domain to Netlify&lt;/h2&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1370px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/baad894436f80d9898b2f0de90c35388/46ef9/domain-management.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 34.66666666666667%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAHABQDASIAAhEBAxEB/8QAFwABAAMAAAAAAAAAAAAAAAAAAAECBf/EABUBAQEAAAAAAAAAAAAAAAAAAAAB/9oADAMBAAIQAxAAAAHdsJAP/8QAFhABAQEAAAAAAAAAAAAAAAAAARAh/9oACAEBAAEFAnCf/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAEP/aAAgBAQAGPwJ//8QAFhABAQEAAAAAAAAAAAAAAAAAARAR/9oACAEBAAE/IUaN/9oADAMBAAIAAwAAABADz//EABcRAQADAAAAAAAAAAAAAAAAAAEQESH/2gAIAQMBAT8QHaj/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAWEAEBAQAAAAAAAAAAAAAAAAABABH/2gAIAQEAAT8QcKhsDN//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/baad894436f80d9898b2f0de90c35388/e922d/domain-management.webp 375w,
+/static/baad894436f80d9898b2f0de90c35388/3ea8a/domain-management.webp 750w,
+/static/baad894436f80d9898b2f0de90c35388/505d3/domain-management.webp 1370w&quot;
+          sizes=&quot;(max-width: 1370px) 100vw, 1370px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/baad894436f80d9898b2f0de90c35388/8a6f5/domain-management.jpg 375w,
+/static/baad894436f80d9898b2f0de90c35388/d0f75/domain-management.jpg 750w,
+/static/baad894436f80d9898b2f0de90c35388/46ef9/domain-management.jpg 1370w&quot;
+          sizes=&quot;(max-width: 1370px) 100vw, 1370px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/baad894436f80d9898b2f0de90c35388/46ef9/domain-management.jpg&quot;
+          alt=&quot;domain-management&quot;
+          title=&quot;domain-management&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Click Add custom domain.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 700px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/cad96048d793237378f1805301b98b46/40619/adding-custom-domain.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 51.733333333333334%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAECAwX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB7lRqiGL/AP/EABgQAAIDAAAAAAAAAAAAAAAAABARAAIy/9oACAEBAAEFAlEKZH//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAUEAEAAAAAAAAAAAAAAAAAAAAg/9oACAEBAAY/Al//xAAZEAACAwEAAAAAAAAAAAAAAAABEAAxYYH/2gAIAQEAAT8hgaKr6//aAAwDAQACAAMAAAAQpw//xAAWEQEBAQAAAAAAAAAAAAAAAAABERD/2gAIAQMBAT8QGlz/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/ED//xAAcEAEAAgEFAAAAAAAAAAAAAAABABGRECExobH/2gAIAQEAAT8QAu65YA2ZIFHNzuenX//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/cad96048d793237378f1805301b98b46/e922d/adding-custom-domain.webp 375w,
+/static/cad96048d793237378f1805301b98b46/84c6d/adding-custom-domain.webp 700w&quot;
+          sizes=&quot;(max-width: 700px) 100vw, 700px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/cad96048d793237378f1805301b98b46/8a6f5/adding-custom-domain.jpg 375w,
+/static/cad96048d793237378f1805301b98b46/40619/adding-custom-domain.jpg 700w&quot;
+          sizes=&quot;(max-width: 700px) 100vw, 700px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/cad96048d793237378f1805301b98b46/40619/adding-custom-domain.jpg&quot;
+          alt=&quot;adding&quot;
+          title=&quot;adding&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Click verify. If you can use the domain, it will be passed.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 907px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/680121cbd62fb63657a4e5b68c8ec07b/ab419/custom-domain-list.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 50.93333333333333%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAKABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAECBf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhADEAAAAe8miKP/xAAXEAADAQAAAAAAAAAAAAAAAAAAARAR/9oACAEBAAEFApor/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFBABAAAAAAAAAAAAAAAAAAAAIP/aAAgBAQAGPwJf/8QAFhABAQEAAAAAAAAAAAAAAAAAEAFB/9oACAEBAAE/IYtv/9oADAMBAAIAAwAAABBQz//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQMBAT8QP//EABQRAQAAAAAAAAAAAAAAAAAAABD/2gAIAQIBAT8QP//EABoQAAIDAQEAAAAAAAAAAAAAAAERACExEJH/2gAIAQEAAT8Q0UVAbTPkKEhZCZe74p//2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/680121cbd62fb63657a4e5b68c8ec07b/e922d/custom-domain-list.webp 375w,
+/static/680121cbd62fb63657a4e5b68c8ec07b/3ea8a/custom-domain-list.webp 750w,
+/static/680121cbd62fb63657a4e5b68c8ec07b/b1578/custom-domain-list.webp 907w&quot;
+          sizes=&quot;(max-width: 907px) 100vw, 907px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/680121cbd62fb63657a4e5b68c8ec07b/8a6f5/custom-domain-list.jpg 375w,
+/static/680121cbd62fb63657a4e5b68c8ec07b/d0f75/custom-domain-list.jpg 750w,
+/static/680121cbd62fb63657a4e5b68c8ec07b/ab419/custom-domain-list.jpg 907w&quot;
+          sizes=&quot;(max-width: 907px) 100vw, 907px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/680121cbd62fb63657a4e5b68c8ec07b/ab419/custom-domain-list.jpg&quot;
+          alt=&quot;custom-domain-list&quot;
+          title=&quot;custom-domain-list&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;If you click Check DNS configuration, you can see the below dialog.&lt;/p&gt;
+&lt;p&gt;&lt;span
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 784px; &quot;
+    &gt;
+      &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/static/6805833219f890771ce0ca7455dac9b5/09704/register-records.jpg&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+    &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 114.39999999999999%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAXABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQBAgX/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEAMQAAAB9nYyXJhTovQP/8QAGxAAAwACAwAAAAAAAAAAAAAAAAECEiEQERP/2gAIAQEAAQUCzk9JM5Y1vola5//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQMBAT8BH//EABQRAQAAAAAAAAAAAAAAAAAAACD/2gAIAQIBAT8BH//EABwQAAEEAwEAAAAAAAAAAAAAAAABAjKRIDM0of/aAAgBAQAGPwKTbJNskhzItHK3w0I2sP/EAB0QAAIBBAMAAAAAAAAAAAAAAAABIRARMUFhceH/2gAIAQEAAT8hsOgIkIb0yXtZvIv9i7lsJjZFP//aAAwDAQACAAMAAAAQL988/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHBABAAICAwEAAAAAAAAAAAAAAQARITFRcdHw/9oACAEBAAE/EF/EjTZ9lPnl0I0osdUyHbb1Odu/KGV9wGN4PqlCrLBhTQw1P//Z&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;picture&gt;
+        &lt;source
+          srcset=&quot;/static/6805833219f890771ce0ca7455dac9b5/e922d/register-records.webp 375w,
+/static/6805833219f890771ce0ca7455dac9b5/3ea8a/register-records.webp 750w,
+/static/6805833219f890771ce0ca7455dac9b5/eeba7/register-records.webp 784w&quot;
+          sizes=&quot;(max-width: 784px) 100vw, 784px&quot;
+          type=&quot;image/webp&quot;
+        /&gt;
+        &lt;source
+          srcset=&quot;/static/6805833219f890771ce0ca7455dac9b5/8a6f5/register-records.jpg 375w,
+/static/6805833219f890771ce0ca7455dac9b5/d0f75/register-records.jpg 750w,
+/static/6805833219f890771ce0ca7455dac9b5/09704/register-records.jpg 784w&quot;
+          sizes=&quot;(max-width: 784px) 100vw, 784px&quot;
+          type=&quot;image/jpeg&quot;
+        /&gt;
+        &lt;img
+          class=&quot;gatsby-resp-image-image&quot;
+          src=&quot;/static/6805833219f890771ce0ca7455dac9b5/09704/register-records.jpg&quot;
+          alt=&quot;register-rr&quot;
+          title=&quot;register-rr&quot;
+          loading=&quot;lazy&quot;
+          style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        /&gt;
+      &lt;/picture&gt;
+  &lt;/a&gt;
+    &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;You need to set Primary domain and Redirects automatically to primary domain both.&lt;/p&gt;
+&lt;h2&gt;How to set DNS record?&lt;/h2&gt;
+&lt;p&gt;You should check a website where you bought your domain. You should be able to register A/CNAME records there. If you are not sure, you should ask to the company.&lt;/p&gt;
+&lt;h3&gt;Let&apos;s check dig command&lt;/h3&gt;
+&lt;p&gt;After registering A/CNAME records, you can check if the registeration is done by dig command.&lt;/p&gt;
+&lt;div
+              class=&quot;gatsby-code-button-container&quot;
+              data-toaster-id=&quot;51545964115176090000&quot;
+              data-toaster-class=&quot;gatsby-code-button-toaster&quot;
+              data-toaster-text-class=&quot;gatsby-code-button-toaster-text&quot;
+              data-toaster-text=&quot;Copied to clipboard&quot;
+              data-toaster-duration=&quot;5000&quot;
+              onClick=&quot;copyToClipboard(`dig please-enter-your-domain-name`, `51545964115176090000`)&quot;
+            &gt;
+              &lt;div
+                class=&quot;gatsby-code-button&quot;
+                data-tooltip=&quot;Copy to clipboard&quot;
+              &gt;
+                &lt;svg class=&quot;gatsby-code-button-icon&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;24&quot; height=&quot;24&quot; viewBox=&quot;0 0 24 24&quot;&gt;&lt;path fill=&quot;none&quot; d=&quot;M0 0h24v24H0V0z&quot;/&gt;&lt;path d=&quot;M16 1H2v16h2V3h12V1zm-1 4l6 6v12H6V5h9zm-1 7h5.5L14 6.5V12z&quot;/&gt;&lt;/svg&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;bash&quot;&gt;&lt;pre class=&quot;language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;&lt;span class=&quot;token function&quot;&gt;dig&lt;/span&gt; please-enter-your-domain-name&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Since DNS takes a time to spread records to all around the world, it might take a time.&lt;/p&gt;
+&lt;p&gt;Also, you can check by &lt;a href=&quot;https://dnspropagation.net/&quot;&gt;DNS Propagation Check&lt;/a&gt;. Please wait for a while. It might take a day or more. After that, you should be able to see your website by your original URL.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How to add copy icon to code blocks of markdown for Gatsby with Typescript]]></title><description><![CDATA[Installing a plugin Adding plugin to gatsby-config.js You might be better to put "gatsby-remark-code-buttons" before "gatsby-remark-prismjs…]]></description><link>https://yas-ito.com/copy-icon-code/</link><guid isPermaLink="false">https://yas-ito.com/copy-icon-code/</guid><pubDate>Sat, 11 Jul 2020 21:40:32 GMT</pubDate><content:encoded>&lt;h2&gt;Installing a plugin&lt;/h2&gt;
 &lt;div
               class=&quot;gatsby-code-button-container&quot;
               data-toaster-id=&quot;8036456865865427000&quot;
