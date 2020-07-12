@@ -9,6 +9,10 @@ import { MarkdownRemark } from "../graphql-types";
 import { rhythm } from "../utils/typography";
 
 const StyledLink = styled(FadeLink)`
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  color: #65ace4;
+  font-weight: bold;
   box-shadow: none;
 `;
 
