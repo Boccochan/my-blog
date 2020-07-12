@@ -1,24 +1,27 @@
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
 import React from "react";
-import styled from "styled-components";
-// import { Bio } from "../components/bio";
 import { Layout } from "../components/layout";
-import { FadeLink } from "../components/link";
 import { SEO } from "../components/seo";
 import { MarkdownRemark } from "../graphql-types";
-import { rhythm } from "../utils/typography";
+import BlogSummary from "../components/blog-summary";
+import Grid, { GridSpacing } from "@material-ui/core/Grid";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+import Container from "@material-ui/core/Container";
 
-const StyledLink = styled(FadeLink)`
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  color: #65ace4;
-  font-weight: bold;
-  box-shadow: none;
-`;
-
-const Title = styled.h3`
-  margin-bottom: ${rhythm(1 / 4)};
-`;
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      height: 140,
+      width: 100,
+    },
+    control: {
+      padding: theme.spacing(2),
+    },
+  })
+);
 
 type Props = PageRendererProps;
 
@@ -48,6 +51,9 @@ const BlogIndex = (props: Props) => {
     }
   `);
 
+  const [spacing] = React.useState<GridSpacing>(2);
+  const classes = useStyles();
+
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
@@ -57,29 +63,30 @@ const BlogIndex = (props: Props) => {
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      {/* <Bio /> */}
-      {posts.map(({ node }: { node: MarkdownRemark }) => {
-        const frontmatter = node!.frontmatter!;
-        const fields = node!.fields!;
-        const slug = fields.slug!;
 
-        const excerpt = node!.excerpt!;
-
-        const title = frontmatter.title || fields.slug;
-        return (
-          <div key={slug}>
-            <Title>
-              <StyledLink to={slug}>{title}</StyledLink>
-            </Title>
-            <small>{frontmatter.date}</small>
-            <p
-              dangerouslySetInnerHTML={{
-                __html: frontmatter.description || excerpt,
-              }}
-            />
-          </div>
-        );
-      })}
+      <Container maxWidth="lg">
+        <Grid container className={classes.root} spacing={2}>
+          <Grid item xs={12}>
+            <Grid container spacing={spacing}>
+              {posts.map(({ node }: { node: MarkdownRemark }) => {
+                const frontmatter = node!.frontmatter!;
+                const fields = node!.fields!;
+                return (
+                  <Grid key={fields.slug!} item>
+                    <BlogSummary
+                      slug={fields.slug!}
+                      title={frontmatter.title || fields.slug}
+                      excerpt={node!.excerpt!}
+                      date={frontmatter.date}
+                      description={frontmatter.description}
+                    />
+                  </Grid>
+                );
+              })}
+            </Grid>
+          </Grid>
+        </Grid>
+      </Container>
     </Layout>
   );
 };

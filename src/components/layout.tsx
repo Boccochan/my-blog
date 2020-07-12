@@ -7,6 +7,7 @@ import { rhythm } from "../utils/typography";
 import MenuBar from "./menu";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "../styles/color";
+import Grid from "@material-ui/core/Grid";
 
 interface Props extends PageRendererProps {
   title: string;
@@ -31,10 +32,7 @@ interface Props extends PageRendererProps {
 // `;
 
 const Content = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  max-width: ${rhythm(24)};
-  padding: ${`${rhythm(1.5)} ${rhythm(3 / 4)}`};
+  padding: ${`${rhythm(1.5)} 0`};
 `;
 
 export const Layout = (props: Props) => {
@@ -52,7 +50,6 @@ export const Layout = (props: Props) => {
           <StyledLink to={`/`}>{title}</StyledLink>
         </HeaderTitle> */}
       </header>
-
       <Content>
         <main>{children}</main>
         <footer>© {new Date().getFullYear()}, Yasuhiro Ito</footer>

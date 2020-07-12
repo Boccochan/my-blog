@@ -7,8 +7,9 @@ import { FadeLink } from "../components/link";
 import { SEO } from "../components/seo";
 import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
-// import PostStyles from "./blog-post-style.scss";
 import "./blog-post-style.scss";
+import Container from "@material-ui/core/Container";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -45,34 +46,33 @@ const BlogPostTemplate = (props: Props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      {/* <div className={PostStyles.content}> */}
       <SEO
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-
-      <Date>{frontmatter.date}</Date>
-      <h1>{post.frontmatter!.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-      <Divider />
-      <Bio />
-      <PostNavigator>
-        <li>
-          {previous && (
-            <FadeLink to={previous.fields!.slug!} rel="prev">
-              ← {previous.frontmatter!.title}
-            </FadeLink>
-          )}
-        </li>
-        <li>
-          {next && (
-            <FadeLink to={next.fields!.slug!} rel="next">
-              {next.frontmatter!.title} →
-            </FadeLink>
-          )}
-        </li>
-      </PostNavigator>
-      {/* </div> */}
+      <Container maxWidth="md">
+        <Date>{frontmatter.date}</Date>
+        <h1>{post.frontmatter!.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Divider />
+        <Bio />
+        <PostNavigator>
+          <li>
+            {previous && (
+              <FadeLink to={previous.fields!.slug!} rel="prev">
+                ← {previous.frontmatter!.title}
+              </FadeLink>
+            )}
+          </li>
+          <li>
+            {next && (
+              <FadeLink to={next.fields!.slug!} rel="next">
+                {next.frontmatter!.title} →
+              </FadeLink>
+            )}
+          </li>
+        </PostNavigator>
+      </Container>
     </Layout>
   );
 };
