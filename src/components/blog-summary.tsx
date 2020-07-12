@@ -18,25 +18,13 @@ const StyledLink = styled(FadeLink)`
 const StyledDesc = styled.p`
   font-size: 12px;
   color: gray;
-  margin-top: 12px;
-  margin-bottom: 0px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 `;
 
 const useStyles = makeStyles({
   root: {
-    width: 357,
-    height: 150,
-  },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)",
-  },
-  title: {
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
+    height: 160,
   },
 });
 

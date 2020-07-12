@@ -13,13 +13,6 @@ const useStyles = makeStyles((theme: Theme) =>
     root: {
       flexGrow: 1,
     },
-    paper: {
-      height: 140,
-      width: 100,
-    },
-    control: {
-      padding: theme.spacing(2),
-    },
   })
 );
 
@@ -72,7 +65,7 @@ const BlogIndex = (props: Props) => {
                 const frontmatter = node!.frontmatter!;
                 const fields = node!.fields!;
                 return (
-                  <Grid key={fields.slug!} item>
+                  <Grid key={fields.slug!} item xs={12} sm={6} lg={4}>
                     <BlogSummary
                       slug={fields.slug!}
                       title={frontmatter.title || fields.slug}

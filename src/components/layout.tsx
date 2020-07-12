@@ -1,59 +1,41 @@
 import { PageRendererProps } from "gatsby";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-// import { rhythm, styledScale } from "../utils/typography";
 import { rhythm } from "../utils/typography";
-// import { FadeLink } from "./link";
 import MenuBar from "./menu";
 import { MuiThemeProvider } from "@material-ui/core/styles";
 import { theme } from "../styles/color";
-import Grid from "@material-ui/core/Grid";
 
 interface Props extends PageRendererProps {
   title: string;
   children: ReactNode;
 }
 
-// const StyledH1 = styled.h1`
-//   ${styledScale(1.5)};
-//   margin-bottom: ${rhythm(1.5)};
-//   margin-top: 0;
-// `;
-
-// const StyledH3 = styled.h3`
-//   font-family: Montserrat, sans-serif;
-//   margin-top: 0;
-// `;
-
-// const StyledLink = styled(FadeLink)`
-//   box-shadow: none;
-//   color: inherit;
-//   text-decoration: none;
-// `;
-
 const Content = styled.div`
+  min-height: calc(100vh - 100px);
   padding: ${`${rhythm(1.5)} 0`};
 `;
 
-export const Layout = (props: Props) => {
-  // const { location, title, children } = props;
-  const { children } = props;
-  // const rootPath = `/`;
+const StyledFooter = styled.footer`
+  padding-top: 5px;
+  background-color: #4f4f4f;
+  color: white;
+  text-align: center;
+  height: 50px;
+`;
 
-  // const HeaderTitle = location.pathname === rootPath ? StyledH1 : StyledH3;
+export const Layout = (props: Props) => {
+  const { children } = props;
 
   return (
     <MuiThemeProvider theme={theme}>
       <header>
         <MenuBar />
-        {/* <HeaderTitle>
-          <StyledLink to={`/`}>{title}</StyledLink>
-        </HeaderTitle> */}
       </header>
       <Content>
         <main>{children}</main>
-        <footer>© {new Date().getFullYear()}, Yasuhiro Ito</footer>
       </Content>
+      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
     </MuiThemeProvider>
   );
 };
