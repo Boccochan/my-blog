@@ -8,8 +8,6 @@ import { SEO } from "../components/seo";
 import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
 import "./blog-post-style.scss";
-import Container from "@material-ui/core/Container";
-import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -35,6 +33,14 @@ const PostNavigator = styled.ul`
   padding: 0;
 `;
 
+const StyledContainer = styled.div`
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+`;
+
 const BlogPostTemplate = (props: Props) => {
   const data = props.data!;
   const post = data.markdownRemark!;
@@ -50,7 +56,7 @@ const BlogPostTemplate = (props: Props) => {
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-      <Container maxWidth="md">
+      <StyledContainer>
         <Date>{frontmatter.date}</Date>
         <h1>{post.frontmatter!.title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -72,7 +78,7 @@ const BlogPostTemplate = (props: Props) => {
             )}
           </li>
         </PostNavigator>
-      </Container>
+      </StyledContainer>
     </Layout>
   );
 };

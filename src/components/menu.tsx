@@ -19,6 +19,24 @@ import {
 import InfoIcon from "@material-ui/icons/Info";
 import HomeIcon from "@material-ui/icons/Home";
 import MenuIcon from "@material-ui/icons/Menu";
+import media from "styled-media-query";
+import styled from "styled-components";
+
+const StyledMenu = styled.div`
+  background: black;
+
+  ${media.lessThan("medium")`
+    background: red;
+  `}
+
+  ${media.between("medium", "large")`
+    background: green;
+  `}
+
+  ${media.greaterThan("large")`
+    background: blue;
+  `}
+`;
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -59,45 +77,7 @@ function MenuBar() {
 
   return (
     <React.Fragment>
-      {/* 上部のバー */}
-      <AppBar
-        elevation={0}
-        position="static"
-        aria-label="Global Navi"
-        color="primary"
-      >
-        <Toolbar>
-          <IconButton
-            onClick={toggleDrawerNav}
-            aria-label="SideMenu"
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography className={classes.headerLogo} variant="subtitle1">
-            YesYas!
-          </Typography>
-          <Typography className={classes.headerTitleStyle} variant="subtitle1">
-            Welcome to Yasuhiro's home:)
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      {/* サイドメニュー */}
-      <Drawer open={isOpen} onClose={closeDrawerNav}>
-        <div className={classes.drawerList}>
-          <List>
-            <ListItem button onClick={closeDrawerNav}>
-              <ListItemIcon>{<HomeIcon />}</ListItemIcon>
-              <ListItemText primary={"Home"} />
-            </ListItem>
-            <ListItem button onClick={closeDrawerNav}>
-              <ListItemIcon>{<InfoIcon />}</ListItemIcon>
-              <ListItemText primary={"Info"} />
-            </ListItem>
-          </List>
-          <Divider />
-        </div>
-      </Drawer>
+      <StyledMenu>Hello World</StyledMenu>
     </React.Fragment>
   );
 }
