@@ -1,13 +1,8 @@
 import React from "react";
-import Card from "@material-ui/core/Card";
-import { makeStyles } from "@material-ui/core/styles";
-import CardContent from "@material-ui/core/CardContent";
 import { BlogInfo } from "../types";
 import { FadeLink } from "../components/link";
 import styled from "styled-components";
-import Divider from "@material-ui/core/Divider";
-import media, { generateMedia } from "styled-media-query";
-import { customMedia } from "../styles/custom-media";
+import media from "styled-media-query";
 
 const SytledCard = styled.div`
   border: 1px solid #e0e0e0;
@@ -55,14 +50,7 @@ const StyledDesc = styled.p`
   margin-bottom: 6px;
 `;
 
-const useStyles = makeStyles({
-  root: {
-    height: 160,
-  },
-});
-
 const BlogSummary = (props: BlogInfo) => {
-  // const classes = useStyles();
   const { slug, title, date, description, excerpt } = props;
 
   return (
@@ -77,22 +65,6 @@ const BlogSummary = (props: BlogInfo) => {
         }}
       />
     </SytledCard>
-    // <Card className={classes.root} variant="outlined">
-    //   <CardContent>
-    //     <div>
-    //       <StyledLink to={slug}>{title}</StyledLink>
-    //     </div>
-    //     <div>
-    //       <small>{date}</small>
-    //     </div>
-    //     <Divider />
-    //     <StyledDesc
-    //       dangerouslySetInnerHTML={{
-    //         __html: description || excerpt,
-    //       }}
-    //     />
-    //   </CardContent>
-    // </Card>
   );
 };
 

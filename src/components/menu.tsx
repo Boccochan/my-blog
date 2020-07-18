@@ -39,47 +39,77 @@ const StyledMenu = styled.div`
   `}
 `;
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    headerLogo: {
-      color: "inherit",
-      marginRight: 20,
-    },
-    headerTitleStyle: {
-      flexGrow: 1,
-      color: "inherit",
-    },
-    menuButton: {
-      color: "inherit",
-      padding: "8px",
-    },
-    avatar: {
-      margin: "8px",
-    },
-    drawerList: {
-      width: 200,
-      height: "100%",
-    },
-  })
-);
+const StyledNav = styled.nav`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #fffdfd;
+  border: 1px solid #e0e0e0;
+`;
+
+const StyledBurgerLine = styled.div`
+  width: 25px;
+  height: 3px;
+  background-color: #333333;
+  margin: 5px;
+`;
+
+type Props = {
+  translateX: string;
+};
+
+const StyledNavLinks = styled.ul`
+  position: absolute;
+  right: 0px;
+  height: 92vh;
+  top: 8vh;
+  background-color: #5d4954;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  transform: ${(props: Props) => props.translateX};
+  transition: transform 0.5s ease-in;
+`;
+
+const StyledNavLi = styled.li`
+  opacity: 0;
+`;
 
 function MenuBar() {
   const [isOpen, setOpen] = useState(false);
 
-  const classes = useStyles();
-
-  const toggleDrawerNav = () => {
-    setOpen(!isOpen);
-  };
-
-  const closeDrawerNav = () => {
-    setOpen(false);
+  const handleClick = () => {
+    console.log("hello");
   };
 
   return (
-    <React.Fragment>
-      <StyledMenu>Hello World</StyledMenu>
-    </React.Fragment>
+    <StyledNav>
+      <StyledNavLinks translateX="translateX(100%)">
+        <StyledNavLi>
+          <a href="#">Home</a>
+        </StyledNavLi>
+        <StyledNavLi>
+          <a href="#">About</a>
+        </StyledNavLi>
+        <StyledNavLi>
+          <a href="#">Work</a>
+        </StyledNavLi>
+        <StyledNavLi>
+          <a href="#">Project5s</a>
+        </StyledNavLi>
+      </StyledNavLinks>
+      <div onClick={handleClick}>
+        <StyledBurgerLine />
+        <StyledBurgerLine />
+        <StyledBurgerLine />
+      </div>
+
+      <div class="logo">
+        <h4>Jojo town</h4>
+      </div>
+    </StyledNav>
   );
 }
 
