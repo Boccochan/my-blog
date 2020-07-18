@@ -24,6 +24,7 @@ import styled from "styled-components";
 
 const StyledMenu = styled.div`
   background: black;
+  margin-bottom: 30px;
 
   ${media.lessThan("medium")`
     background: red;

@@ -6,23 +6,20 @@ import { BlogInfo } from "../types";
 import { FadeLink } from "../components/link";
 import styled from "styled-components";
 import Divider from "@material-ui/core/Divider";
-import media from "styled-media-query";
+import media, { generateMedia } from "styled-media-query";
+import { customMedia } from "../styles/custom-media";
 
 const SytledCard = styled.div`
   border: 1px solid #e0e0e0;
   border-radius: 2px 2px 2px 2px;
   display: block;
   height: 200px;
-  width: 300px;
+  width: 100%;
   padding: 20px;
   margin-right: auto;
   margin-left: auto;
 
   background-color: #fffdfd;
-  ${media.lessThan("small")`
-    height: 160px;
-    width: 240px;
-  `}
 `;
 
 const StyledTitle = styled.div`
@@ -41,7 +38,7 @@ const StyledLink = styled(FadeLink)`
   ${media.lessThan("small")`
     font-size: 14px;
     height: 160px;
-    width: 240px;
+    width: 300px;
   `}
 `;
 

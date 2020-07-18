@@ -11,17 +11,19 @@ interface Props extends PageRendererProps {
   children: ReactNode;
 }
 
-const Content = styled.div`
-  min-height: calc(100vh - 100px);
-  padding: ${`${rhythm(1.5)} 0`};
+const StyledWrapper = styled.div`
+  padding; 0px;
+  margin: 0px;
+  min-height: calc(100vh - 50px);
 `;
 
 const StyledFooter = styled.footer`
-  padding-top: 5px;
   background-color: #4f4f4f;
   color: white;
-  text-align: center;
   height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Layout = (props: Props) => {
@@ -29,12 +31,13 @@ export const Layout = (props: Props) => {
 
   return (
     <MuiThemeProvider theme={theme}>
-      <header>
-        <MenuBar />
-      </header>
-      <Content>
+      <StyledWrapper>
+        <header>
+          <MenuBar />
+        </header>
         <main>{children}</main>
-      </Content>
+      </StyledWrapper>
+
       <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
     </MuiThemeProvider>
   );
