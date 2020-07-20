@@ -34,11 +34,14 @@ const PostNavigator = styled.ul`
 `;
 
 const StyledContainer = styled.div`
-  max-width: 650px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-top: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  background-color: #fffdfd;
 `;
 
 const BlogPostTemplate = (props: Props) => {

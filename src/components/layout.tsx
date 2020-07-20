@@ -1,10 +1,8 @@
 import { PageRendererProps } from "gatsby";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { rhythm } from "../utils/typography";
 import MenuBar from "./menu";
-import { MuiThemeProvider } from "@material-ui/core/styles";
-import { theme } from "../styles/color";
+import BaseStyles from "../styles/base-style";
 
 interface Props extends PageRendererProps {
   title: string;
@@ -12,33 +10,33 @@ interface Props extends PageRendererProps {
 }
 
 const StyledWrapper = styled.div`
-  padding; 0px;
-  margin: 0px;
-  min-height: calc(100vh - 50px);
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  // background-color: black;
 `;
 
-const StyledFooter = styled.footer`
-  background-color: #4f4f4f;
-  color: white;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+// const StyledFooter = styled.footer`
+//   background-color: #4f4f4f;
+//   color: white;
+//   height: 50px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// `;
 
 export const Layout = (props: Props) => {
   const { children } = props;
 
   return (
-    <MuiThemeProvider theme={theme}>
+    <React.Fragment>
+      <BaseStyles />
       <StyledWrapper>
         <header>
           <MenuBar />
         </header>
         <main>{children}</main>
       </StyledWrapper>
-
-      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
-    </MuiThemeProvider>
+      {/* <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter> */}
+    </React.Fragment>
   );
 };

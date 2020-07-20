@@ -13,7 +13,6 @@ const SytledCard = styled.div`
   padding: 20px;
   margin-right: auto;
   margin-left: auto;
-
   background-color: #fffdfd;
 `;
 
@@ -56,7 +55,7 @@ const BlogSummary = (props: BlogInfo) => {
   return (
     <SytledCard>
       <StyledTitle>
-        <StyledLink to={slug}>{title}</StyledLink>
+        <FadeLink to={slug}>{title}</FadeLink>
       </StyledTitle>
       <StyledDate>{date}</StyledDate>
       <StyledDesc
