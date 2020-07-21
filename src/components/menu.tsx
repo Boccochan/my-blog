@@ -15,6 +15,10 @@ const StyledNav = styled.nav`
   height: 60px;
   background-color: #fffdfd;
   border-bottom: 1px solid #e0e0e0;
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
 `;
 
 const StyledBurger = styled.div`
@@ -150,27 +154,22 @@ function MenuBar() {
       <StyledMainMenu>
         <h4>Yasuhiro blog</h4>
       </StyledMainMenu>
-      <StyledNav>
-        <StyledMainMenu>
-          <h4>Yasuhiro blog</h4>
-        </StyledMainMenu>
-        <StyledNavLinks visible={visibleMenu}>
-          <StyledNavLi index={0} visible={visibleMenu}>
-            <StyledLiA href="/">Home</StyledLiA>
-          </StyledNavLi>
-          <StyledNavLi index={1} visible={visibleMenu}>
-            <StyledLiA href="#">About</StyledLiA>
-          </StyledNavLi>
-          <StyledNavLi index={2} visible={visibleMenu}>
-            <StyledLiA href="#">Music</StyledLiA>
-          </StyledNavLi>
-        </StyledNavLinks>
-        <StyledBurger onClick={toggleMenu}>
-          <StyledBurgerLine1 visible={visibleMenu} />
-          <StyledBurgerLine2 visible={visibleMenu} />
-          <StyledBurgerLine3 visible={visibleMenu} />
-        </StyledBurger>
-      </StyledNav>
+      <StyledNavLinks visible={visibleMenu}>
+        <StyledNavLi index={0} visible={visibleMenu}>
+          <StyledLiA href="/">Home</StyledLiA>
+        </StyledNavLi>
+        <StyledNavLi index={1} visible={visibleMenu}>
+          <StyledLiA href="#">About</StyledLiA>
+        </StyledNavLi>
+        <StyledNavLi index={2} visible={visibleMenu}>
+          <StyledLiA href="#">Music</StyledLiA>
+        </StyledNavLi>
+      </StyledNavLinks>
+      <StyledBurger onClick={toggleMenu}>
+        <StyledBurgerLine1 visible={visibleMenu} />
+        <StyledBurgerLine2 visible={visibleMenu} />
+        <StyledBurgerLine3 visible={visibleMenu} />
+      </StyledBurger>
     </StyledNav>
   );
 }
