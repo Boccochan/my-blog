@@ -23,7 +23,7 @@ const StyledContainer = styled.div`
   margin-left: auto;
   padding: 10px;
   display: grid;
-  gap: 5px;
+  gap: 25px;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
 
   ${customMedia.lessThan("medium")`
@@ -37,6 +37,7 @@ const StyledContainer = styled.div`
 type Props = PageRendererProps;
 
 const BlogIndex = (props: Props) => {
+  console.log("BlogIndex!!!");
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -62,8 +63,8 @@ const BlogIndex = (props: Props) => {
     }
   `);
 
-  const [spacing] = React.useState<GridSpacing>(2);
-  const classes = useStyles();
+  // const [spacing] = React.useState<GridSpacing>(2);
+  // const classes = useStyles();
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
