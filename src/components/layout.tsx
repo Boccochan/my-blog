@@ -13,8 +13,9 @@ const StyledWrapper = styled.div`
   min-height: 100vh;
   // background-color: #f0f0f0;
   // background-color: black;
-  background-color: #f0f0f0;
+  background-color: #f5f5f7;
   // background-color: #4f4f4f;
+  // background-color: #56ccf2;
 `;
 
 const StyledMain = styled.div`

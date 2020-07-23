@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import media from "styled-media-query";
 import styled, { css, keyframes } from "styled-components";
+import { Link } from "gatsby";
 
 type Props = {
   visible: boolean;
@@ -11,10 +12,13 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
-  height: 60px;
-  background-color: #fffdfd;
-  border-bottom: 1px solid #e0e0e0;
+  height: 8vh;
+  // height: 60px;
+  // background-color: #fffdfd;
+
+  // background-color: #f5f5f7;
+  background-color: #333333;
+  // border-bottom: 1px solid #e0e0e0;
   top: 0px;
   width: 100%;
   position: fixed;
@@ -24,6 +28,13 @@ const StyledNav = styled.nav`
 const StyledBurger = styled.div`
   position: absolute;
   right: 2%;
+  opacity: 0;
+  z-index: 1;
+  ${media.lessThan("large")`
+    opacity: 1;
+    z-index: 100;
+  
+  `}
 `;
 
 const StyledBurgerLine = styled.div`
@@ -36,7 +47,7 @@ const StyledBurgerLine = styled.div`
 const StyledBurgerLine1 = styled.div`
   width: 25px;
   height: 3px;
-  background-color: #333333;
+  background-color: #f5f5f7;
   margin: 5px;
 
   ${(props: { visible: boolean }) =>
@@ -50,7 +61,8 @@ const StyledBurgerLine1 = styled.div`
 const StyledBurgerLine2 = styled.div`
   width: 25px;
   height: 3px;
-  background-color: #333333;
+
+  background-color: #f5f5f7;
   margin: 5px;
   ${(props: { visible: boolean }) =>
     props.visible
@@ -63,7 +75,8 @@ const StyledBurgerLine2 = styled.div`
 const StyledBurgerLine3 = styled.div`
   width: 25px;
   height: 3px;
-  background-color: #333333;
+
+  background-color: #f5f5f7;
   margin: 5px;
 
   ${(props: { visible: boolean }) =>
@@ -75,8 +88,24 @@ const StyledBurgerLine3 = styled.div`
 `;
 
 const StyledMainMenu = styled.div`
+  // display: table-cell;
+  // vertical-align: middle;
+  height: 8vh;
   position: absolute;
   left: 5%;
+  font-size: 24px;
+  display: table;
+  width: 100%;
+`;
+
+const StyeldH4 = styled.div`
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 600;
+  font-size: 1em;
+  color: #f5f5f7;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 `;
 
 const StyledNavLinks = styled.ul`
@@ -84,7 +113,7 @@ const StyledNavLinks = styled.ul`
   right: 0px;
   height: 92vh;
   top: 8vh;
-  background-color: #fffdfd;
+  background-color: #333333;
   border-left: 1px solid #e0e0e0;
   transition: transform 0.5s ease;
   display: flex;
@@ -133,17 +162,148 @@ const StyledNavLi = styled.li`
         `}
 `;
 
-const StyledLiA = styled.a`
-  color: #333333;
-  text-decoration: none;
-  letter-spacing: 3px;
+const StyledLink = styled(Link)`
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+    sans-serif, Apple Color Emoji, Segoe UI Emoji;
+  color: #f5f5f7;
   font-weight: bold;
-  font-size: 14px;
+  box-shadow: none;
+
+  ${media.lessThan("small")`
+    font-size: 14px;
+    height: 160px;
+    width: 300px;
+  `}
+`;
+
+const StyledSearchBox = styled.div`
+  // top: 0;
+  // left: 0;
+  right: 0;
+  // bottom: 0;
+  width: 100px;
+  min-height: 8vh;
+  position: absolute;
+  // right: 2%;
+  // background-color: black;
+
+  ${media.lessThan("large")`
+    opacity: 0;
+  `}
+`;
+
+const StyledSearchIcon = styled.div`
+  position: absolute;
+  margin: auto;
+  // margin-top: 24px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: #2f80ed;
+  // background: #333333;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 13px;
+    right: 0;
+    bottom: 0;
+    left: 13px;
+    width: 10px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all 0.5s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -2px;
+    right: 0px;
+    bottom: 0;
+    left: -2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all 0.5s;
+  }
+`;
+
+const StyledSearchBar = styled.input`
+  // font-family: "Inconsolata", monospace;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  width: 40px;
+  height: 30px;
+  outline: none;
+  border: none;
+  // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  // background: crimson;
+  background: #2f80ed;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 10 80px 10 20px;
+  border-radius: 30px;
+  // box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    padding 0 80px 0 20px;
+    left: -280px;
+    width: 300px;
+    height: 30px;
+    opacity: 1;
+  }
+
+  &:focus ~ ${StyledSearchIcon} {
+    background: #BDBDBD; 
+    z-index: 7;
+    &::before {
+      top: 0;
+      left: 0;
+      width: 20px;
+    }
+    &::after {
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 2px;
+      border: none;
+      background: white;
+      border-radius: 0%;
+      transform: rotate(-45deg);
+    }
+  }
 `;
 
 function MenuBar() {
   const [visibleMenu, setVisibleMenu] = useState(false);
 
+  console.log("hello!!!!!!", visibleMenu);
   const toggleMenu = () => {
     console.log("hello");
     setVisibleMenu(!visibleMenu);
@@ -152,17 +312,17 @@ function MenuBar() {
   return (
     <StyledNav>
       <StyledMainMenu>
-        <h4>Yasuhiro blog</h4>
+        <StyeldH4>Yasuhiro blog</StyeldH4>
       </StyledMainMenu>
       <StyledNavLinks visible={visibleMenu}>
         <StyledNavLi index={0} visible={visibleMenu}>
-          <StyledLiA href="/">Home</StyledLiA>
+          <StyledLink to="/">Home</StyledLink>
         </StyledNavLi>
         <StyledNavLi index={1} visible={visibleMenu}>
-          <StyledLiA href="#">About</StyledLiA>
+          <StyledLink to="/">About</StyledLink>
         </StyledNavLi>
         <StyledNavLi index={2} visible={visibleMenu}>
-          <StyledLiA href="#">Music</StyledLiA>
+          <StyledLink to="/">Music</StyledLink>
         </StyledNavLi>
       </StyledNavLinks>
       <StyledBurger onClick={toggleMenu}>
@@ -170,6 +330,10 @@ function MenuBar() {
         <StyledBurgerLine2 visible={visibleMenu} />
         <StyledBurgerLine3 visible={visibleMenu} />
       </StyledBurger>
+      <StyledSearchBox>
+        <StyledSearchBar type="text" placeholder="Search..." />
+        <StyledSearchIcon />
+      </StyledSearchBox>
     </StyledNav>
   );
 }
