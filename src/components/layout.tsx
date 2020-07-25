@@ -13,13 +13,13 @@ const StyledWrapper = styled.div`
   min-height: 100vh;
   // background-color: #f0f0f0;
   // background-color: black;
-  background-color: #f5f5f7;
+  background-color: #ffffff;
   // background-color: #4f4f4f;
   // background-color: #56ccf2;
 `;
 
 const StyledMain = styled.div`
-  padding-top: 10vh;
+  // padding-top: 11vh;
 `;
 
 // const StyledFooter = styled.footer`
@@ -41,7 +41,6 @@ export const Layout = (props: Props) => {
         <header>
           <MenuBar />
         </header>
-        {/* <main>{children}</main> */}
         <StyledMain>{children}</StyledMain>
       </StyledWrapper>
       {/* <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter> */}
