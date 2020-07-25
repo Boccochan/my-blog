@@ -22,14 +22,16 @@ const StyledMain = styled.div`
   // padding-top: 11vh;
 `;
 
-// const StyledFooter = styled.footer`
-//   background-color: #4f4f4f;
-//   color: white;
-//   height: 50px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
+const StyledFooter = styled.footer`
+  position: relative;
+  background-color: #4f4f4f;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+`;
 
 export const Layout = (props: Props) => {
   const { children } = props;
@@ -41,9 +43,9 @@ export const Layout = (props: Props) => {
         <header>
           <MenuBar />
         </header>
-        <StyledMain>{children}</StyledMain>
+        <div>{children}</div>
       </StyledWrapper>
-      {/* <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter> */}
+      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
     </React.Fragment>
   );
 };

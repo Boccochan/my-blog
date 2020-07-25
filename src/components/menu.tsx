@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import media from "styled-media-query";
 import styled, { css, keyframes } from "styled-components";
 import { Link } from "gatsby";
+import { customMedia } from "../styles/custom-media";
 
 type Props = {
   visible: boolean;
@@ -12,17 +13,15 @@ const StyledNav = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 8vh;
-  // height: 60px;
-  // background-color: #fffdfd;
-
-  // background-color: #f5f5f7;
+  height: 80px;
   background-color: #333333;
-  // border-bottom: 1px solid #e0e0e0;
   top: 0px;
   width: 100%;
   position: fixed;
   z-index: 1000;
+  ${customMedia.lessThan("tiny")`
+    width: 320px;
+  `}
 `;
 
 const StyledBurger = styled.div`
@@ -109,16 +108,13 @@ const StyeldH4 = styled.div`
 `;
 
 const StyledNavLinks = styled.ul`
-  position: absolute;
-  right: 0px;
-  height: 92vh;
-  top: 8vh;
-  background-color: #333333;
-  border-left: 1px solid #e0e0e0;
-  transition: transform 0.5s ease;
   display: flex;
   justify-content: space-around;
-  width: 10%;
+  bottom: 0;
+  width: 30%;
+  margin: 0;
+  // margin-left: auto;
+  margin-right: 50%;
 
   ${(props: { visible: boolean }) =>
     props.visible
@@ -128,13 +124,24 @@ const StyledNavLinks = styled.ul`
       : css`
           transform: translateX(100%);
         `}
-  flex-direction: column;
-  align-items: center;
-  width: 180px;
-  margin: 0px;
 
-  ${media.lessThan("medium")`
+  ${media.lessThan("large")`
+    position: absolute;
+    right: 0px;
+    height: 92vh;
+    top: 80px;
+    background-color: #333333;
+    border-left: 1px solid #e0e0e0;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: space-around;
+    width: 10%;
+    flex-direction: column;
+    align-items: center;
+    width: 180px;
+    margin: 0px;
     width: 50%;
+
   `}
 `;
 
@@ -152,13 +159,14 @@ const FadeIn = keyframes`
 const StyledNavLi = styled.li`
   opacity: 0;
   list-style: none;
+  margin-top: 0.25em;
   ${(props: Props) =>
     props.visible
       ? css`
           animation: ${FadeIn} 0.5s ease forwards ${props.index / 7 + 0.5}s;
         `
       : css`
-          opacity: 0;
+          opacity: 1;
         `}
 `;
 
@@ -177,15 +185,10 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledSearchBox = styled.div`
-  // top: 0;
-  // left: 0;
   right: 0;
-  // bottom: 0;
   width: 100px;
   min-height: 8vh;
   position: absolute;
-  // right: 2%;
-  // background-color: black;
 
   ${media.lessThan("large")`
     opacity: 0;
@@ -195,7 +198,6 @@ const StyledSearchBox = styled.div`
 const StyledSearchIcon = styled.div`
   position: absolute;
   margin: auto;
-  // margin-top: 24px;
   top: 0;
   right: 0;
   bottom: 0;
@@ -203,7 +205,6 @@ const StyledSearchIcon = styled.div`
   width: 40px;
   height: 40px;
   background: #2f80ed;
-  // background: #333333;
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -243,7 +244,6 @@ const StyledSearchIcon = styled.div`
 `;
 
 const StyledSearchBar = styled.input`
-  // font-family: "Inconsolata", monospace;
   position: absolute;
   margin: auto;
   top: 0px;
@@ -254,15 +254,11 @@ const StyledSearchBar = styled.input`
   height: 30px;
   outline: none;
   border: none;
-  // border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  // background: crimson;
   background: #2f80ed;
   color: white;
   text-shadow: 0 0 10px crimson;
   padding: 10 80px 10 20px;
   border-radius: 30px;
-  // box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
-  // box-shadow: inset 0 0 25px 0 rgba(0, 0, 0, 0.5);
   transition: all 1s;
   opacity: 0;
   z-index: 5;
@@ -322,7 +318,7 @@ function MenuBar() {
           <StyledLink to="/">About</StyledLink>
         </StyledNavLi>
         <StyledNavLi index={2} visible={visibleMenu}>
-          <StyledLink to="/">Music</StyledLink>
+          <StyledLink to="/">Contact</StyledLink>
         </StyledNavLi>
       </StyledNavLinks>
       <StyledBurger onClick={toggleMenu}>
