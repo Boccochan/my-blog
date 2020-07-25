@@ -36,13 +36,6 @@ const StyledBurger = styled.div`
   `}
 `;
 
-const StyledBurgerLine = styled.div`
-  width: 25px;
-  height: 3px;
-  background-color: #333333;
-  margin: 5px;
-`;
-
 const StyledBurgerLine1 = styled.div`
   width: 25px;
   height: 3px;
@@ -113,7 +106,6 @@ const StyledNavLinks = styled.ul`
   bottom: 0;
   width: 30%;
   margin: 0;
-  // margin-left: auto;
   margin-right: 50%;
 
   ${(props: { visible: boolean }) =>
@@ -131,7 +123,6 @@ const StyledNavLinks = styled.ul`
     height: 92vh;
     top: 80px;
     background-color: #333333;
-    border-left: 1px solid #e0e0e0;
     transition: transform 0.5s ease;
     display: flex;
     justify-content: space-around;

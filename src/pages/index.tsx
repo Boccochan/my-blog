@@ -4,7 +4,6 @@ import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import { MarkdownRemark } from "../graphql-types";
 import BlogSummary from "../components/blog-summary";
-import media from "styled-media-query";
 
 import styled from "styled-components";
 import { customMedia } from "../styles/custom-media";
@@ -115,10 +114,6 @@ const Introduction = styled.div`
   ${customMedia.lessThan("medium")`
     font-size: 26px;
   `}
-  // ${customMedia.lessThan("tiny")`
-  //   width: 320px;
-  //   max-width: 320px; 
-  // `}
 `;
 
 const IntroductionSub = styled.div`
@@ -244,10 +239,6 @@ const AboutMe = styled.div`
   ${customMedia.lessThan("tiny")`
     width: 320px;
   `}
-
-  // ${customMedia.lessThan("medium")`
-  //   width: 320px;
-  // `}
 `;
 
 const AboutMeSummary = styled.div`
@@ -257,7 +248,6 @@ const AboutMeSummary = styled.div`
   right: 0;
   bottom: 0;
   margin: auto;
-  // width: 500px;
   height: 100%;
 `;
 
@@ -266,21 +256,14 @@ const Name = styled.h1`
   border-bottom: none;
   font-weight: bold;
   font-size: 48px;
-  // ${customMedia.lessThan("tiny")`
-  //   font-size: 32px;
-  // `}
 
   ${customMedia.lessThan("medium")`
     font-size: 32px;
   `}
-
 `;
 
 const Job = styled.p`
   color: #4f4f4f;
-  // ${customMedia.lessThan("tiny")`
-  //   font-size: 9px;
-  // `}
   ${customMedia.lessThan("medium")`
     font-size: 9px;
   `}
@@ -355,9 +338,6 @@ const BlogIndex = (props: Props) => {
       }
     }
   `);
-
-  // const [spacing] = React.useState<GridSpacing>(2);
-  // const classes = useStyles();
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
