@@ -14,7 +14,7 @@ yarn add gatsby-remark-code-buttons
 
 You might be better to put "gatsby-remark-code-buttons" before "gatsby-remark-prismjs". In my case, when I put "gatsby-remark-code-buttons" after "gatsby-remark-prismjs", it did not work for some reasons. I am not sure why it was happened.
 
-```js
+```js:title=gatsby-config.js
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -37,7 +37,7 @@ You might be better to put "gatsby-remark-code-buttons" before "gatsby-remark-pr
 
 I created remark-copy.css under "./src/styles/". But you can put the file anywhere you want.
 
-```css
+```css:title=src/styles/remark-copy.css
 .gatsby-code-button-container {
   touch-action: none;
   display: flex;
@@ -61,6 +61,6 @@ I created remark-copy.css under "./src/styles/". But you can put the file anywhe
 
 You need to add the below to gatsby-browser.js
 
-```js
+```js:title=gatsby-browser.js
 import "./src/styles/remark-copy.css";
 ```

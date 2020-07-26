@@ -6,7 +6,7 @@ description: How to fix the postion of the nav bar?
 
 If you want to fix the postion of the nav bar, you need to put just postion: fixed.
 
-```html
+```html:title=index.html
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -32,7 +32,7 @@ If you want to fix the postion of the nav bar, you need to put just postion: fix
 </html>
 ```
 
-```css
+```css:title=style.css
 nav {
   top: 0px;
   position: fixed;

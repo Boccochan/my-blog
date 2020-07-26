@@ -10,7 +10,7 @@ You can create a burger by css.
 
 ## html and css
 
-```html
+```html:title=index.html
 <body>
   <div class="burger">
     <div class="line1"></div>
@@ -20,7 +20,7 @@ You can create a burger by css.
 </body>
 ```
 
-```css
+```css:title=style.css
 .burger div {
   width: 25px;
   height: 3px;
@@ -35,7 +35,7 @@ You can make it to close button
 
 ![close](./close.jpg)
 
-```css
+```css:title=style.css
 .line1 {
   transform: rotate(-45deg) translate(-5px, 6px);
 }
@@ -53,7 +53,7 @@ You can make it to close button
 
 We need to write a bit of javascript for it.
 
-```js
+```js:title=app.js
 const burgerEvent = () => {
   const burger = document.querySelector(".burger");
 
@@ -65,7 +65,7 @@ const burgerEvent = () => {
 burgerEvent();
 ```
 
-```html
+```html:title=index.html
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -89,7 +89,7 @@ burgerEvent();
 </html>
 ```
 
-```css
+```css:title=style.css
 .burger div {
   width: 25px;
   height: 3px;

@@ -23,7 +23,7 @@ yarn add styled-media-query
 
 ## How to use them
 
-```js
+```js:title=card.ts
 import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";

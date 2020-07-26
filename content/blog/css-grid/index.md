@@ -14,7 +14,7 @@ Literally, the grid layout is grid. You can put elemnts on each box which is cal
 
 ## How to use it?
 
-```html
+```html:title=index.html
 <body>
   <div class="grid-box">
     <div class="grid-item">Hello</div>
@@ -27,7 +27,7 @@ Literally, the grid layout is grid. You can put elemnts on each box which is cal
 </body>
 ```
 
-```css
+```css:title=style.css
 .grid-box {
   width: 480px;
   display: grid;
@@ -48,7 +48,7 @@ minmax is for setting min and max width for each track.
 
 Of course, you can change how many times repeating for each device by using media query. So, it is easy to support with responsible design.
 
-```css
+```css:title=style.css
 @media screen and (max-width: 480px) {
   .grid-box {
     grid-template-columns: repeat(1, minmax(200px, 1fr));
