@@ -265,7 +265,6 @@ const Star = styled.div`
 type Props = PageRendererProps;
 
 const Home = (props: Props) => {
-  console.log("BlogIndex!!!");
   const data = useStaticQuery(graphql`
     query {
       site {
