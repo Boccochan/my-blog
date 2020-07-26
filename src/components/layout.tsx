@@ -18,19 +18,17 @@ const StyledWrapper = styled.div`
   // background-color: #56ccf2;
 `;
 
-const StyledMain = styled.div`
-  // padding-top: 11vh;
-`;
-
 const StyledFooter = styled.footer`
-  position: relative;
+  // position: relative;
   background-color: #4f4f4f;
   color: white;
   height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // z-index: 100;
+  bottom: 0;
+  // margin-top: auto;
 `;
 
 export const Layout = (props: Props) => {
@@ -45,7 +43,7 @@ export const Layout = (props: Props) => {
         </header>
         <div>{children}</div>
       </StyledWrapper>
-      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
+      {/* <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter> */}
     </React.Fragment>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import { BlogInfo } from "../types";
-import { FadeLink } from "../components/link";
+import { FadeLink } from "./link";
 import styled from "styled-components";
 import media from "styled-media-query";
 
