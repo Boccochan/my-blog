@@ -10,7 +10,8 @@ interface Props extends PageRendererProps {
 }
 
 const StyledWrapper = styled.div`
-  min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  max-height: auto;
   // background-color: #f0f0f0;
   // background-color: black;
   background-color: #ffffff;
@@ -19,16 +20,16 @@ const StyledWrapper = styled.div`
 `;
 
 const StyledFooter = styled.footer`
-  // position: relative;
+  position: relative;
   background-color: #4f4f4f;
   color: white;
   height: 50px;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
-  // z-index: 100;
-  bottom: 0;
-  // margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  // bottom: 0;
+  margin-top: auto;
 `;
 
 export const Layout = (props: Props) => {
@@ -43,7 +44,8 @@ export const Layout = (props: Props) => {
         </header>
         <div>{children}</div>
       </StyledWrapper>
-      {/* <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter> */}
+
+      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
     </React.Fragment>
   );
 };

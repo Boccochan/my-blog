@@ -9,7 +9,7 @@ import GreenRobotImg from "../../static/home/green-robot.png";
 import YellowRobotImg from "../../static/home/small-yellow-robot.png";
 import OrangeRobotImg from "../../static/home/orange-robot.png";
 import LightImg from "../../static/home/light.png";
-import SittingRobotImg from "../static/home/sitting-robot.png";
+import SittingRobotImg from "../../static/home/sitting-robot.png";
 import HeartImg from "../../static/home/heart.png";
 import StarImg from "../../static/home/star.png";
 import { navigate } from "gatsby";
@@ -175,10 +175,10 @@ const HelloWorld = styled.div`
 `;
 
 const AboutMeBox = styled.div`
-  position: absolute;
-  top: 600px;
+  position: relative;
+  margin-top: 90px;
   width: 100%;
-  height: 30vh;
+  height: 400px;
   z-index: 2;
   text-align: center;
 `;
