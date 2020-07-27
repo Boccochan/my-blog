@@ -2,7 +2,7 @@ import React from "react";
 import { BlogInfo } from "../types";
 import { FadeLink } from "./link";
 import styled from "styled-components";
-import media from "styled-media-query";
+// import media from "styled-media-query";
 
 const SytledCard = styled.div`
   border: 1px solid #e0e0e0;
@@ -22,19 +22,19 @@ const StyledTitle = styled.div`
   background-color: #fffdfd;
 `;
 
-const StyledLink = styled(FadeLink)`
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-    sans-serif, Apple Color Emoji, Segoe UI Emoji;
-  color: #121212;
-  font-weight: bold;
-  box-shadow: none;
+// const StyledLink = styled(FadeLink)`
+//   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
+//     sans-serif, Apple Color Emoji, Segoe UI Emoji;
+//   color: #121212;
+//   font-weight: bold;
+//   box-shadow: none;
 
-  ${media.lessThan("small")`
-    font-size: 14px;
-    height: 160px;
-    width: 300px;
-  `}
-`;
+//   ${media.lessThan("small")`
+//     font-size: 14px;
+//     height: 160px;
+//     width: 300px;
+//   `}
+// `;
 
 const StyledDate = styled.div`
   color: #828282;

@@ -8,6 +8,7 @@ import { SEO } from "../components/seo";
 import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
 import "./blog-post-style.scss";
+import { Social } from "../components/social";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -18,7 +19,6 @@ const Date = styled.p`
   display: block;
   ${styledScale(-1 / 5)};
   margin-bottom: ${rhythm(1)};
-  // margin-top: ${rhythm(-1)};
 `;
 
 const Divider = styled.hr`
@@ -37,10 +37,9 @@ const StyledContainer = styled.div`
   max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 40px;
+  margin-top: 100px;
   padding-left: 40px;
   padding-right: 40px;
-
   background-color: #fffdfd;
 `;
 
@@ -52,6 +51,8 @@ const BlogPostTemplate = (props: Props) => {
   const html = post.html!;
   const siteTitle = data.site!.siteMetadata!.title!;
   const { previous, next } = props.pageContext;
+  const url = location.href ? location.href : "";
+  const title = post.frontmatter!.title ? post.frontmatter!.title : "";
 
   return (
     <Layout location={props.location} title={siteTitle}>
@@ -61,8 +62,10 @@ const BlogPostTemplate = (props: Props) => {
       />
       <StyledContainer>
         <Date>{frontmatter.date}</Date>
-        <h1>{post.frontmatter!.title}</h1>
+        <h1>{title}</h1>
         <div dangerouslySetInnerHTML={{ __html: html }} />
+
+        <Social title={title} url={url} />
         <Divider />
         <Bio />
         <PostNavigator>

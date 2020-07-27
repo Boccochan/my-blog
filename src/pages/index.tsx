@@ -70,6 +70,7 @@ const IntroductionSub = styled.div`
   color: #333333;
   font-weight: 300;
   font-family: "Roboto", sans-serif;
+  line-height: 22px;
   ${customMedia.lessThan("medium")`
     top: 16vh;
     left: 8vw;
@@ -216,6 +217,7 @@ const Name = styled.h1`
 
 const Job = styled.p`
   color: #4f4f4f;
+  line-height: 22px;
   ${customMedia.lessThan("medium")`
     font-size: 9px;
   `}
