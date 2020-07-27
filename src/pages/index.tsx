@@ -231,7 +231,7 @@ const SittingRobot = styled.div`
   position: absolute;
   bottom: 0;
   top: 80px;
-  left: 200px;
+  left: 18%;
   bottom: 0px;
 
   ${customMedia.between("large", "largeHuge")`
@@ -245,7 +245,7 @@ const SittingRobot = styled.div`
 const Heart = styled.div`
   position: absolute;
   top: 0px;
-  left: 180px;
+  left: 16%;
 
   ${customMedia.between("large", "largeHuge")`
     left: 80px;
