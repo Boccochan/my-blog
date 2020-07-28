@@ -1,6 +1,4 @@
 import { Link } from "gatsby";
-// tslint:disable-next-line:no-submodule-imports
-// import AniLink from "gatsby-plugin-transition-link/AniLink";
 import * as React from "react";
 import { ComponentProps } from "react";
 import styled from "styled-components";
@@ -26,13 +24,11 @@ const StyledLink = styled(Link)`
 
 export const FadeLink = (props: Props) => {
   const { children, ...linkProps } = props;
-  console.log(linkProps);
   console.log(children);
 
+  const path = `/blog${linkProps.to!}`;
+
   return (
-    // <AniLink fade={true} duration={FADE_TIME} {...linkProps}>
-    <StyledLink to={linkProps.to!}>{children}</StyledLink>
-    // <div>{children}</div>
-    // </AniLink>
+    <StyledLink to={path}>{children}</StyledLink>
   );
 };

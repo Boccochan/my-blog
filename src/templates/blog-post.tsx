@@ -34,7 +34,7 @@ const PostNavigator = styled.ul`
 `;
 
 const StyledContainer = styled.div`
-  max-width: 680px;
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 100px;
