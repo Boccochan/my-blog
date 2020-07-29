@@ -51,6 +51,7 @@ const StyledDesc = styled.p`
 
 const BlogSummary = (props: BlogInfo) => {
   const { slug, title, date, description, excerpt } = props;
+  console.log(slug);
 
   return (
     <SytledCard>

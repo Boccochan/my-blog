@@ -4,6 +4,7 @@ module.exports = {
     author: `Yas Ito`,
     description: `Introducing technology, Japanese culture and so forth.`,
     siteUrl: `https://yas-ito.com/`,
+    // siteUrl: `http://localhost:8000`,
     social: {
       twitter: `itoq`,
     },

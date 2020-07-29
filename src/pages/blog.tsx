@@ -19,7 +19,7 @@ import { customMedia } from "../styles/custom-media";
 const MainBox = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 80px;
+  // margin-top: 80px;
   background-color: #f9f9f9;
   z-index: 3;
   min-height: 100vh;
@@ -105,7 +105,7 @@ const BlogIndex = (props: Props) => {
   // };
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout location={props.location} title={siteTitle} crumbLabel="blog">
       <SEO
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}

@@ -3,20 +3,18 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import MenuBar from "./menu";
 import BaseStyles from "../styles/base-style";
+import { Breadcrumbs } from "./breadcrumbs";
 
 interface Props extends PageRendererProps {
   title: string;
   children: ReactNode;
+  crumbLabel: string;
 }
 
 const StyledWrapper = styled.div`
   min-height: calc(100vh - 50px);
   max-height: auto;
-  // background-color: #f0f0f0;
-  // background-color: black;
   background-color: #ffffff;
-  // background-color: #4f4f4f;
-  // background-color: #56ccf2;
 `;
 
 const StyledFooter = styled.footer`
@@ -28,12 +26,23 @@ const StyledFooter = styled.footer`
   justify-content: center;
   align-items: center;
   z-index: 100;
-  // bottom: 0;
   margin-top: auto;
 `;
 
+const Main = styled.div`
+  position: relative;
+  margin-top: 80px;
+  // background-color: blue;
+`;
+
 export const Layout = (props: Props) => {
-  const { children } = props;
+  const { children, location, crumbLabel } = props;
+  const rootPath = `${__PATH_PREFIX__}/`;
+  const home = ["home"];
+  const path = home.concat(
+    location.pathname.split("/").filter((name) => name !== "")
+  );
+  console.log(path);
 
   return (
     <React.Fragment>
@@ -42,7 +51,20 @@ export const Layout = (props: Props) => {
         <header>
           <MenuBar />
         </header>
-        <div>{children}</div>
+        <Main>
+          {location.pathname !== rootPath && <Breadcrumbs currentPath={path} />}
+          {/* <Breadcrumbs currentPath={path} /> */}
+          {/* {location.pathname !== rootPath && (
+            <StyledBreadcrumb
+              location={location}
+              crumbLabel={crumbLabel}
+              crumbSeparator=""
+              crumbStyle={{ color: "#666" }}
+              crumbActiveStyle={{ color: "#333" }}
+            />
+          )} */}
+          <div>{children}</div>
+        </Main>
       </StyledWrapper>
 
       <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>

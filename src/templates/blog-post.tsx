@@ -53,9 +53,14 @@ const BlogPostTemplate = (props: Props) => {
   const { previous, next } = props.pageContext;
   const url = location.href ? location.href : "";
   const title = post.frontmatter!.title ? post.frontmatter!.title : "";
+  console.log(url.split("/").slice(-2)[0]);
 
   return (
-    <Layout location={props.location} title={siteTitle}>
+    <Layout
+      location={props.location}
+      title={siteTitle}
+      crumbLabel={url.split("/").slice(-2)[0]}
+    >
       <SEO
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}

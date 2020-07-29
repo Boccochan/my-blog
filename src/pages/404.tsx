@@ -1,9 +1,9 @@
-import { graphql, PageRendererProps, useStaticQuery } from "gatsby"
-import React from "react"
-import { Layout } from "../components/layout"
-import { SEO } from "../components/seo"
+import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
+import React from "react";
+import { Layout } from "../components/layout";
+import { SEO } from "../components/seo";
 
-type Props = PageRendererProps
+type Props = PageRendererProps;
 
 export const NotFoundPage = (props: Props) => {
   const data = useStaticQuery(graphql`
@@ -14,15 +14,20 @@ export const NotFoundPage = (props: Props) => {
         }
       }
     }
-  `)
+  `);
+  const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={props.location} title={data.site.siteMetadata.title}>
+    <Layout
+      location={props.location}
+      title={data.site.siteMetadata.title}
+      crumbLabel={siteTitle}
+    >
       <SEO title="404: Not Found" />
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFoundPage
+export default NotFoundPage;

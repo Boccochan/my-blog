@@ -19,7 +19,7 @@ const Background = styled.img`
   width: 100%;
   height: 450px;
   background-color: transparent;
-  margin-top: 80px;
+  // margin-top: 80px;
   min-height: 400px;
 
   z-index: 2;
@@ -34,7 +34,7 @@ const IntroLayer = styled.div`
   postion: relative;
   width: 100%;
   height; auto;
-  top: 0;
+  // top: 0;
   z-index: 3;
   ${customMedia.lessThan("tiny")`
     width: 320px;
@@ -44,7 +44,7 @@ const IntroLayer = styled.div`
 
 const IntroductionBox = styled.div`
   position: absolute;
-  top: 140px;
+  top: 80px;
   left: 16vw;
   z-index: 5;
   ${customMedia.lessThan("tiny")`
