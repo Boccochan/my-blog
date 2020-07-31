@@ -13,28 +13,34 @@ import SittingRobotImg from "../../static/home/sitting-robot.png";
 import HeartImg from "../../static/home/heart.png";
 import StarImg from "../../static/home/star.png";
 import { navigate } from "gatsby";
+import media from "styled-media-query";
 
 const Background = styled.img`
   position: relative;
   width: 100%;
-  height: 450px;
   background-color: transparent;
-  // margin-top: 80px;
-  min-height: 400px;
-
+  height: 740px;
   z-index: 2;
-  ${customMedia.lessThan("background")`
-    width: 1271px;
-    max-width: 1271px;
 
+  ${media.lessThan("small")`
+    height: 340px;
   `}
+  ${media.between("small", "medium")`
+    height: 400px;
+  `}
+  ${media.between("medium", "large")`
+    height: 700px;
+  `}
+  ${media.greaterThan("large")`
+    height: 740px;
+  `}
+
 `;
 
 const IntroLayer = styled.div`
   postion: relative;
   width: 100%;
   height; auto;
-  // top: 0;
   z-index: 3;
   ${customMedia.lessThan("tiny")`
     width: 320px;
@@ -45,39 +51,65 @@ const IntroLayer = styled.div`
 const IntroductionBox = styled.div`
   position: absolute;
   top: 80px;
-  left: 16vw;
+  left: 8vw;
   z-index: 5;
-  ${customMedia.lessThan("tiny")`
-    width: 320px;
-    max-width: 320px; 
+  ${media.lessThan("small")`
+    top: 40px;
+    left: 4vw;
   `}
 `;
 
 const Introduction = styled.div`
-  font-size: 48px;
+  font-size: 90px;
   min-height: 30px;
   color: #f5f5f7;
   font-family: "Roboto", sans-serif;
-  ${customMedia.lessThan("medium")`
-    font-size: 26px;
+  width: 100%;
+
+  ${media.lessThan("small")`
+    width: 340px;
+    font-size: 30px;
+  `}
+  ${media.between("small", "medium")`
+    width: 100%;
+    font-size: 50px;
+  `}
+  ${media.between("medium", "large")`
+    width: 100%;
+    font-size: 80px; 
+  `}
+  ${media.greaterThan("large")`
+    width: 100%;
+    font-size: 100px;
   `}
 `;
 
 const IntroductionSub = styled.div`
   margin-top: 20px;
   min-height: 30px;
-  font-size: 16px;
   color: #333333;
   font-weight: 300;
   font-family: "Roboto", sans-serif;
-  line-height: 22px;
-  ${customMedia.lessThan("medium")`
+
+  ${media.lessThan("small")`
+    min-width: 340px;
+    font-size: 10px;
+  `}
+  ${media.between("small", "medium")`
+    width: 100%;
     top: 16vh;
     left: 8vw;
-    font-size: 14px;
-    width: 440px;
-    max-width: 440px; 
+    font-size: 12px;
   `}
+  ${media.between("medium", "large")`
+    width: 100%;
+    font-size: 20px;
+  `}
+  ${media.greaterThan("large")`
+    width: 100%;
+    font-size: 30px;
+  `}
+
 `;
 
 const GotoBlogBox = styled.div`
@@ -85,27 +117,51 @@ const GotoBlogBox = styled.div`
   padding: 20px;
   widhth: 100%;
   text-align: center;
+  ${media.lessThan("large")`
+    text-align: left;
+  `}
+  ${media.greaterThan("large")`
+    text-align: center;
+  `}
 `;
 
 const StyleButton = styled.button`
-  width: 150px;
+  width: 300px;
   padding: 10px;
   color: #f5f5f7;
+  font-size: 30px;
 
   background-color: #bb6bd9;
   border: 1px solid #bb6bd9;
   border-style: none;
-  border-radius: 30px;
+  border-radius: 40px;
   outline: none;
+
   &:hover {
     background-color: #e3a5fb;
     font-weight: bold;
   }
+  ${media.lessThan("small")`
+    font-size: 10px;
+    width: 160px;
+  `}
+  ${media.between("small", "medium")`
+    top: 16vh;
+    left: 8vw;
+    font-size: 12px;
+    width: 200px;
+  `}
+  ${media.between("medium", "large")`
+    top: 16vh;
+    left: 8vw;
+    font-size: 14px;
+    width: 300px;
+  `}
 `;
 
 const CharactorsBox = styled.div`
   position: absolute;
-  top: 200px;
+  top: 400px;
   right: 200px;
   width: 800px;
   height: 350px;
@@ -182,6 +238,9 @@ const AboutMeBox = styled.div`
   height: 400px;
   z-index: 2;
   text-align: center;
+  ${media.lessThan("small")`
+    margin-top: 0;
+  `}
 `;
 
 const AboutMe = styled.div`
@@ -189,9 +248,10 @@ const AboutMe = styled.div`
   width: 100%;
   height: 200px;
   z-index: 3;
-  ${customMedia.lessThan("tiny")`
-    width: 320px;
-  `}
+  min-width: 280px;
+  // ${customMedia.lessThan("tiny")`
+  //   width: 320px;
+  // `}
 `;
 
 const AboutMeSummary = styled.div`
@@ -202,6 +262,7 @@ const AboutMeSummary = styled.div`
   bottom: 0;
   margin: auto;
   height: 100%;
+  width: 100%;
 `;
 
 const Name = styled.h1`
@@ -339,7 +400,7 @@ const Home = (props: Props) => {
             <Name>Yasuhiro Ito</Name>
             <Job>Software Engineer@qualitia.co.jp</Job>
             <Job>
-              Almost 15 years professional experience in the tech industry.
+              Almost 15 years professional experience.
               <br />
               Front-End, Back-End, Cloud Infrastracture and so forth.
             </Job>

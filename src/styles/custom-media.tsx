@@ -12,4 +12,5 @@ export const customMedia = generateMedia({
   largeHuge: "1340px",
   huge: "1440px",
   veryHuge: "1700px",
+  Max: "2300px",
 });
