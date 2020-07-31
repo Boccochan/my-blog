@@ -2,6 +2,7 @@ import React from "react";
 import path from "path";
 import { Link } from "gatsby";
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 
 type Props = {
   currentPath: string[];
@@ -44,6 +45,12 @@ const Box = styled.div`
           padding: 0px 30px;
         `}
 
+  ${media.lessThan("medium")`
+    padding: 0px 30px;
+    font-size: 12px;
+    height: 16px;
+  `}
+
   background-color: #f9f9f9;
   &::after {
     content: "";
@@ -58,6 +65,12 @@ const Box = styled.div`
     transform: scale(0.707) rotate(45deg);
     box-shadow: 1px -1px rgba(0, 0, 0, 0.25);
     z-index: 100;
+
+    ${media.lessThan("medium")`
+      width: calc(16px);
+      height: calc(16px);
+      right: calc(16px / 2 * -1);
+  `}
   }
 `;
 
