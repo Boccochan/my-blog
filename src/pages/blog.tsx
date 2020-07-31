@@ -19,11 +19,9 @@ import { customMedia } from "../styles/custom-media";
 const MainBox = styled.div`
   position: relative;
   width: 100%;
-  // margin-top: 80px;
   background-color: #f9f9f9;
   z-index: 3;
   min-height: 100vh;
-  // min-height: 86vh;
   ${customMedia.lessThan("tiny")`
     width: 320px;
     max-width: 320px;

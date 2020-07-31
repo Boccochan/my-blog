@@ -15,6 +15,11 @@ interface Props extends PageRendererProps {
   data: Query;
 }
 
+const Box = styled.div`
+  top: 0;
+  background-color: #f9f9f9;
+`;
+
 const Date = styled.p`
   display: block;
   ${styledScale(-1 / 5)};
@@ -37,7 +42,7 @@ const StyledContainer = styled.div`
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  // margin-top: 100px;
   padding-left: 40px;
   padding-right: 40px;
   background-color: #fffdfd;
@@ -65,31 +70,33 @@ const BlogPostTemplate = (props: Props) => {
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-      <StyledContainer>
-        <Date>{frontmatter.date}</Date>
-        <h1>{title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Box>
+        <StyledContainer>
+          <Date>{frontmatter.date}</Date>
+          <h1>{title}</h1>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
 
-        <Social title={title} url={url} />
-        <Divider />
-        <Bio />
-        <PostNavigator>
-          <li>
-            {previous && (
-              <FadeLink to={previous.fields!.slug!} rel="prev">
-                ← {previous.frontmatter!.title}
-              </FadeLink>
-            )}
-          </li>
-          <li>
-            {next && (
-              <FadeLink to={next.fields!.slug!} rel="next">
-                {next.frontmatter!.title} →
-              </FadeLink>
-            )}
-          </li>
-        </PostNavigator>
-      </StyledContainer>
+          <Social title={title} url={url} />
+          <Divider />
+          <Bio />
+          <PostNavigator>
+            <li>
+              {previous && (
+                <FadeLink to={previous.fields!.slug!} rel="prev">
+                  ← {previous.frontmatter!.title}
+                </FadeLink>
+              )}
+            </li>
+            <li>
+              {next && (
+                <FadeLink to={next.fields!.slug!} rel="next">
+                  {next.frontmatter!.title} →
+                </FadeLink>
+              )}
+            </li>
+          </PostNavigator>
+        </StyledContainer>
+      </Box>
     </Layout>
   );
 };

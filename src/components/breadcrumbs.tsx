@@ -1,7 +1,7 @@
 import React from "react";
 import path from "path";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 type Props = {
   currentPath: string[];
@@ -11,31 +11,49 @@ const BreadcrumbsBox = styled.div`
   position: relative;
   display: flex;
   background-color: #f9f9f9;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-width: 950px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
 const StyledLink = styled(Link)`
   box-shadow: none;
-  color: #fafafa;
+  color: #2f80ed;
+`;
+
+const Current = styled.div`
+  box-shadow: none;
+  color: #333;
 `;
 
 const Box = styled.div`
   position: relative;
   text-align: center;
-  height: 38px;
-  padding: 10px 30px;
-  background-color: ${(props: { selected: boolean }) =>
-    props.selected ? "#2f80ed" : "#4F4F4F"};
+  height: 20px;
+  padding: 0px 30px;
+  ${(props: { index: number }) =>
+    props.index === 0
+      ? css`
+          padding: 0;
+          padding-left: 0;
+          padding-right: 30px;
+        `
+      : css`
+          padding: 0px 30px;
+        `}
 
+  background-color: #f9f9f9;
   &::after {
     content: "";
     position: absolute;
     display: inline-block;
-    width: calc(38px);
-    height: calc(38px);
+    width: calc(20px);
+    height: calc(20px);
     top: 0;
-    right: calc(38px / 2 * -1);
-    background-color: ${(props: { selected: boolean }) =>
-      props.selected ? "#2f80ed" : "#4F4F4F"};
+    right: calc(20px / 2 * -1);
+    background-color: #f9f9f9;
     border-top-right-radius: 5px;
     transform: scale(0.707) rotate(45deg);
     box-shadow: 1px -1px rgba(0, 0, 0, 0.25);
@@ -53,10 +71,14 @@ export const Breadcrumbs = (props: Props) => {
         if (page !== "home") {
           linkPath = path.join(linkPath, page);
         }
-        console.log(1111, linkPath);
+
         return (
-          <Box selected={index + 1 === length}>
-            <StyledLink to={linkPath}>{page}</StyledLink>
+          <Box index={index}>
+            {index + 1 === length ? (
+              <Current>{page}</Current>
+            ) : (
+              <StyledLink to={linkPath}>{page}</StyledLink>
+            )}
           </Box>
         );
       })}

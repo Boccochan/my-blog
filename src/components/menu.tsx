@@ -80,8 +80,6 @@ const StyledBurgerLine3 = styled.div`
 `;
 
 const StyledMainMenu = styled.div`
-  // display: table-cell;
-  // vertical-align: middle;
   height: 8vh;
   position: absolute;
   left: 5%;

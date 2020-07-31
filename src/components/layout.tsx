@@ -14,7 +14,7 @@ interface Props extends PageRendererProps {
 const StyledWrapper = styled.div`
   min-height: calc(100vh - 50px);
   max-height: auto;
-  background-color: #ffffff;
+  background-color: #f9f9f9;
 `;
 
 const StyledFooter = styled.footer`
@@ -32,11 +32,10 @@ const StyledFooter = styled.footer`
 const Main = styled.div`
   position: relative;
   margin-top: 80px;
-  // background-color: blue;
 `;
 
 export const Layout = (props: Props) => {
-  const { children, location, crumbLabel } = props;
+  const { children, location } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
   const home = ["home"];
   const path = home.concat(
@@ -53,16 +52,6 @@ export const Layout = (props: Props) => {
         </header>
         <Main>
           {location.pathname !== rootPath && <Breadcrumbs currentPath={path} />}
-          {/* <Breadcrumbs currentPath={path} /> */}
-          {/* {location.pathname !== rootPath && (
-            <StyledBreadcrumb
-              location={location}
-              crumbLabel={crumbLabel}
-              crumbSeparator=""
-              crumbStyle={{ color: "#666" }}
-              crumbActiveStyle={{ color: "#333" }}
-            />
-          )} */}
           <div>{children}</div>
         </Main>
       </StyledWrapper>

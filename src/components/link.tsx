@@ -4,8 +4,6 @@ import { ComponentProps } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-const FADE_TIME = 0.5;
-
 type Props = Partial<ComponentProps<typeof Link>>;
 
 const StyledLink = styled(Link)`
@@ -28,7 +26,5 @@ export const FadeLink = (props: Props) => {
 
   const path = `/blog${linkProps.to!}`;
 
-  return (
-    <StyledLink to={path}>{children}</StyledLink>
-  );
+  return <StyledLink to={path}>{children}</StyledLink>;
 };
