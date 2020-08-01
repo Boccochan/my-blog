@@ -34,10 +34,17 @@ const Main = styled.div`
   margin-top: 80px;
 `;
 
+const BreadcrumbsLayout = styled.div`
+  padding: 20px;
+  width: 980px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
 export const Layout = (props: Props) => {
   const { children, location } = props;
   const rootPath = `${__PATH_PREFIX__}/`;
-  const home = ["home"];
+  const home = ["/"];
   const path = home.concat(
     location.pathname.split("/").filter((name) => name !== "")
   );
@@ -51,7 +58,11 @@ export const Layout = (props: Props) => {
           <MenuBar />
         </header>
         <Main>
-          {location.pathname !== rootPath && <Breadcrumbs currentPath={path} />}
+          {location.pathname !== rootPath && (
+            <BreadcrumbsLayout>
+              <Breadcrumbs currentPath={path} />
+            </BreadcrumbsLayout>
+          )}
           <div>{children}</div>
         </Main>
       </StyledWrapper>
