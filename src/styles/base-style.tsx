@@ -7,9 +7,8 @@ const BaseStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    position: relative;
-    overflow-x: hidden;
-    // overflow-y: hidden;
+    position: relative; //disable gatsby base-style
+    overflow-x: hidden; //disable gatsby base-style
   }
   
 `;

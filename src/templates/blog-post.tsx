@@ -49,6 +49,7 @@ const StyledContainer = styled.div`
 `;
 
 const BlogPostTemplate = (props: Props) => {
+  const { location } = props;
   const data = props.data!;
   const post = data.markdownRemark!;
   const excerpt = post.excerpt!;
