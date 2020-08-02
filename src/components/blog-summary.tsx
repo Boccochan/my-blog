@@ -2,10 +2,10 @@ import React from "react";
 import { BlogInfo } from "../types";
 import { FadeLink } from "./link";
 import styled from "styled-components";
-// import media from "styled-media-query";
+import { theme } from "../styles/color";
 
 const SytledCard = styled.div`
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${theme.colors.graySuperLight};
   border-radius: 2px 2px 2px 2px;
   display: block;
   height: 200px;
@@ -13,37 +13,26 @@ const SytledCard = styled.div`
   padding: 20px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #fffdfd;
+  background-color: ${theme.colors.whiteSuperLight};
 `;
 
 const StyledTitle = styled.div`
   height: 90px;
-  border-bottom: 1px solid #e0e0e0;
-  background-color: #fffdfd;
+  border-bottom: 1px solid ${theme.colors.graySuperLight};
+  background-color: ${theme.colors.whiteSuperLight};
 `;
 
-// const StyledLink = styled(FadeLink)`
-//   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
-//     sans-serif, Apple Color Emoji, Segoe UI Emoji;
-//   color: #121212;
-//   font-weight: bold;
-//   box-shadow: none;
-
-//   ${media.lessThan("small")`
-//     font-size: 14px;
-//     height: 160px;
-//     width: 300px;
-//   `}
-// `;
-
 const StyledDate = styled.div`
-  color: #828282;
+  padding-top: 4px;
+  color: ${theme.colors.gray};
+  font-weight: 300;
   font-size: 10px;
 `;
 
 const StyledDesc = styled.p`
   font-size: 12px;
-  color: #828282;
+  font-weight: 300;
+  color: ${theme.colors.gray};
   height: 60px;
   margin-top: 6px;
   margin-bottom: 6px;
@@ -51,7 +40,6 @@ const StyledDesc = styled.p`
 
 const BlogSummary = (props: BlogInfo) => {
   const { slug, title, date, description, excerpt } = props;
-  console.log(slug);
 
   return (
     <SytledCard>

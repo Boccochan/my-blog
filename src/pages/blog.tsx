@@ -6,20 +6,12 @@ import { MarkdownRemark } from "../graphql-types";
 import BlogSummary from "../components/blog-summary";
 import styled from "styled-components";
 import { customMedia } from "../styles/custom-media";
-// import BackgroundImage from "./back.png";
-// import GreenRobotImg from "./green-robot.png";
-// import YellowRobotImg from "./small-yellow-robot.png";
-// import OrangeRobotImg from "./orange-robot.png";
-// import LightImg from "./light.png";
-// import SittingRobotImg from "./sitting-robot.png";
-// import HeartImg from "./heart.png";
-// import StarImg from "./star.png";
-// import { navigate } from "gatsby";
+import { theme } from "../styles/color";
 
 const MainBox = styled.div`
   position: relative;
   width: 100%;
-  background-color: #f9f9f9;
+  background-color: ${theme.colors.whiteLight};
   z-index: 3;
   min-height: 100vh;
   ${customMedia.lessThan("tiny")`
@@ -45,9 +37,8 @@ const NewestBlogs = styled.div`
   padding: 5px;
   font-size: 32px;
   font-weight: 300;
-  background-color: #eb5757;
-  font-family: "Roboto", sans-serif;
-  color: #f5f5f7;
+  background-color: ${theme.colors.red};
+  color: ${theme.colors.white};
 `;
 
 const StyledContainer = styled.div`
@@ -97,10 +88,6 @@ const BlogIndex = (props: Props) => {
 
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
-  // const gotoAbout = () => {
-  //   navigate("/about/");
-  //   console.log("About");
-  // };
 
   return (
     <Layout location={props.location} title={siteTitle} crumbLabel="blog">

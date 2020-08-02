@@ -4,6 +4,7 @@ import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import styled from "styled-components";
 import { customMedia } from "../styles/custom-media";
+import { theme } from "../styles/color";
 import BackgroundImage from "../../static/home/back.png";
 import GreenRobotImg from "../../static/home/green-robot.png";
 import YellowRobotImg from "../../static/home/small-yellow-robot.png";
@@ -62,8 +63,7 @@ const IntroductionBox = styled.div`
 const Introduction = styled.div`
   font-size: 90px;
   min-height: 30px;
-  color: #f5f5f7;
-  font-family: "Roboto", sans-serif;
+  color: ${theme.colors.white};
   width: 100%;
 
   ${media.lessThan("small")`
@@ -87,9 +87,8 @@ const Introduction = styled.div`
 const IntroductionSub = styled.div`
   margin-top: 20px;
   min-height: 30px;
-  color: #333333;
+  color: ${theme.colors.gray};
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
 
   ${media.lessThan("small")`
     min-width: 340px;
@@ -128,17 +127,17 @@ const GotoBlogBox = styled.div`
 const StyleButton = styled.button`
   width: 300px;
   padding: 10px;
-  color: #f5f5f7;
+  color: ${theme.colors.white};
   font-size: 30px;
 
-  background-color: #bb6bd9;
-  border: 1px solid #bb6bd9;
+  background-color: ${theme.colors.purple};
+  border: 1px solid ${theme.colors.purple};
   border-style: none;
   border-radius: 40px;
   outline: none;
 
   &:hover {
-    background-color: #e3a5fb;
+    background-color: ${theme.colors.purpleLight};
     font-weight: bold;
   }
   ${media.lessThan("small")`
@@ -220,9 +219,8 @@ const HelloWorld = styled.div`
   right: -130px;
   width: 800px;
   height; 400px;
-  color: #F5F5F5;
+  color: ${theme.colors.white};
   font-size: 228px;
-  font-family: "Roboto", sans-serif;
   padding: 0;
   z-index: 0;
 
@@ -249,9 +247,6 @@ const AboutMe = styled.div`
   height: 200px;
   z-index: 3;
   min-width: 280px;
-  // ${customMedia.lessThan("tiny")`
-  //   width: 320px;
-  // `}
 `;
 
 const AboutMeSummary = styled.div`
@@ -266,7 +261,7 @@ const AboutMeSummary = styled.div`
 `;
 
 const Name = styled.h1`
-  color: #333333;
+  color: ${theme.colors.grayDark};
   border-bottom: none;
   font-weight: bold;
   font-size: 48px;
@@ -277,7 +272,7 @@ const Name = styled.h1`
 `;
 
 const Job = styled.p`
-  color: #4f4f4f;
+  color: ${theme.colors.gray};
   line-height: 22px;
   ${customMedia.lessThan("medium")`
     font-size: 9px;
