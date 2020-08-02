@@ -12,13 +12,13 @@ interface Props extends PageRendererProps {
   crumbLabel: string;
 }
 
-const StyledWrapper = styled.div`
+const Wrapper = styled.div`
   min-height: calc(100vh - 50px);
   max-height: auto;
   background-color: ${theme.colors.blogBackground};
 `;
 
-const StyledFooter = styled.footer`
+const Footer = styled.footer`
   position: relative;
   background-color: ${theme.colors.gray};
   color: ${theme.colors.white};
@@ -54,7 +54,7 @@ export const Layout = (props: Props) => {
   return (
     <React.Fragment>
       <BaseStyles />
-      <StyledWrapper>
+      <Wrapper>
         <header>
           <MenuBar />
         </header>
@@ -67,8 +67,8 @@ export const Layout = (props: Props) => {
           <div>{children}</div>
         </Main>
 
-        <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
-      </StyledWrapper>
+        <Footer>© {new Date().getFullYear()}, Yasuhiro Ito</Footer>
+      </Wrapper>
     </React.Fragment>
   );
 };
