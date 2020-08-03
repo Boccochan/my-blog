@@ -1,38 +1,52 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
+import MySummary from "./AboutMeSummary";
+import SittingRobotImg from "../../../static/home/sitting-robot.png";
+import StarImg from "../../../static/home/star.png";
+// import { theme } from "../../styles/color";
 // import media from "styled-media-query";
 
 const Container = styled.div`
-  text-align: center;
-  min-width: 280px;
+  position: relative;
+  width: 100%;
+  display: flex;
 `;
 
-const Name = styled.div`
-  color: ${theme.colors.grayDark};
-  font-weight: bold;
-  font-size: 48px;
-`;
-const Job = styled.div`
-  margin-top: 30px;
+const Block = styled.div`
+  width: 400px;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
 `;
 
-const Summary = styled.div`
-  color: ${theme.colors.gray};
-  line-height: 22px;
+const BlockSittingRobot = styled.div`
+  position: absolute;
+  top: 0;
+  left: 300px;
+`;
+
+const BlockStar = styled.div`
+  position: absolute;
+  top: 80px;
+  right: 300px;
+`;
+
+const Img = styled.img`
+  background-color: transparent;
 `;
 
 export default function AboutMe() {
   return (
     <Container>
-      <Name>Yasuhiro Ito</Name>
-      <Job>
-        <Summary>Software Engineer</Summary>
-        <Summary>Almost 15 years professional experience.</Summary>
-        <Summary>
-          Front-End, Back-End, Cloud Infrastracture and so forth.
-        </Summary>
-      </Job>
+      <BlockSittingRobot>
+        <Img src={SittingRobotImg} />
+      </BlockSittingRobot>
+      <Block>
+        <MySummary />
+      </Block>
+      <BlockStar>
+        <Img src={StarImg} />
+      </BlockStar>
     </Container>
   );
 }
