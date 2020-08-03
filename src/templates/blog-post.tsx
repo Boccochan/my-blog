@@ -7,8 +7,9 @@ import { FadeLink } from "../components/link";
 import { SEO } from "../components/seo";
 import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
-import "./blog-post-style.scss";
 import { Social } from "../components/social";
+import { theme } from "../styles/color";
+import "./blog-post-style.scss";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -17,7 +18,7 @@ interface Props extends PageRendererProps {
 
 const Box = styled.div`
   top: 0;
-  background-color: #f9f9f9;
+  background-color: ${theme.colors.blogBackground};
 `;
 
 const Date = styled.p`
@@ -36,16 +37,17 @@ const PostNavigator = styled.ul`
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  padding-bottom: 20px;
+  // margin-bottom: 20px;
 `;
 
 const StyledContainer = styled.div`
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  // margin-top: 100px;
   padding-left: 40px;
   padding-right: 40px;
-  background-color: #fffdfd;
+  background-color: ${theme.colors.whiteSuperLight};
 `;
 
 const BlogPostTemplate = (props: Props) => {

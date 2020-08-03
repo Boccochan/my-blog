@@ -4,13 +4,10 @@ import reset from "styled-reset";
 const BaseStyles = createGlobalStyle`
   ${reset}
   body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
     position: relative; //disable gatsby base-style
     overflow-x: hidden; //disable gatsby base-style
+    // font-family: "Roboto", sans-serif;
   }
-  
 `;
 
 export default BaseStyles;

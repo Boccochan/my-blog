@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import styled from "styled-components";
 import MenuBar from "./menu";
 import BaseStyles from "../styles/base-style";
+import { theme } from "../styles/color";
 import { Breadcrumbs } from "./breadcrumbs";
 
 interface Props extends PageRendererProps {
@@ -11,16 +12,16 @@ interface Props extends PageRendererProps {
   crumbLabel: string;
 }
 
-const StyledWrapper = styled.div`
+const Wrapper = styled.div`
   min-height: calc(100vh - 50px);
   max-height: auto;
-  background-color: #f9f9f9;
+  background-color: ${theme.colors.blogBackground};
 `;
 
-const StyledFooter = styled.footer`
+const Footer = styled.footer`
   position: relative;
-  background-color: #4f4f4f;
-  color: white;
+  background-color: ${theme.colors.gray};
+  color: ${theme.colors.white};
   height: 50px;
   display: flex;
   justify-content: center;
@@ -53,7 +54,7 @@ export const Layout = (props: Props) => {
   return (
     <React.Fragment>
       <BaseStyles />
-      <StyledWrapper>
+      <Wrapper>
         <header>
           <MenuBar />
         </header>
@@ -65,9 +66,9 @@ export const Layout = (props: Props) => {
           )}
           <div>{children}</div>
         </Main>
-      </StyledWrapper>
 
-      <StyledFooter>© {new Date().getFullYear()}, Yasuhiro Ito</StyledFooter>
+        <Footer>© {new Date().getFullYear()}, Yasuhiro Ito</Footer>
+      </Wrapper>
     </React.Fragment>
   );
 };

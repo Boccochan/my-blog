@@ -3,6 +3,7 @@ import media from "styled-media-query";
 import styled, { css, keyframes } from "styled-components";
 import { Link } from "gatsby";
 import { customMedia } from "../styles/custom-media";
+import { theme } from "../styles/color";
 
 type Props = {
   visible: boolean;
@@ -14,7 +15,7 @@ const StyledNav = styled.nav`
   justify-content: space-around;
   align-items: center;
   height: 80px;
-  background-color: #333333;
+  background-color: ${theme.colors.grayDark};
   top: 0px;
   width: 100%;
   position: fixed;
@@ -39,7 +40,7 @@ const StyledBurger = styled.div`
 const StyledBurgerLine1 = styled.div`
   width: 25px;
   height: 3px;
-  background-color: #f5f5f7;
+  background-color: ${theme.colors.white};
   margin: 5px;
 
   ${(props: { visible: boolean }) =>
@@ -54,7 +55,7 @@ const StyledBurgerLine2 = styled.div`
   width: 25px;
   height: 3px;
 
-  background-color: #f5f5f7;
+  background-color: ${theme.colors.white};
   margin: 5px;
   ${(props: { visible: boolean }) =>
     props.visible
@@ -68,7 +69,7 @@ const StyledBurgerLine3 = styled.div`
   width: 25px;
   height: 3px;
 
-  background-color: #f5f5f7;
+  background-color: ${theme.colors.white};
   margin: 5px;
 
   ${(props: { visible: boolean }) =>
@@ -120,7 +121,7 @@ const StyledNavLinks = styled.ul`
     right: 0px;
     height: 92vh;
     top: 80px;
-    background-color: #333333;
+    background-color: ${theme.colors.grayDark};
     transition: transform 0.5s ease;
     display: flex;
     justify-content: space-around;
@@ -193,7 +194,7 @@ const StyledSearchIcon = styled.div`
   left: 0;
   width: 40px;
   height: 40px;
-  background: #2f80ed;
+  background: ${theme.colors.blue};
   border-radius: 50%;
   transition: all 1s;
   z-index: 4;
@@ -211,7 +212,7 @@ const StyledSearchIcon = styled.div`
     left: 13px;
     width: 10px;
     height: 2px;
-    background: white;
+    background: ${theme.colors.white};
     transform: rotate(45deg);
     transition: all 0.5s;
   }
@@ -227,7 +228,7 @@ const StyledSearchIcon = styled.div`
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    border: 2px solid white;
+    border: 2px solid ${theme.colors.white};
     transition: all 0.5s;
   }
 `;
@@ -243,7 +244,7 @@ const StyledSearchBar = styled.input`
   height: 30px;
   outline: none;
   border: none;
-  background: #2f80ed;
+  background: ${theme.colors.blue};
   color: white;
   text-shadow: 0 0 10px crimson;
   padding: 10 80px 10 20px;
@@ -265,7 +266,7 @@ const StyledSearchBar = styled.input`
   }
 
   &:focus ~ ${StyledSearchIcon} {
-    background: #BDBDBD; 
+    background: ${theme.colors.grayLight}; 
     z-index: 7;
     &::before {
       top: 0;
@@ -278,7 +279,7 @@ const StyledSearchBar = styled.input`
       width: 20px;
       height: 2px;
       border: none;
-      background: white;
+      background: ${theme.colors.white};
       border-radius: 0%;
       transform: rotate(-45deg);
     }
