@@ -16,6 +16,9 @@ const BackgroundBox = styled.div`
   width: 100%;
   height: 500px;
   background-color: #21bef0;
+  ${customMedia.lessThan("medium")`
+    height: 300px;
+  `}
 `;
 
 const IntroBox = styled.div`
@@ -45,8 +48,15 @@ const CharactorsBox = styled.div`
   z-index: 3;
   opacity: 1;
 
-  ${customMedia.lessThan("veryHuge")`
-    right: 0px;
+  ${customMedia.lessThan("huge")`
+    opacity: 0;
+  `}
+
+  ${customMedia.between("huge", "veryHuge")`
+    top: 200px;
+    width: 550px;
+    right: 10px;
+
   `}
 `;
 

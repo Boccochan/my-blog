@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MySummary from "./AboutMeSummary";
 import SittingRobotImg from "../../../static/home/sitting-robot.png";
 import StarImg from "../../../static/home/star.png";
+import { customMedia } from "../../styles/custom-media";
 // import { theme } from "../../styles/color";
 // import media from "styled-media-query";
 
@@ -23,12 +24,24 @@ const BlockSittingRobot = styled.div`
   position: absolute;
   top: 0;
   left: 300px;
+
+  ${customMedia.lessThan("large")`
+    opacity: 0;
+  `}
+
+  ${customMedia.between("large", "huge")`
+    left: 200px;
+  `}
 `;
 
 const BlockStar = styled.div`
   position: absolute;
   top: 80px;
   right: 300px;
+
+  ${customMedia.lessThan("large")`
+    opacity: 0;
+  `}
 `;
 
 const Img = styled.img`
