@@ -12,14 +12,21 @@ interface Props extends PageRendererProps {
   crumbLabel: string;
 }
 
+const Background = styled.div`
+  background-color: ${theme.colors.blogBackground};
+`;
+
 const Wrapper = styled.div`
   min-height: calc(100vh - 50px);
+  // position: relative;
+  min-height: 100vh;
   max-height: auto;
-  background-color: ${theme.colors.blogBackground};
+  // background-color: ${theme.colors.blogBackground};
 `;
 
 const Footer = styled.footer`
   position: relative;
+  // position: absolute;
   background-color: ${theme.colors.gray};
   color: ${theme.colors.white};
   height: 50px;
@@ -28,6 +35,7 @@ const Footer = styled.footer`
   align-items: center;
   z-index: 100;
   margin-top: auto;
+  // bottom: 0;
 `;
 
 const Main = styled.div`
@@ -54,21 +62,23 @@ export const Layout = (props: Props) => {
   return (
     <React.Fragment>
       <BaseStyles />
-      <Wrapper>
-        <header>
-          <MenuBar />
-        </header>
-        <Main>
-          {location.pathname !== rootPath && (
-            <BreadcrumbsLayout>
-              <Breadcrumbs currentPath={path} />
-            </BreadcrumbsLayout>
-          )}
-          <div>{children}</div>
-        </Main>
+      <Background>
+        <Wrapper>
+          <header>
+            <MenuBar />
+          </header>
+          <Main>
+            {location.pathname !== rootPath && (
+              <BreadcrumbsLayout>
+                <Breadcrumbs currentPath={path} />
+              </BreadcrumbsLayout>
+            )}
+            <div>{children}</div>
+          </Main>
+        </Wrapper>
 
         <Footer>© {new Date().getFullYear()}, Yasuhiro Ito</Footer>
-      </Wrapper>
+      </Background>
     </React.Fragment>
   );
 };
