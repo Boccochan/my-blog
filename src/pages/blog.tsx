@@ -27,6 +27,7 @@ const NewestBlogsTag = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
+  font-family: "Roboto", sans-serif;
 `;
 
 const NewestBlogs = styled.div`

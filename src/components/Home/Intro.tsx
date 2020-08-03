@@ -6,6 +6,7 @@ import Button from "./Button";
 
 const Title = styled.div`
   color: ${theme.colors.white};
+  font-family: "Roboto", sans-serif;
 
   ${media.lessThan("small")`
     width: 340px;
@@ -31,6 +32,7 @@ const Title = styled.div`
 const Introduction = styled.div`
   color: ${theme.colors.gray};
   font-weight: 300;
+  font-family: "Roboto", sans-serif;
 
   ${media.lessThan("small")`
     min-width: 340px;
