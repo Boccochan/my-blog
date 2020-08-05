@@ -5,13 +5,13 @@ import media from "styled-media-query";
 import { navigate } from "gatsby";
 
 const StyledBtn = styled.button`
-  width: 300px;
+  width: 250px;
   background-color: ${theme.colors.purple};
   border: 1px solid ${theme.colors.purple};
   color: ${theme.colors.white};
   padding: 10px;
   border-style: none;
-  border-radius: 40px;
+  border-radius: 5px;
   outline: none;
 
   &:hover {
@@ -26,12 +26,12 @@ const StyledBtn = styled.button`
 
   ${media.between("medium", "large")`
     font-size: 14px;
-    width: 300px;
+    width: 250px;
   `}
 
   ${media.greaterThan("large")`
     font-size: 30px;
-    width: 300px;
+    width: 250px;
   `}
 `;
 
