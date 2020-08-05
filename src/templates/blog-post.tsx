@@ -9,7 +9,8 @@ import { Query, SitePageContext } from "../graphql-types";
 import { rhythm, styledScale } from "../utils/typography";
 import { Social } from "../components/social";
 import { theme } from "../styles/color";
-import "./blog-post-style.scss";
+// import "./blog-post-style.scss";
+import "./markdown.scss";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;

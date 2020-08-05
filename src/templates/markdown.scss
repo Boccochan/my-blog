@@ -1,0 +1,39 @@
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body p {
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+
+body h1,
+body h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #eaecef;
+}
+
+body h1 {
+  font-size: 30px;
+}
+
+body h2 {
+  font-size: 26px;
+}
+
+body p {
+  font-weight: 300;
+}
+
+body ul {
+  margin-left: 16px;
+  list-style-type: square;
+}
+
+body li {
+  font-weight: 300;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
