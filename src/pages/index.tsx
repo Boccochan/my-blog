@@ -6,9 +6,9 @@ import styled from "styled-components";
 import { customMedia } from "../styles/custom-media";
 import { theme } from "../styles/color";
 import media from "styled-media-query";
-import AboutMe from "../components/Home/AboutMe";
-import Intro from "../components/Home/Intro";
-import { MascotIntro } from "../components/Home/Mascot";
+import AboutMe from "../components/home/AboutMe";
+import Intro from "../components/home/Intro";
+import { MascotIntro } from "../components/home/Mascot";
 
 const BackgroundBox = styled.div`
   position: relative;

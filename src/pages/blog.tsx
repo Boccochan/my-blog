@@ -27,19 +27,30 @@ const NewestBlogsTag = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
-  font-family: "Roboto", sans-serif;
 `;
 
 const NewestBlogs = styled.div`
-  position: absolute;
+  position: relative;
   left: 10px;
-  width: 210px;
+  width: 230px;
   height; 70px;
   padding: 5px;
   font-size: 32px;
   font-weight: 300;
   background-color: ${theme.colors.red};
   color: ${theme.colors.white};
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    background-color: ${theme.colors.blogBackground};
+    top: 0;
+    width: 42px;
+    height: 42px;
+    transform: scale(0.707) rotate(45deg);
+    right: -21px;
+  }
 `;
 
 const StyledContainer = styled.div`
