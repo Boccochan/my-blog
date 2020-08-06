@@ -9,6 +9,7 @@ import media from "styled-media-query";
 import AboutMe from "../components/home/AboutMe";
 import Intro from "../components/home/Intro";
 import { MascotIntro } from "../components/home/Mascot";
+import Skills from "../components/home/SkillSummary";
 
 const BackgroundBox = styled.div`
   position: relative;
@@ -121,6 +122,7 @@ const Home = (props: Props) => {
       <AboutMeBox>
         <AboutMe />
       </AboutMeBox>
+      <Skills />
     </Layout>
   );
 };
