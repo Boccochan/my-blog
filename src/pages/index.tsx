@@ -9,6 +9,7 @@ import media from "styled-media-query";
 import AboutMe from "../components/home/AboutMe";
 import Intro from "../components/home/Intro";
 import { MascotIntro } from "../components/home/Mascot";
+import SkillSummary from "../components/home/SkillSummary";
 
 const BackgroundBox = styled.div`
   position: relative;
@@ -16,7 +17,11 @@ const BackgroundBox = styled.div`
   width: 100%;
   height: 500px;
   background-color: #21bef0;
-  ${customMedia.lessThan("medium")`
+  ${customMedia.between("tiny", "medium")`
+    height: 400px;
+  `}
+
+  ${customMedia.lessThan("tiny")`
     height: 300px;
   `}
 `;
@@ -60,30 +65,17 @@ const CharactorsBox = styled.div`
   `}
 `;
 
-const HelloWorld = styled.div`
-  position: fixed;
-  top: 380px;
-  right: -130px;
-  width: 800px;
-  height; 400px;
-  color: ${theme.colors.white};
-  font-size: 228px;
-  padding: 0;
-  z-index: 0;
-
-  ${customMedia.lessThan("ipad")`
-    opacity: 0;
-  `};
-`;
-
 const AboutMeBox = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: auto;
   z-index: 2;
   text-align: center;
-  ${media.lessThan("small")`
-    margin-top: 0;
+  ${customMedia.lessThan("large")`
+    height: auto;
+  `}
+  ${customMedia.greaterThan("large")`
+    height: 350px;
   `}
 `;
 
@@ -117,10 +109,10 @@ const Home = (props: Props) => {
           <MascotIntro />
         </CharactorsBox>
       </IntroLayer>
-      <HelloWorld>Hello World</HelloWorld>
       <AboutMeBox>
         <AboutMe />
       </AboutMeBox>
+      <SkillSummary />
     </Layout>
   );
 };
