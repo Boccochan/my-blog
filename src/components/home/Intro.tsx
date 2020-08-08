@@ -58,6 +58,21 @@ const Introduction = styled.div`
 const Container = styled.div`
   margin-top: 30px;
   margin-bottom: 30px;
+
+  // ${media.lessThan("small")`
+  //   margin-top: 10px;
+  //   margin-bottom: 10px;
+  // `}
+
+  // ${media.between("small", "medium")`
+  //   margin-top: 20px;
+  //   margin-bottom: 20px;
+  // `}
+
+  // ${media.greaterThan("medium")`
+  //   margin-top: 30px;
+  //   margin-bottom: 30px;
+  // `}
 `;
 
 export default function Intro() {

@@ -15,9 +15,16 @@ const Container = styled.div`
 
 const Block = styled.div`
   width: 400px;
-  margin-top: 100px;
+  // margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
+  ${customMedia.greaterThan("large")`
+    margin-top: 100px;
+  `}
+  ${customMedia.lessThan("large")`
+    margin-top: 50px;
+    margin-bottom: 50px;
+  `}
 `;
 
 const BlockSittingRobot = styled.div`
@@ -36,6 +43,7 @@ const BlockSittingRobot = styled.div`
 
 const BlockStar = styled.div`
   position: absolute;
+
   top: 80px;
   right: 300px;
 

@@ -1,99 +1,45 @@
 import React, { useState, useEffect } from "react";
-import {
-  Radar,
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  LabelList,
-} from "recharts";
+import SkillSummaryChart from "./SkillSummaryChart";
+import SkillProgramming from "./SkillProgramming";
 import styled from "styled-components";
-
-const Title = styled.div`
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-`;
+import { theme } from "../../styles/color";
 
 const Container = styled.div`
-  width: ${(props: { width: string }) => props.width};
+  position: relative;
+  display: grid;
+  z-index: 100;
+  padding-top: 20px;
+  background-color: ${theme.colors.blogBackground};
+  gap: 25px;
+  grid-template-columns: repeat(
+    ${(props: { repeat: number }) => props.repeat},
+    minmax(200px, 1fr)
+  );
 `;
 
-function customTick({
-  payload,
-  x,
-  y,
-  textAnchor,
-  stroke,
-  radius,
-}: {
-  payload: { value: string };
-  x: number;
-  y: number;
-  textAnchor: string;
-  stroke: string;
-  radius: string;
-}) {
-  return (
-    <g>
-      <text
-        radius={radius}
-        stroke={stroke}
-        x={x}
-        y={y}
-        text-anchor={textAnchor}
-        fontSize="12px"
-      >
-        <tspan x={x} dy="0em">
-          {payload.value}
-        </tspan>
-      </text>
-    </g>
-  );
-}
-
-export default function Skills() {
-  const data = [
-    {
-      subject: "Front-End",
-      A: 60,
-    },
-    {
-      subject: "Back-End",
-      A: 78,
-    },
-    {
-      subject: "AWS",
-      A: 68,
-    },
-    {
-      subject: "DB",
-      A: 60,
-    },
-    {
-      subject: "Network",
-      A: 40,
-    },
-    {
-      subject: "Security",
-      A: 30,
-    },
-  ];
-
+export default function SkillSummary() {
   const [ContainerWidth, setContainerWidth] = useState(0);
   const [OuterRadius, setRadiusSize] = useState(100);
+  const [Repeat, setRepeat] = useState(2);
+  const [GraphWidh, setGraphWidth] = useState(0);
 
   const resizeWindow = () => {
     const innerWidth = window.innerWidth;
     if (innerWidth > 1080) {
+      setRepeat(2);
       setRadiusSize(100);
       setContainerWidth(innerWidth / 2);
-    } else if (320 < innerWidth && innerWidth <= 1080) {
-      setRadiusSize(100);
-      setContainerWidth(innerWidth);
-    } else {
+      setGraphWidth(innerWidth / 2 - 200);
+    } else if (innerWidth > 700 && innerWidth <= 1080) {
+      setRepeat(1);
       setRadiusSize(60);
       setContainerWidth(innerWidth);
+      setGraphWidth(innerWidth - 200);
+    } else {
+      setRepeat(1);
+      setRadiusSize(60);
+      setContainerWidth(innerWidth);
+      setGraphWidth(innerWidth);
     }
   };
 
@@ -104,27 +50,10 @@ export default function Skills() {
   }, []);
 
   return (
-    <Container width={`${ContainerWidth}px`}>
-      <Title>Skill summary</Title>
-      <RadarChart
-        cx="50%"
-        cy="50%"
-        outerRadius={OuterRadius}
-        width={ContainerWidth}
-        height={300}
-        data={data}
-      >
-        <PolarGrid />
-        <PolarAngleAxis dataKey="subject" tick={customTick} />
-        <PolarRadiusAxis domain={[0, 100]} />
-        <Radar
-          name="Yasuhiro"
-          dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
-        />
-      </RadarChart>
+    <Container repeat={Repeat}>
+      <SkillSummaryChart width={ContainerWidth} outerRadius={OuterRadius} />
+      {/* <SkillProgramming width={ContainerWidth} graphWidth={GraphWidh} /> */}
+      <SkillProgramming graphWidth={GraphWidh} />
     </Container>
   );
 }
