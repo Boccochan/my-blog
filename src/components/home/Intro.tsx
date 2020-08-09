@@ -5,7 +5,7 @@ import media from "styled-media-query";
 import Button from "./Button";
 
 const Title = styled.div`
-  color: ${theme.colors.white};
+  color: ${theme.colors.grayDark};
   font-family: "Roboto", sans-serif;
 
   ${media.lessThan("small")`
@@ -20,17 +20,17 @@ const Title = styled.div`
 
   ${media.between("medium", "large")`
     width: 100%;
-    font-size: 80px; 
+    font-size: 70px; 
   `}
 
   ${media.greaterThan("large")`
     width: 100%;
-    font-size: 80px;
+    font-size: 70px;
   `}
 `;
 
 const Introduction = styled.div`
-  color: ${theme.colors.gray};
+  color: ${theme.colors.grayDark};
   font-weight: 300;
   font-family: "Roboto", sans-serif;
 
@@ -51,11 +51,13 @@ const Introduction = styled.div`
 
   ${media.greaterThan("large")`
     width: 100%;
-    font-size: 30px;
+    font-size: 20px;
   `}
 `;
 
 const Container = styled.div`
+  position: relative;
+  display: flex;
   margin-top: 30px;
   margin-bottom: 30px;
 
@@ -78,20 +80,16 @@ const Container = styled.div`
 export default function Intro() {
   return (
     <div>
-      <Title>
-        Technology makes
-        <br />
-        our future better!!
-      </Title>
+      <Title>I love technology</Title>
       <Container>
         <Introduction>
           Hello there! I am Yasuhiro Ito who is a software engineer.
-          <br /> I have been posting tech blogs almost everyday to solve
-          <br /> our problems.
+          <br /> I have been posting tech blogs and creating playground.
         </Introduction>
       </Container>
       <Container>
-        <Button to="/blog" name="See blog" />
+        <Button to="/blog" name="Blog" />
+        <Button to="/playground" name="Playground" />
       </Container>
     </div>
   );

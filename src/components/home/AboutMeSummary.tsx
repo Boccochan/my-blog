@@ -37,7 +37,7 @@ export default function AboutMeSummary() {
       <Name>Yasuhiro Ito</Name>
       <Job>
         <Summary fontSize={20}>Software Engineer</Summary>
-        <Summary fontSize={20}>Over 15 years professional experience.</Summary>
+        <Summary fontSize={20}>Over 14 years professional experience</Summary>
       </Job>
     </Container>
   );

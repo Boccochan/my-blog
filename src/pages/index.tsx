@@ -10,20 +10,21 @@ import AboutMe from "../components/home/AboutMe";
 import Intro from "../components/home/Intro";
 import { MascotIntro } from "../components/home/Mascot";
 import SkillSummary from "../components/home/SkillSummary";
+// import WorkExperience from "../components/home/WorkExperience";
+import Details from "../components/home/Details";
 
 const BackgroundBox = styled.div`
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 500px;
-  background-color: #21bef0;
+  height: 400px;
+  background-color: ${theme.colors.yellow};
+  // background-color: #21bef0;
   ${customMedia.between("tiny", "medium")`
     height: 400px;
-  `}
-
-  ${customMedia.lessThan("tiny")`
+  `} ${customMedia.lessThan("tiny")`
     height: 300px;
-  `}
+  `};
 `;
 
 const IntroBox = styled.div`
@@ -46,7 +47,7 @@ const IntroLayer = styled.div`
 
 const CharactorsBox = styled.div`
   position: absolute;
-  top: 150px;
+  top: 40px;
   right: 80px;
   width: 800px;
   height: 350px;
@@ -112,6 +113,7 @@ const Home = (props: Props) => {
         <AboutMe />
       </AboutMeBox>
       <SkillSummary />
+      <Details />
     </Layout>
   );
 };

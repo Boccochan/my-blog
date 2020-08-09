@@ -10,6 +10,7 @@ const Container = styled.div`
   display: grid;
   z-index: 100;
   padding-top: 20px;
+  margin-bottom: 40px;
   background-color: ${theme.colors.blogBackground};
   gap: 25px;
   grid-template-columns: repeat(
@@ -53,7 +54,6 @@ export default function SkillSummary() {
   return (
     <Container repeat={Repeat}>
       <SkillSummaryChart width={ContainerWidth} outerRadius={OuterRadius} />
-      {/* <SkillProgramming width={ContainerWidth} graphWidth={GraphWidh} /> */}
       <SkillProgramming graphWidth={GraphWidh} />
       <SkillTools />
     </Container>

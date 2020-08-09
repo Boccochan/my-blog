@@ -1,15 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import { customMedia } from "../../styles/custom-media";
 
 export type Props = {
   title: string;
   name: string[];
-  // tool: {
-  //   name: string;
-  //   color: string;
-  // }[];
 };
 
 type BarType = {
@@ -40,22 +35,12 @@ const Title = styled.div`
 `;
 
 const Value = styled.div`
-  // padding: 4px 12px;
   font-size: 12px;
   font-weight: 300;
   color: ${theme.colors.gray};
   margin-right: 8px;
   margin-left: 2px;
-  // background-color: ${theme.colors.red};
   width: 60px;
-  // width: 400px;
-`;
-
-const BorderBottom = styled.div`
-  position: relative;
-  display: flex;
-  border-bottom: 1px solid ${theme.colors.grayLight};
-  width: 80px;
 `;
 
 export default function KeyValue(props: Props) {

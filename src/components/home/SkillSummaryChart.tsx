@@ -7,6 +7,7 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 import styled from "styled-components";
+import { theme } from "../../styles/color";
 
 const Title = styled.div`
   font-size: 30px;
@@ -102,9 +103,11 @@ export default function SkillSummaryChart(props: Props) {
         <Radar
           name="Yasuhiro"
           dataKey="A"
-          stroke="#8884d8"
-          fill="#8884d8"
-          fillOpacity={0.6}
+          // stroke="#8884d8"
+          // fill="#8884d8"
+          stroke={theme.colors.blue}
+          fill={theme.colors.blue}
+          fillOpacity={0.7}
         />
       </RadarChart>
     </Container>

@@ -5,17 +5,19 @@ import media from "styled-media-query";
 import { navigate } from "gatsby";
 
 const StyledBtn = styled.button`
-  width: 250px;
-  background-color: ${theme.colors.purple};
-  border: 1px solid ${theme.colors.purple};
+  width: 100px;
+  background-color: ${theme.colors.green};
+  border: 1px solid ${theme.colors.green};
   color: ${theme.colors.white};
-  padding: 10px;
+  padding: 8px;
+  font-weight: 300;
   border-style: none;
   border-radius: 5px;
   outline: none;
+  margin-right: 10px;
 
   &:hover {
-    background-color: ${theme.colors.purpleLight};
+    // background-color: ${theme.colors.red};
     font-weight: bold;
   }
 
@@ -26,12 +28,12 @@ const StyledBtn = styled.button`
 
   ${media.between("medium", "large")`
     font-size: 14px;
-    width: 250px;
+    width: 200px;
   `}
 
   ${media.greaterThan("large")`
-    font-size: 30px;
-    width: 250px;
+    font-size: 20px;
+    width: 140px;
   `}
 `;
 

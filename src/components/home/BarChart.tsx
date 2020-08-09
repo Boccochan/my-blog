@@ -38,14 +38,14 @@ const Bar = styled.div`
   position: relative;
   width: 300px;
   height: 18px;
-  background-color: ${theme.colors.grayDark};
+  background-color: ${theme.colors.gray};
   border-radius: 4px;
   &::after {
     content: "";
     position: absolute;
     width: ${(props: BarType) => props.level * 3}px;
     height: 18px;
-    background-color: ${theme.colors.blue};
+    background-color: ${theme.colors.green};
     border-radius: 4px;
   }
 `;
