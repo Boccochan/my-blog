@@ -81,7 +81,7 @@ export default function SkillSummaryChart(props: Props) {
     },
     {
       subject: "Security",
-      A: 30,
+      A: 50,
     },
   ];
 

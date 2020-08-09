@@ -12,6 +12,7 @@ export type Colors = {
   purple: string;
   purpleLight: string;
   red: string;
+  green: string;
 };
 
 export type Theme = {
@@ -32,5 +33,6 @@ export const theme: Theme = {
     purple: "#bb6bd9",
     purpleLight: "#e3a5fb",
     red: "#eb5757",
+    green: "#05D15B",
   },
 } as Theme;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SkillSummaryChart from "./SkillSummaryChart";
 import SkillProgramming from "./SkillProgramming";
+import SkillTools from "./SkillTools";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
 
@@ -26,15 +27,15 @@ export default function SkillSummary() {
   const resizeWindow = () => {
     const innerWidth = window.innerWidth;
     if (innerWidth > 1080) {
-      setRepeat(2);
+      setRepeat(3);
       setRadiusSize(100);
-      setContainerWidth(innerWidth / 2);
-      setGraphWidth(innerWidth / 2 - 200);
+      setContainerWidth(innerWidth / 3);
+      setGraphWidth(innerWidth / 3);
     } else if (innerWidth > 700 && innerWidth <= 1080) {
       setRepeat(1);
       setRadiusSize(60);
       setContainerWidth(innerWidth);
-      setGraphWidth(innerWidth - 200);
+      setGraphWidth(innerWidth);
     } else {
       setRepeat(1);
       setRadiusSize(60);
@@ -54,6 +55,7 @@ export default function SkillSummary() {
       <SkillSummaryChart width={ContainerWidth} outerRadius={OuterRadius} />
       {/* <SkillProgramming width={ContainerWidth} graphWidth={GraphWidh} /> */}
       <SkillProgramming graphWidth={GraphWidh} />
+      <SkillTools />
     </Container>
   );
 }

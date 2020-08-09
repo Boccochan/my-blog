@@ -24,7 +24,7 @@ const Job = styled.div`
 const Summary = styled.div`
   color: ${theme.colors.gray};
   line-height: 22px;
-  font-size: 20px;
+  font-size: ${(props: { fontSize: number }) => props.fontSize}px;
   font-weight: 300;
   ${customMedia.lessThan("medium")`
     font-size: 12px;
@@ -36,8 +36,8 @@ export default function AboutMeSummary() {
     <Container>
       <Name>Yasuhiro Ito</Name>
       <Job>
-        <Summary>Software Engineer</Summary>
-        <Summary>Over 15 years professional experience.</Summary>
+        <Summary fontSize={20}>Software Engineer</Summary>
+        <Summary fontSize={20}>Over 15 years professional experience.</Summary>
       </Job>
     </Container>
   );

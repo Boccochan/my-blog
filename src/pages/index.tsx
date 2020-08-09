@@ -61,7 +61,6 @@ const CharactorsBox = styled.div`
     top: 200px;
     width: 550px;
     right: 10px;
-
   `}
 `;
 

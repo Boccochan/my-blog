@@ -1,6 +1,7 @@
 import React from "react";
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from "recharts";
 import styled from "styled-components";
+import BarChart from "./BarChart";
+import { customMedia } from "../../styles/custom-media";
 
 const Title = styled.div`
   font-size: 30px;
@@ -11,7 +12,12 @@ const Title = styled.div`
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
+
   width: ${(props: { width: number }) => `${props.width}px`};
+`;
+
+const BarChartBox = styled.div`
+  margin-top: 40px;
 `;
 
 type Props = {
@@ -27,7 +33,7 @@ export default function SkillProgramming(props: Props) {
     },
     {
       name: "Javascript",
-      level: 60,
+      level: 40,
     },
     {
       name: "Python3",
@@ -47,29 +53,21 @@ export default function SkillProgramming(props: Props) {
     },
     {
       name: "SQL",
-      level: 30,
+      level: 28,
     },
     {
       name: "Bash",
-      level: 40,
+      level: 34,
     },
   ];
   return (
     <Container width={props.graphWidth}>
       <Title>Programming Skills</Title>
-      <BarChart
-        width={props.graphWidth}
-        height={300}
-        data={data}
-        layout="vertical"
-        margin={{ top: 35, right: 10, left: 10, bottom: 5 }}
-      >
-        <XAxis type="number" tick={{ fontWeight: 30 }} />
-        <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Bar dataKey="level" fill="#82ca9d" />
-      </BarChart>
+      <BarChartBox>
+        {data.map((prog) => {
+          return <BarChart title={prog.name} level={prog.level} />;
+        })}
+      </BarChartBox>
     </Container>
   );
 }
