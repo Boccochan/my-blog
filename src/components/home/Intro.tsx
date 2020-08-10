@@ -59,7 +59,7 @@ const Container = styled.div`
   position: relative;
   display: flex;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 
   // ${media.lessThan("small")`
   //   margin-top: 10px;

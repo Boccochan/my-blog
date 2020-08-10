@@ -69,6 +69,8 @@ export default function SelfSummary() {
           <li>English - Fluent</li>
         </ul>
       </Details>
+      <Summary>Location</Summary>
+      <Details>Tokyo, Japan. I am willing to work anywhere.</Details>
     </Container>
   );
 }

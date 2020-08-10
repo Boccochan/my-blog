@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
 import { customMedia } from "../../styles/custom-media";
+import EmailIcon from "@material-ui/icons/Email";
 
 const Container = styled.div`
   text-align: center;
@@ -31,10 +32,19 @@ const Summary = styled.div`
   `}
 `;
 
+// const IconText = styled.div`
+//   position: relative;
+//   display: flex;
+//   width: 200px;
+//   margin-right: auto;
+//   margin-left: auto;
+// `;
+
 export default function AboutMeSummary() {
   return (
     <Container>
       <Name>Yasuhiro Ito</Name>
+      <Summary fontSize={14}>boccochan@gamil.com</Summary>
       <Job>
         <Summary fontSize={20}>Software Engineer</Summary>
         <Summary fontSize={20}>Over 14 years professional experience</Summary>
