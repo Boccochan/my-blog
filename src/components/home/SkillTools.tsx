@@ -7,7 +7,6 @@ import { Title } from "./Title";
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
 `;
 
 const KeyValueBox = styled.div`

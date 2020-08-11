@@ -102,7 +102,7 @@ const BlogIndex = (props: Props) => {
   const posts = data.allMarkdownRemark.edges;
 
   return (
-    <Layout location={props.location} title={siteTitle} crumbLabel="blog">
+    <Layout location={props.location} title={siteTitle}>
       <SEO
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Radar,
   RadarChart,
@@ -9,6 +9,7 @@ import {
 import styled from "styled-components";
 import { theme } from "../../styles/color";
 import { Title } from "./Title";
+import { mediaType } from "../../styles/custom-media";
 
 const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};
@@ -48,15 +49,60 @@ function customTick({
   );
 }
 
-type Props = {
-  width: number;
-  outerRadius: number;
-  height: number;
-  cy: string;
-};
+export default function SkillSummaryChart() {
+  const [width, setContainerWidth] = useState(0);
+  const [outerRadius, setRadiusSize] = useState(100);
+  const [height, setGraphHeight] = useState(300);
+  const [cy, setGraphCy] = useState("50%");
 
-export default function SkillSummaryChart(props: Props) {
-  console.log(props);
+  const num = (media: string) => Number(media.slice(0, -2));
+
+  const resizeWindow = () => {
+    const innerWidth = window.innerWidth;
+
+    if (innerWidth < num(mediaType.galaxyFold)) {
+      setGraphCy("45%");
+      setRadiusSize(80);
+      setContainerWidth(num(mediaType.galaxyFold));
+      setGraphHeight(220);
+    } else if (
+      innerWidth >= num(mediaType.galaxyFold) &&
+      innerWidth < num(mediaType.iphone5)
+    ) {
+      setGraphCy("45%");
+      setRadiusSize(80);
+      setContainerWidth(innerWidth);
+      setGraphHeight(220);
+    } else if (
+      innerWidth >= num(mediaType.iphone5) &&
+      innerWidth < num(mediaType.ipad)
+    ) {
+      setGraphCy("50%");
+      setRadiusSize(100);
+      setContainerWidth(innerWidth);
+      setGraphHeight(240);
+    } else if (
+      innerWidth >= num(mediaType.ipad) &&
+      innerWidth < num(mediaType.medium)
+    ) {
+      setGraphCy("50%");
+      setRadiusSize(100);
+      setContainerWidth(innerWidth);
+      setGraphHeight(250);
+    } else {
+      setRadiusSize(100);
+      setContainerWidth(innerWidth / 3);
+      setGraphHeight(300);
+      setGraphCy("40%");
+    }
+  };
+
+  useEffect(() => {
+    resizeWindow();
+    window.addEventListener("resize", resizeWindow);
+    return () => window.removeEventListener("resize", resizeWindow);
+  }, []);
+
   const data = [
     {
       subject: "Front-End",
@@ -85,14 +131,14 @@ export default function SkillSummaryChart(props: Props) {
   ];
 
   return (
-    <Container width={props.width}>
+    <Container width={width}>
       <Title>Skill Summary</Title>
       <RadarChart
         cx="50%"
-        cy={props.cy}
-        outerRadius={props.outerRadius}
-        width={props.width}
-        height={props.height}
+        cy={cy}
+        outerRadius={outerRadius}
+        width={width}
+        height={height}
         data={data}
       >
         <PolarGrid />

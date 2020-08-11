@@ -23,7 +23,6 @@ const StyledLink = styled(Link)`
 
 export const FadeLink = (props: Props) => {
   const { children, ...linkProps } = props;
-  console.log(children);
 
   const path = `/blog${linkProps.to!}`;
 

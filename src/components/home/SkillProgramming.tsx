@@ -1,21 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import BarChart from "./SkillBarChart";
-import { myMedia } from "../../styles/custom-media";
-import { T2 } from "../../styles/typography";
 import { Title } from "./Title";
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  width: ${(props: { width: number }) => `${props.width}px`};
+  width: auto;
 `;
 
-type Props = {
-  graphWidth: number;
-};
-
-export default function SkillProgramming(props: Props) {
+export default function SkillProgramming() {
   const data = [
     {
       name: "Typescript",
@@ -50,8 +44,9 @@ export default function SkillProgramming(props: Props) {
       level: 34,
     },
   ];
+
   return (
-    <Container width={props.graphWidth}>
+    <Container>
       <Title>Programming Skills</Title>
       {data.map((prog) => {
         return <BarChart title={prog.name} level={prog.level} />;

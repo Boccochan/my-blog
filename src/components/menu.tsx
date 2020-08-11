@@ -33,7 +33,6 @@ const StyledBurger = styled.div`
   ${media.lessThan("large")`
     opacity: 1;
     z-index: 100;
-  
   `}
 `;
 
@@ -131,7 +130,6 @@ const StyledNavLinks = styled.ul`
     width: 180px;
     margin: 0px;
     width: 50%;
-
   `}
 `;
 
@@ -289,9 +287,7 @@ const StyledSearchBar = styled.input`
 function MenuBar() {
   const [visibleMenu, setVisibleMenu] = useState(false);
 
-  console.log("hello!!!!!!", visibleMenu);
   const toggleMenu = () => {
-    console.log("hello");
     setVisibleMenu(!visibleMenu);
   };
 

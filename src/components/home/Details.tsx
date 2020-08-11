@@ -9,7 +9,6 @@ const Container = styled.div`
   position: relative;
   display: grid;
   z-index: 100;
-  // padding-top: 20px;
   margin-bottom: 40px;
   background-color: ${theme.colors.blogBackground};
   gap: 25px;

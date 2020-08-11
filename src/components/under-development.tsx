@@ -31,7 +31,7 @@ const UnderDevelopment = (props: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={props.location} title={siteTitle} crumbLabel="">
+    <Layout location={props.location} title={siteTitle}>
       <SEO
         title={props.pageTitle}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}

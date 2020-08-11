@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Yasuhiro's blog`,
     author: `Yas Ito`,
-    description: `Introducing technology, Japanese culture and so forth.`,
+    description: `Introducing technology, porfolio.`,
     siteUrl: `https://yas-ito.com/`,
     // siteUrl: `http://localhost:8000`,
     social: {
