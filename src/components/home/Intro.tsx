@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import media from "styled-media-query";
 import Button from "./Button";
 import { myMedia, mediaType } from "../../styles/custom-media";
 

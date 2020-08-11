@@ -4,8 +4,6 @@ import MySummary from "./AboutMeSummary";
 import SittingRobotImg from "../../../static/home/sitting-robot.png";
 import StarImg from "../../../static/home/star.png";
 import { customMedia } from "../../styles/custom-media";
-// import { theme } from "../../styles/color";
-// import media from "styled-media-query";
 
 const Container = styled.div`
   position: relative;

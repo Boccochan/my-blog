@@ -8,7 +8,7 @@ import {
 } from "recharts";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import { Title } from "./SkillTitle";
+import { Title } from "./Title";
 
 const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};

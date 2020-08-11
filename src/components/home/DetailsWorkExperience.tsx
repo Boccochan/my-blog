@@ -3,11 +3,10 @@ import styled from "styled-components";
 import WorkTimeline from "./DetailsWorkTimeline";
 import WorkHistory from "./DetailsWorkHistory";
 import { myMedia } from "../../styles/custom-media";
-import { Title } from "./DetailsTitle";
+import { Title } from "./Title";
 
 const Container = styled.div`
   width: auto;
-  // margin-bottom: 100px;
 
   ${myMedia.lessThan("iphone5")`
     padding-right: 8px;

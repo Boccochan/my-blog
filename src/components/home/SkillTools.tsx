@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import KeyValue from "./KeyValue";
-import { Title } from "./SkillTitle";
 import { myMedia } from "../../styles/custom-media";
+import { Title } from "./Title";
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  width: ${(props: { width: number }) => `${props.width}px`};
+  text-align: center;
 `;
 
 const KeyValueBox = styled.div`
+  text-align: left;
   ${myMedia.lessThan("iphone5")`
     margin-top: 20px;
   `}
@@ -30,8 +31,6 @@ const KeyValueBox = styled.div`
   ${myMedia.greaterThan("medium")`
     margin-top: 40px;
   `}
-
-
 `;
 
 export default function SkillTools() {

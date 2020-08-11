@@ -34,7 +34,7 @@ export default function SkillSummary() {
     const innerWidth = window.innerWidth;
 
     if (innerWidth < num(mediaType.galaxyFold)) {
-      setGraphCy("55%");
+      setGraphCy("45%");
       setRadiusSize(80);
       setContainerWidth(num(mediaType.galaxyFold));
       setGraphWidth(innerWidth);
@@ -43,7 +43,7 @@ export default function SkillSummary() {
       innerWidth >= num(mediaType.galaxyFold) &&
       innerWidth < num(mediaType.iphone5)
     ) {
-      setGraphCy("55%");
+      setGraphCy("45%");
       setRadiusSize(80);
       setContainerWidth(innerWidth);
       setGraphWidth(innerWidth);
@@ -52,7 +52,7 @@ export default function SkillSummary() {
       innerWidth >= num(mediaType.iphone5) &&
       innerWidth < num(mediaType.ipad)
     ) {
-      setGraphCy("55%");
+      setGraphCy("50%");
       setRadiusSize(100);
       setContainerWidth(innerWidth);
       setGraphWidth(innerWidth);
@@ -71,7 +71,7 @@ export default function SkillSummary() {
       setContainerWidth(innerWidth / 3);
       setGraphWidth(innerWidth / 3);
       setGraphHeight(300);
-      setGraphCy("50%");
+      setGraphCy("40%");
     }
   };
 
