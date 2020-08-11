@@ -1,5 +1,5 @@
 import path from "path";
-import { GatsbyCreatePages } from "../types";
+import { GatsbyCreatePages } from "@src/types";
 
 interface Post {
   node: {

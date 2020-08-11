@@ -3,8 +3,8 @@ import SkillSummaryChart from "./SkillSummaryChart";
 import SkillProgramming from "./SkillProgramming";
 import SkillTools from "./SkillTools";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { customMedia } from "../../styles/custom-media";
+import { theme } from "@src/styles/color";
+import { customMedia } from "@src/styles/custom-media";
 
 const Container = styled.div`
   position: relative;

@@ -1,14 +1,14 @@
 import { graphql, PageRendererProps } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { Bio } from "../components/bio";
-import { Layout } from "../components/layout";
-import { FadeLink } from "../components/link";
-import { SEO } from "../components/seo";
-import { Query, SitePageContext } from "../graphql-types";
-import { rhythm, styledScale } from "../utils/typography";
-import { Social } from "../components/social";
-import { theme } from "../styles/color";
+import { Bio } from "@src/components/bio";
+import { Layout } from "@src/components/layout";
+import { FadeLink } from "@src/components/link";
+import { SEO } from "@src/components/seo";
+import { Query, SitePageContext } from "@src/graphql-types";
+import { rhythm, styledScale } from "@src/utils/typography";
+import { Social } from "@src/components/social";
+import { theme } from "@src/styles/color";
 // import "./blog-post-style.scss";
 import "./markdown.scss";
 

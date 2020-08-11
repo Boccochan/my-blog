@@ -7,9 +7,9 @@ import {
   PolarRadiusAxis,
 } from "recharts";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
+import { theme } from "@src/styles/color";
 import { Title } from "./Title";
-import { mediaType } from "../../styles/custom-media";
+import { mediaType } from "@src/styles/custom-media";
 
 const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};

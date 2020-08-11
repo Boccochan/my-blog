@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
+import { theme } from "@src/styles/color";
 import Button from "./IntroNavButton";
-import { myMedia, mediaType } from "../../styles/custom-media";
+import { myMedia, mediaType } from "@src/styles/custom-media";
 
 const Box = styled.div`
   ${myMedia.lessThan("iphone5")`

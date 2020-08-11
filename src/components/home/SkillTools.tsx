@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import KeyValue from "./SkillKeyValue";
-import { myMedia } from "../../styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 import { Title } from "./Title";
 
 const Container = styled.div`

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { T6 } from "../../styles/typography";
-import { mediaType } from "../../styles/custom-media";
+import { theme } from "@src/styles/color";
+import { T6 } from "@src/styles/typography";
+import { mediaType } from "@src/styles/custom-media";
 
 type Props = {
   title: string;

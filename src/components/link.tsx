@@ -3,7 +3,7 @@ import * as React from "react";
 import { ComponentProps } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
-import { theme } from "../styles/color";
+import { theme } from "@src/styles/color";
 
 type Props = Partial<ComponentProps<typeof Link>>;
 

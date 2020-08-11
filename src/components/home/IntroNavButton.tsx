@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
+import { theme } from "@src/styles/color";
 import { navigate } from "gatsby";
-import { myMedia } from "../../styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 
 const StyledBtn = styled.button`
   width: 100px;

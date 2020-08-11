@@ -2,7 +2,7 @@ import React from "react";
 import { BlogInfo } from "../types";
 import { FadeLink } from "./link";
 import styled from "styled-components";
-import { theme } from "../styles/color";
+import { theme } from "@src/styles/color";
 
 const SytledCard = styled.div`
   border: 1px solid ${theme.colors.graySuperLight};

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { T3, T5, D1 } from "../../styles/typography";
+import { theme } from "@src/styles/color";
+import { T3, T5, D1 } from "@src/styles/typography";
 
 const Container = styled.div`
   margin-right: auto;

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import MySummary from "./AboutMeSummary";
-import SittingRobotImg from "../../../static/home/sitting-robot.png";
-import StarImg from "../../../static/home/star.png";
-import { customMedia } from "../../styles/custom-media";
+import SittingRobotImg from "@static/home/sitting-robot.png";
+import StarImg from "@static/home/star.png";
+import { customMedia } from "@src/styles/custom-media";
 
 const Container = styled.div`
   position: relative;

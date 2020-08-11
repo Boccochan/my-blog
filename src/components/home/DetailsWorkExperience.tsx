@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import WorkTimeline from "./DetailsWorkTimeline";
 import WorkHistory from "./DetailsWorkHistory";
-import { myMedia } from "../../styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 import { Title } from "./Title";
 
 const Container = styled.div`

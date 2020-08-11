@@ -1,6 +1,6 @@
 import React from "react";
 import { PageRendererProps } from "gatsby";
-import UnderDevelopment from "../components/under-development";
+import UnderDevelopment from "@src/components/under-development";
 
 type Props = PageRendererProps;
 

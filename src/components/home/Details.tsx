@@ -2,8 +2,8 @@ import React from "react";
 import WorkEperience from "./DetailsWorkExperience";
 import AboutMe from "./DetailsAboutMe";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { customMedia } from "../../styles/custom-media";
+import { theme } from "@src/styles/color";
+import { customMedia } from "@src/styles/custom-media";
 
 const Container = styled.div`
   position: relative;

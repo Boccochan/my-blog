@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { myMedia } from "../../styles/custom-media";
-import { T2 } from "../../styles/typography";
+import { myMedia } from "@src/styles/custom-media";
+import { T2 } from "@src/styles/typography";
 
 export const Title = styled(T2)`
   text-align: center;

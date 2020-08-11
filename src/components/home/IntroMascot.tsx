@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import GreenRobotImg from "../../../static/home/green-robot.png";
-import YellowRobotImg from "../../../static/home/small-yellow-robot.png";
-import OrangeRobotImg from "../../../static/home/orange-robot.png";
-import { customMedia } from "../../styles/custom-media";
+import GreenRobotImg from "@static/home/green-robot.png";
+import YellowRobotImg from "@static/home/small-yellow-robot.png";
+import OrangeRobotImg from "@static/home/orange-robot.png";
+import { customMedia } from "@src/styles/custom-media";
 
 const Img = styled.img`
   background-color: transparent;

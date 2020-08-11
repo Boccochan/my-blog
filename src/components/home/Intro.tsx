@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { myMedia } from "../../styles/custom-media";
-import { theme } from "../../styles/color";
+import { myMedia } from "@src/styles/custom-media";
+import { theme } from "@src/styles/color";
 import IntroNav from "./IntroNav";
 import { MascotIntro } from "./IntroMascot";
 

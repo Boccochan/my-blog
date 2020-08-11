@@ -2,8 +2,8 @@ import { PageRendererProps } from "gatsby";
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import MenuBar from "./menu";
-import BaseStyles from "../styles/base-style";
-import { theme } from "../styles/color";
+import BaseStyles from "@src/styles/base-style";
+import { theme } from "@src/styles/color";
 import { Breadcrumbs } from "./breadcrumbs";
 
 interface Props extends PageRendererProps {

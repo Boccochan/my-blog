@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { myMedia } from "../../styles/custom-media";
+import { theme } from "@src/styles/color";
+import { myMedia } from "@src/styles/custom-media";
 
 const Container = styled.div`
   ${myMedia.lessThan("iphone5")`

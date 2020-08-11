@@ -9,7 +9,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Image from "gatsby-image";
 import React, { ComponentProps, forwardRef, Ref } from "react";
 import styled from "styled-components";
-import { rhythm } from "../utils/typography";
+import { rhythm } from "@src/utils/typography";
 
 const Content = styled.div`
   display: flex;

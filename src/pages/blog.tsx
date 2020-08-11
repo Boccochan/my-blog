@@ -1,12 +1,12 @@
 import React from "react";
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
-import { Layout } from "../components/layout";
-import { SEO } from "../components/seo";
-import { MarkdownRemark } from "../graphql-types";
-import BlogSummary from "../components/blog-summary";
+import { Layout } from "@src/components/layout";
+import { SEO } from "@src/components/seo";
+import { MarkdownRemark } from "@src/graphql-types";
+import BlogSummary from "@src/components/blog-summary";
 import styled from "styled-components";
-import { customMedia } from "../styles/custom-media";
-import { theme } from "../styles/color";
+import { customMedia } from "@src/styles/custom-media";
+import { theme } from "@src/styles/color";
 
 const MainBox = styled.div`
   position: relative;

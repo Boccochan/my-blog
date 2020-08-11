@@ -1,8 +1,8 @@
 import React from "react";
 
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
-import { Layout } from "../components/layout";
-import { SEO } from "../components/seo";
+import { Layout } from "@src/components/layout";
+import { SEO } from "@src/components/seo";
 import styled from "styled-components";
 
 const MainBox = styled.div`

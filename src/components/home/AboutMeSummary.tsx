@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { myMedia } from "../../styles/custom-media";
-import { T1, T4 } from "../../styles/typography";
+import { theme } from "@src/styles/color";
+import { myMedia } from "@src/styles/custom-media";
+import { T1, T4 } from "@src/styles/typography";
 
 const Container = styled.div`
   text-align: center;

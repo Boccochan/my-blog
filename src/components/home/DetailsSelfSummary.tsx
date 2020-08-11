@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { myMedia } from "../../styles/custom-media";
-import { T3, D1 } from "../../styles/typography";
+import { myMedia } from "@src/styles/custom-media";
+import { T3, D1 } from "@src/styles/typography";
 
 const Container = styled.div`
   margin-bottom: 100px;

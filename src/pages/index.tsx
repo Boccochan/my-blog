@@ -1,11 +1,11 @@
 import React from "react";
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
-import { Layout } from "../components/layout";
-import { SEO } from "../components/seo";
-import AboutMe from "../components/home/AboutMe";
-import Intro from "../components/home/Intro";
-import SkillSummary from "../components/home/Skill";
-import Details from "../components/home/Details";
+import { Layout } from "@src/components/layout";
+import { SEO } from "@src/components/seo";
+import AboutMe from "@src/components/home/AboutMe";
+import Intro from "@src/components/home/Intro";
+import SkillSummary from "@src/components/home/Skill";
+import Details from "@src/components/home/Details";
 
 type Props = PageRendererProps;
 

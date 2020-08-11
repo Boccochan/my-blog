@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../styles/color";
-import { myMedia } from "../../styles/custom-media";
-import { T6 } from "../../styles/typography";
+import { theme } from "@src/styles/color";
+import { myMedia } from "@src/styles/custom-media";
+import { T6 } from "@src/styles/typography";
 
 export type Props = {
   title: string;

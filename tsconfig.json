@@ -1,10 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "es6"
-    ],
+    "lib": ["dom", "es6"],
     "sourceMap": true,
     "jsx": "react",
     "noUnusedLocals": true,
@@ -16,12 +13,14 @@
     "declarationMap": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
+    "outDir": ".build",
+    "baseUrl": "./",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@static/*": ["static/*"]
+    },
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types"],
     "esModuleInterop": true
   }
 }
