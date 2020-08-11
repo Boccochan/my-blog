@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import media from "styled-media-query";
 import { navigate } from "gatsby";
+import { myMedia } from "../../styles/custom-media";
 
 const StyledBtn = styled.button`
   width: 100px;
@@ -17,22 +17,16 @@ const StyledBtn = styled.button`
   margin-right: 10px;
 
   &:hover {
-    // background-color: ${theme.colors.red};
     font-weight: bold;
   }
 
-  ${media.lessThan("medium")`
+  ${myMedia.lessThan("iphone5")`
     font-size: 12px;
-    width: 200px;
+    width: 100px;
   `}
 
-  ${media.between("medium", "large")`
+  ${myMedia.between("iphone5", "ipad")`
     font-size: 14px;
-    width: 200px;
-  `}
-
-  ${media.greaterThan("large")`
-    font-size: 20px;
     width: 140px;
   `}
 `;

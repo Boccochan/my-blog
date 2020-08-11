@@ -3,7 +3,7 @@ import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
 import { Layout } from "../components/layout";
 import { SEO } from "../components/seo";
 import styled from "styled-components";
-import { customMedia } from "../styles/custom-media";
+import { customMedia, myMedia } from "../styles/custom-media";
 import { theme } from "../styles/color";
 import media from "styled-media-query";
 import AboutMe from "../components/home/AboutMe";
@@ -19,19 +19,56 @@ const BackgroundBox = styled.div`
   width: 100%;
   height: 400px;
   background-color: ${theme.colors.yellow};
-  // background-color: #21bef0;
-  ${customMedia.between("tiny", "medium")`
-    height: 400px;
-  `} ${customMedia.lessThan("tiny")`
+
+  ${myMedia.lessThan("iphone5")`
+    height: 200px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    height: 200px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    height: 200px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
     height: 300px;
-  `};
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    height: 400px;
+  `}
 `;
 
 const IntroBox = styled.div`
   position: absolute;
-  top: 80px;
-  left: 8vw;
   z-index: 3;
+
+  ${myMedia.lessThan("iphone5")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    top: 40px;
+    left: 4vw;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    top: 80px;
+    left: 8vw;
+  `}
 `;
 
 const IntroLayer = styled.div`
@@ -39,7 +76,8 @@ const IntroLayer = styled.div`
   width: 100%;
   height; auto;
   z-index: 3;
-  ${customMedia.lessThan("tiny")`
+  
+  ${myMedia.lessThan("iphone5")`
     width: 320px;
     max-width: 320px;
   `}
@@ -54,14 +92,25 @@ const CharactorsBox = styled.div`
   z-index: 3;
   opacity: 1;
 
-  ${customMedia.lessThan("huge")`
+  // ${customMedia.lessThan("background")`
+  //   opacity: 0;
+  // `}
+
+  // ${customMedia.between("background", "veryHuge")`
+  //   top: 80px;
+  //   width: 550px;
+  //   right: 80px;
+  // `}
+
+  ${myMedia.lessThan("huge")`
     opacity: 0;
   `}
 
-  ${customMedia.between("huge", "veryHuge")`
-    top: 200px;
+  ${myMedia.between("huge", "max")`
+    top: 80px;
     width: 550px;
-    right: 10px;
+    right: 80px;
+
   `}
 `;
 

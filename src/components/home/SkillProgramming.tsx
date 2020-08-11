@@ -1,27 +1,39 @@
 import React from "react";
 import styled from "styled-components";
 import BarChart from "./BarChart";
-import { customMedia } from "../../styles/custom-media";
-
-const Title = styled.div`
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-`;
+import { Title } from "./SkillTitle";
+import { myMedia } from "../../styles/custom-media";
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-
   width: ${(props: { width: number }) => `${props.width}px`};
 `;
 
 const BarChartBox = styled.div`
-  margin-top: 40px;
+  ${myMedia.lessThan("iphone5")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    margin-top: 16px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    margin-top: 18px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    margin-top: 40px;
+  `}
+
 `;
 
 type Props = {
-  // width: number;
   graphWidth: number;
 };
 

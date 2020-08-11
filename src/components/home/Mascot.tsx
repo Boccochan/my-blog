@@ -8,7 +8,7 @@ import media from "styled-media-query";
 
 const Img = styled.img`
   background-color: transparent;
-  ${customMedia.between("huge", "veryHuge")`
+  ${customMedia.between("medium", "veryHuge")`
     width: 180px;
     height: auto;
   `}

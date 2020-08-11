@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import KeyValue from "./KeyValue";
-
-const Title = styled.div`
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-`;
+import { Title } from "./SkillTitle";
+import { myMedia } from "../../styles/custom-media";
 
 const Container = styled.div`
   margin-right: auto;
@@ -15,7 +11,27 @@ const Container = styled.div`
 `;
 
 const KeyValueBox = styled.div`
-  margin-top: 40px;
+  ${myMedia.lessThan("iphone5")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    margin-top: 16px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    margin-top: 18px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    margin-top: 40px;
+  `}
+
+
 `;
 
 export default function SkillTools() {

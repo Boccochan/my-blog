@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import WorkTimeline from "./DetailsWorkTimeline";
+import { myMedia } from "../../styles/custom-media";
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  width: ${(props: { width: number }) => `${props.width}px`};
+  width: auto;
   margin-bottom: 40px;
 `;
 
@@ -21,20 +21,56 @@ const Summary = styled.div`
   position: relative;
   font-weight: 300;
   margin-bottom: 20px;
-  width: 400px;
+  width: auto;
   line-height: 20px;
   border-bottom: 1px solid ${theme.colors.gray};
 `;
 
 const Title = styled.div`
-  font-size: 12px;
   font-weight: 300;
   margin-bottom: 10px;
+  ${myMedia.lessThan("iphone5")`
+    font-size: 8px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    font-size: 10px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 10px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    font-size: 12px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    font-size: 12px;
+  `}
 `;
 
 const Company = styled.div`
   display: inline-block;
-  font-size: 20px;
+  ${myMedia.lessThan("iphone5")`
+    font-size: 14px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    font-size: 16px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 16px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    font-size: 18px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    font-size: 20px;
+  `}
 `;
 
 const Term = styled.div`
@@ -43,11 +79,49 @@ const Term = styled.div`
   float: right;
   font-size: 12px;
   vertical-align: bottom;
+  ${myMedia.lessThan("iphone5")`
+    font-size: 8px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    font-size: 10px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 10px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    font-size: 12px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    font-size: 12px;
+  `}
+
 `;
 
 const Description = styled.div`
-  font-size: 14px;
   font-weight: 300;
+  ${myMedia.lessThan("iphone5")`
+    font-size: 10px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    font-size: 12px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 12px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    font-size: 14px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    font-size: 14px;
+  `}
 `;
 
 export default function WorkExperience(props: Props) {

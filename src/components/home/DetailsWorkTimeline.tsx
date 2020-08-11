@@ -1,12 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
+import { myMedia } from "../../styles/custom-media";
 
 const Container = styled.div`
-  // margin-right: auto;
-  // margin-left: auto;
-  width: auto;
-  // width: ${(props: { width: number }) => `${props.width}px`};
+  ${myMedia.lessThan("iphone5")`
+    width: 0;
+    opacity: 0;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    width: 0;
+    opacity: 0;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    width: 0;
+    opacity: 0;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    width: auto;
+    opacity: 1;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    width: auto;
+    opacity: 1;
+  `}
+
 `;
 
 const Circle = styled.div`

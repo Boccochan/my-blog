@@ -8,12 +8,7 @@ import {
 } from "recharts";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-
-const Title = styled.div`
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-`;
+import { Title } from "./SkillTitle";
 
 const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};
@@ -56,9 +51,12 @@ function customTick({
 type Props = {
   width: number;
   outerRadius: number;
+  height: number;
+  cy: string;
 };
 
 export default function SkillSummaryChart(props: Props) {
+  console.log(props);
   const data = [
     {
       subject: "Front-End",
@@ -91,10 +89,10 @@ export default function SkillSummaryChart(props: Props) {
       <Title>Skill Summary</Title>
       <RadarChart
         cx="50%"
-        cy="50%"
+        cy={props.cy}
         outerRadius={props.outerRadius}
         width={props.width}
-        height={300}
+        height={props.height}
         data={data}
       >
         <PolarGrid />
@@ -103,8 +101,6 @@ export default function SkillSummaryChart(props: Props) {
         <Radar
           name="Yasuhiro"
           dataKey="A"
-          // stroke="#8884d8"
-          // fill="#8884d8"
           stroke={theme.colors.blue}
           fill={theme.colors.blue}
           fillOpacity={0.7}
