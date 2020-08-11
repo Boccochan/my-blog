@@ -13,7 +13,6 @@ const Container = styled.div`
 
 const Block = styled.div`
   width: 400px;
-  // margin-top: 100px;
   margin-right: auto;
   margin-left: auto;
   ${customMedia.greaterThan("large")`
