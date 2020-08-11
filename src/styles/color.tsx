@@ -11,7 +11,9 @@ export type Colors = {
   blogBackground: string;
   purple: string;
   purpleLight: string;
+  yellow: string;
   red: string;
+  green: string;
 };
 
 export type Theme = {
@@ -24,6 +26,7 @@ export const theme: Theme = {
     whiteLight: "f9f9f9",
     whiteSuperLight: "#fffdfd",
     blue: "#2f80ed",
+    blueLight: "#21bef0",
     gray: "#4f4f4f",
     grayLight: "#bdbdbd",
     graySuperLight: "#e0e0e0",
@@ -31,6 +34,9 @@ export const theme: Theme = {
     grayDark: "#333",
     purple: "#bb6bd9",
     purpleLight: "#e3a5fb",
+    // purpleLight: "#F2C94C",
+    yellow: "#F2C94C",
     red: "#eb5757",
+    green: "#05D15B",
   },
 } as Theme;

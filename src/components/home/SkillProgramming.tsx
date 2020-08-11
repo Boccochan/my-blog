@@ -1,12 +1,8 @@
 import React from "react";
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Bar } from "recharts";
 import styled from "styled-components";
-
-const Title = styled.div`
-  font-size: 30px;
-  font-weight: 300;
-  text-align: center;
-`;
+import BarChart from "./BarChart";
+import { Title } from "./SkillTitle";
+import { myMedia } from "../../styles/custom-media";
 
 const Container = styled.div`
   margin-right: auto;
@@ -14,8 +10,30 @@ const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};
 `;
 
+const BarChartBox = styled.div`
+  ${myMedia.lessThan("iphone5")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    margin-top: 16px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    margin-top: 18px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    margin-top: 20px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    margin-top: 40px;
+  `}
+
+`;
+
 type Props = {
-  // width: number;
   graphWidth: number;
 };
 
@@ -27,7 +45,7 @@ export default function SkillProgramming(props: Props) {
     },
     {
       name: "Javascript",
-      level: 60,
+      level: 40,
     },
     {
       name: "Python3",
@@ -47,29 +65,21 @@ export default function SkillProgramming(props: Props) {
     },
     {
       name: "SQL",
-      level: 30,
+      level: 28,
     },
     {
       name: "Bash",
-      level: 40,
+      level: 34,
     },
   ];
   return (
     <Container width={props.graphWidth}>
       <Title>Programming Skills</Title>
-      <BarChart
-        width={props.graphWidth}
-        height={300}
-        data={data}
-        layout="vertical"
-        margin={{ top: 35, right: 10, left: 10, bottom: 5 }}
-      >
-        <XAxis type="number" tick={{ fontWeight: 30 }} />
-        <YAxis type="category" dataKey="name" tick={{ fontSize: 12 }} />
-        <CartesianGrid strokeDasharray="3 3" />
-        <Tooltip />
-        <Bar dataKey="level" fill="#82ca9d" />
-      </BarChart>
+      <BarChartBox>
+        {data.map((prog) => {
+          return <BarChart title={prog.name} level={prog.level} />;
+        })}
+      </BarChartBox>
     </Container>
   );
 }

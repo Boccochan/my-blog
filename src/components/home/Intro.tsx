@@ -3,96 +3,107 @@ import styled from "styled-components";
 import { theme } from "../../styles/color";
 import media from "styled-media-query";
 import Button from "./Button";
+import { myMedia, mediaType } from "../../styles/custom-media";
+
+const Box = styled.div`
+  ${myMedia.lessThan("iphone5")`
+    width: ${mediaType.iphone5};
+  `}
+`;
 
 const Title = styled.div`
-  color: ${theme.colors.white};
+  color: ${theme.colors.grayDark};
   font-family: "Roboto", sans-serif;
 
-  ${media.lessThan("small")`
-    width: 340px;
+  ${myMedia.lessThan("iphone5")`
     font-size: 30px;
   `}
 
-  ${media.between("small", "medium")`
-    width: 100%;
-    font-size: 50px;
+  ${myMedia.between("iphone5", "iphone678plus")`
+    font-size: 36px;
   `}
 
-  ${media.between("medium", "large")`
-    width: 100%;
-    font-size: 80px; 
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 40px;
   `}
 
-  ${media.greaterThan("large")`
-    width: 100%;
+  ${myMedia.between("ipad", "medium")`
+    font-size: 60px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
     font-size: 80px;
   `}
 `;
 
 const Introduction = styled.div`
-  color: ${theme.colors.gray};
+  color: ${theme.colors.grayDark};
   font-weight: 300;
   font-family: "Roboto", sans-serif;
 
-  ${media.lessThan("small")`
-    min-width: 340px;
+  ${myMedia.lessThan("iphone5")`
     font-size: 10px;
   `}
 
-  ${media.between("small", "medium")`
-    width: 100%;
+  ${myMedia.between("iphone5", "iphone678plus")`
     font-size: 12px;
   `}
 
-  ${media.between("medium", "large")`
-    width: 100%;
+  ${myMedia.between("iphone678plus", "ipad")`
+    font-size: 14px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
     font-size: 20px;
   `}
 
-  ${media.greaterThan("large")`
-    width: 100%;
-    font-size: 30px;
+  ${myMedia.greaterThan("medium")`
+    font-size: 24px;
   `}
 `;
 
 const Container = styled.div`
+  position: relative;
+  display: flex;
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 
-  // ${media.lessThan("small")`
-  //   margin-top: 10px;
-  //   margin-bottom: 10px;
-  // `}
+  ${myMedia.lessThan("iphone5")`
+    margin-bottom: 30px;
+  `}
 
-  // ${media.between("small", "medium")`
-  //   margin-top: 20px;
-  //   margin-bottom: 20px;
-  // `}
+  ${myMedia.between("iphone5", "iphone678plus")`
 
-  // ${media.greaterThan("medium")`
-  //   margin-top: 30px;
-  //   margin-bottom: 30px;
-  // `}
+    margin-bottom: 30px;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    margin-bottom: 30px;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    margin-bottom: 30px;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    margin-bottom: 60px;
+  `}
 `;
 
 export default function Intro() {
   return (
-    <div>
-      <Title>
-        Technology makes
-        <br />
-        our future better!!
-      </Title>
+    <Box>
+      <Title>I love technology</Title>
       <Container>
         <Introduction>
           Hello there! I am Yasuhiro Ito who is a software engineer.
-          <br /> I have been posting tech blogs almost everyday to solve
-          <br /> our problems.
+          <br /> I have been posting tech blogs and creating playground.
         </Introduction>
       </Container>
       <Container>
-        <Button to="/blog" name="See blog" />
+        <Button to="/blog" name="Blog" />
+        <Button to="/playground" name="Playground" />
       </Container>
-    </div>
+    </Box>
   );
 }
