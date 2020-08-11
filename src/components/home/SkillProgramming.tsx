@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import BarChart from "./BarChart";
+import BarChart from "./SkillBarChart";
 import { myMedia } from "../../styles/custom-media";
 import { T2 } from "../../styles/typography";
 import { Title } from "./Title";

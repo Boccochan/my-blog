@@ -1,108 +1,110 @@
 import React from "react";
 import styled from "styled-components";
+import { myMedia } from "../../styles/custom-media";
 import { theme } from "../../styles/color";
-import Button from "./Button";
-import { myMedia, mediaType } from "../../styles/custom-media";
+import IntroNav from "./IntroNav";
+import { MascotIntro } from "./IntroMascot";
 
-const Box = styled.div`
-  ${myMedia.lessThan("iphone5")`
-    width: ${mediaType.iphone5};
-  `}
-`;
-
-const Title = styled.div`
-  color: ${theme.colors.grayDark};
-  font-family: "Roboto", sans-serif;
-
-  ${myMedia.lessThan("iphone5")`
-    font-size: 30px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 36px;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 40px;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 60px;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 80px;
-  `}
-`;
-
-const Introduction = styled.div`
-  color: ${theme.colors.grayDark};
-  font-weight: 300;
-  font-family: "Roboto", sans-serif;
-
-  ${myMedia.lessThan("iphone5")`
-    font-size: 10px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 12px;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 14px;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 20px;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 24px;
-  `}
-`;
-
-const Container = styled.div`
+const BackgroundBox = styled.div`
   position: relative;
-  display: flex;
-  margin-top: 30px;
-  margin-bottom: 60px;
+  z-index: 2;
+  width: 100%;
+  height: 400px;
+  background-color: ${theme.colors.yellow};
 
   ${myMedia.lessThan("iphone5")`
-    margin-bottom: 30px;
+    height: 200px;
   `}
 
   ${myMedia.between("iphone5", "iphone678plus")`
-
-    margin-bottom: 30px;
+    height: 200px;
   `}
 
   ${myMedia.between("iphone678plus", "ipad")`
-    margin-bottom: 30px;
+    height: 200px;
   `}
 
   ${myMedia.between("ipad", "medium")`
-    margin-bottom: 30px;
+    height: 300px;
   `}
 
   ${myMedia.greaterThan("medium")`
-    margin-bottom: 60px;
+    height: 400px;
+  `}
+`;
+
+const IntroBox = styled.div`
+  position: absolute;
+  z-index: 3;
+
+  ${myMedia.lessThan("iphone5")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("iphone5", "iphone678plus")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("iphone678plus", "ipad")`
+    top: 30px;
+    left: 4vw;
+  `}
+
+  ${myMedia.between("ipad", "medium")`
+    top: 40px;
+    left: 4vw;
+  `}
+
+  ${myMedia.greaterThan("medium")`
+    top: 80px;
+    left: 8vw;
+  `}
+`;
+
+const IntroLayer = styled.div`
+  postion: relative;
+  width: 100%;
+  height; auto;
+  z-index: 3;
+  
+  ${myMedia.lessThan("iphone5")`
+    width: 320px;
+    max-width: 320px;
+  `}
+`;
+
+const CharactorsBox = styled.div`
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  width: 800px;
+  height: 350px;
+  z-index: 3;
+  opacity: 1;
+
+  ${myMedia.lessThan("huge")`
+    opacity: 0;
+  `}
+
+  ${myMedia.between("huge", "max")`
+    top: 80px;
+    width: 550px;
+    right: 80px;
   `}
 `;
 
 export default function Intro() {
   return (
-    <Box>
-      <Title>I love technology</Title>
-      <Container>
-        <Introduction>
-          Hello there! I am Yasuhiro Ito who is a software engineer.
-          <br /> I have been posting tech blogs and creating playground.
-        </Introduction>
-      </Container>
-      <Container>
-        <Button to="/blog" name="Blog" />
-        <Button to="/playground" name="Playground" />
-      </Container>
-    </Box>
+    <IntroLayer>
+      <BackgroundBox />
+      <IntroBox>
+        <IntroNav />
+      </IntroBox>
+      <CharactorsBox>
+        <MascotIntro />
+      </CharactorsBox>
+    </IntroLayer>
   );
 }

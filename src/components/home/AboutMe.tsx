@@ -9,6 +9,12 @@ const Container = styled.div`
   position: relative;
   width: 100%;
   display: flex;
+  ${customMedia.lessThan("large")`
+    height: auto;
+  `}
+  ${customMedia.greaterThan("large")`
+    height: 350px;
+  `}
 `;
 
 const Block = styled.div`
