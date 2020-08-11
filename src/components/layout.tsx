@@ -9,7 +9,6 @@ import { Breadcrumbs } from "./breadcrumbs";
 interface Props extends PageRendererProps {
   title: string;
   children: ReactNode;
-  crumbLabel: string;
 }
 
 const Background = styled.div`
@@ -18,15 +17,12 @@ const Background = styled.div`
 
 const Wrapper = styled.div`
   min-height: calc(100vh - 50px);
-  // position: relative;
   min-height: 100vh;
   max-height: auto;
-  // background-color: ${theme.colors.blogBackground};
 `;
 
 const Footer = styled.footer`
   position: relative;
-  // position: absolute;
   background-color: ${theme.colors.gray};
   color: ${theme.colors.white};
   height: 50px;
@@ -35,7 +31,6 @@ const Footer = styled.footer`
   align-items: center;
   z-index: 100;
   margin-top: auto;
-  // bottom: 0;
 `;
 
 const Main = styled.div`

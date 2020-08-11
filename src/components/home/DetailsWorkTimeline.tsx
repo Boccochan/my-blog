@@ -28,7 +28,6 @@ const Container = styled.div`
     width: auto;
     opacity: 1;
   `}
-
 `;
 
 const Circle = styled.div`
@@ -60,7 +59,7 @@ const Bar = styled.div`
 
 export default function WorkTimeline() {
   return (
-    <Container width={300}>
+    <Container>
       <Circle color={theme.colors.red}>Now</Circle>
       <Bar color={theme.colors.red} height={160} />
       <Circle color={theme.colors.red}>2017</Circle>

@@ -1,13 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import KeyValue from "./KeyValue";
+import KeyValue from "./SkillKeyValue";
 import { myMedia } from "../../styles/custom-media";
 import { Title } from "./Title";
 
 const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
-  text-align: center;
 `;
 
 const KeyValueBox = styled.div`

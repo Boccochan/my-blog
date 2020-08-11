@@ -18,11 +18,7 @@ export const NotFoundPage = (props: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout
-      location={props.location}
-      title={data.site.siteMetadata.title}
-      crumbLabel={siteTitle}
-    >
+    <Layout location={props.location} title={data.site.siteMetadata.title}>
       <SEO title="404: Not Found" />
       <h1>Not Found</h1>
       <p>You just hit a route that doesn&#39;t exist... the sadness.</p>

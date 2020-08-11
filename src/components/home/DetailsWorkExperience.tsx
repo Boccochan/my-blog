@@ -22,17 +22,6 @@ const Container = styled.div`
     padding-right: 12px;
     padding-left: 12px;
   `}
-
-  // ${myMedia.between("ipad", "medium")`
-  //   font-size: 30px;
-  //   margin-bottom: 40px;
-  // `}
-
-  // ${myMedia.greaterThan("medium")`
-  //   font-size: 30px;
-  //   margin-bottom: 50px;
-  // `}
-
 `;
 
 const Experience = styled.div`

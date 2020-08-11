@@ -12,7 +12,7 @@ type Props = {
 const Container = styled.div`
   position: relative;
   display: flex;
-  width: 400px;
+  width: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-right: auto;
