@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import media from "styled-media-query";
 import styled, { css, keyframes } from "styled-components";
 import { Link } from "gatsby";
-import { customMedia } from "@src/styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 import { theme } from "@src/styles/color";
 
 type Props = {
@@ -20,7 +19,8 @@ const StyledNav = styled.nav`
   width: 100%;
   position: fixed;
   z-index: 1000;
-  ${customMedia.lessThan("tiny")`
+
+  ${myMedia.lessThan("iphone5")`
     width: 320px;
   `}
 `;
@@ -30,7 +30,7 @@ const StyledBurger = styled.div`
   right: 2%;
   opacity: 0;
   z-index: 1;
-  ${media.lessThan("large")`
+  ${myMedia.lessThan("ipadpro")`
     opacity: 1;
     z-index: 100;
   `}
@@ -165,7 +165,7 @@ const StyledLink = styled(Link)`
   font-weight: bold;
   box-shadow: none;
 
-  ${media.lessThan("small")`
+  ${myMedia.lessThan("surfaceDuo")`
     font-size: 14px;
     height: 160px;
     width: 300px;
@@ -178,7 +178,7 @@ const StyledSearchBox = styled.div`
   min-height: 8vh;
   position: absolute;
 
-  ${media.lessThan("large")`
+  ${myMedia.lessThan("medium")`
     opacity: 0;
   `}
 `;

@@ -5,7 +5,7 @@ import { SEO } from "@src/components/seo";
 import { MarkdownRemark } from "@src/graphql-types";
 import BlogSummary from "@src/components/blog-summary";
 import styled from "styled-components";
-import { customMedia } from "@src/styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 import { theme } from "@src/styles/color";
 
 const MainBox = styled.div`
@@ -14,7 +14,7 @@ const MainBox = styled.div`
   background-color: ${theme.colors.whiteLight};
   z-index: 3;
   min-height: 100vh;
-  ${customMedia.lessThan("tiny")`
+  ${myMedia.lessThan("iphone5")`
     width: 320px;
     max-width: 320px;
   `}
@@ -61,10 +61,10 @@ const StyledContainer = styled.div`
   display: grid;
   gap: 25px;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  ${customMedia.lessThan("medium")`
+  ${myMedia.lessThan("ipad")`
     grid-template-columns: repeat(1, minmax(200px, 1fr));
   `}
-  ${customMedia.between("medium", "large")`
+  ${myMedia.between("ipad", "medium")`
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   `}
 `;

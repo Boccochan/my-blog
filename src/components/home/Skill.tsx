@@ -4,7 +4,7 @@ import SkillProgramming from "./SkillProgramming";
 import SkillTools from "./SkillTools";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
-import { customMedia } from "@src/styles/custom-media";
+import { myMedia } from "@src/styles/custom-media";
 
 const Container = styled.div`
   position: relative;
@@ -16,7 +16,7 @@ const Container = styled.div`
   gap: 25px;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
 
-  ${customMedia.lessThan("large")`
+  ${myMedia.lessThan("medium")`
     grid-template-columns: repeat(1, minmax(200px, 1fr));
   `}
 `;
