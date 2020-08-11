@@ -1,18 +1,12 @@
 import React, { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { theme } from "../../styles/color";
-// import { customMedia } from "../../styles/custom-media";
-import { myMedia, mediaType } from "../../styles/custom-media";
+import { T6 } from "../../styles/typography";
+import { mediaType } from "../../styles/custom-media";
 
 type Props = {
   title: string;
   level: number;
-};
-
-type BarType = {
-  width: number;
-  level: number;
-  color: string;
 };
 
 const Container = styled.div`
@@ -25,7 +19,7 @@ const Container = styled.div`
   margin-left: auto;
 `;
 
-const Title = styled.div`
+const Title = styled(T6)`
   padding-right: 10px;
   display: flex;
   justify-content: flex-end;
@@ -33,27 +27,6 @@ const Title = styled.div`
   font-size: 12px;
   color: #666666;
   width: 80px;
-
-  ${myMedia.lessThan("iphone5")`
-    font-size: 8px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 8px;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 9px;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 10px;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 10px;
-  `}
-
 `;
 
 const Bar = styled.div`

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { theme } from "../../styles/color";
-import { customMedia } from "../../styles/custom-media";
 import { myMedia } from "../../styles/custom-media";
+import { T1, T4 } from "../../styles/typography";
 
 const Container = styled.div`
   text-align: center;
@@ -10,36 +10,11 @@ const Container = styled.div`
   max-width: 400px;
 `;
 
-const Name = styled.div`
+const Name = styled(T1)`
   color: ${theme.colors.grayDark};
-  font-size: 48px;
-  font-weight: 300;
-  
-  ${myMedia.lessThan("iphone5")`
-    font-size: 30px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 36px;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 40px;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 48px;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 48px;
-  `}
-
 `;
 
 const Job = styled.div`
-  margin-top: 30px;
-
   ${myMedia.lessThan("iphone5")`
     margin-top: 12px;
   `}
@@ -59,47 +34,21 @@ const Job = styled.div`
   ${myMedia.greaterThan("medium")`
     margin-top: 30px;
   `}
-
 `;
 
-const Summary = styled.div`
+const Summary = styled(T4)`
   color: ${theme.colors.gray};
   line-height: 22px;
-  font-size: ${(props: { fontSize: number }) => props.fontSize}px;
-  font-weight: 300;
-  // ${customMedia.lessThan("medium")`
-  //   font-size: 12px;
-  // `}
-
-  ${myMedia.lessThan("iphone5")`
-    font-size: 12px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 12px;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 14px;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 14px;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 16px;
-  `}
 `;
 
 export default function AboutMeSummary() {
   return (
     <Container>
       <Name>Yasuhiro Ito</Name>
-      <Summary fontSize={14}>yasuhiro0312q@gamil.com</Summary>
+      <Summary>yasuhiro0312q@gamil.com</Summary>
       <Job>
-        <Summary fontSize={20}>Software Engineer</Summary>
-        <Summary fontSize={20}>Over 14 years professional experience</Summary>
+        <Summary>Software Engineer</Summary>
+        <Summary>Over 14 years professional experience</Summary>
       </Job>
     </Container>
   );

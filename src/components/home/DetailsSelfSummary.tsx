@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { myMedia } from "../../styles/custom-media";
+import { T3, D1 } from "../../styles/typography";
 
 const Container = styled.div`
   margin-bottom: 100px;
@@ -35,78 +36,41 @@ const Container = styled.div`
   `}
 `;
 
-const Summary = styled.div`
+const Summary = styled(T3)`
   position: relative;
-  font-size: 20px;
-  font-weight: 300;
   width: auto;
   line-height: 20px;
 
   ${myMedia.lessThan("iphone5")`
     margin-bottom: 12px;
-    font-size: 14px;
   `}
 
   ${myMedia.between("iphone5", "iphone678plus")`
     margin-bottom: 16px;
-    font-size: 16px;
   `}
 
   ${myMedia.between("iphone678plus", "ipad")`
     margin-bottom: 18px;
-    font-size: 16px;
   `}
 
   ${myMedia.between("ipad", "medium")`
     margin-bottom: 20px;
-    font-size: 18px;
   `}
 
   ${myMedia.greaterThan("medium")`
     margin-bottom: 20px;
-    font-size: 20px;
   `}
 `;
 
-const Details = styled.div`
+const Details = styled(D1)`
   position: relative;
-  font-size: 14px;
-  font-weight: 300;
   margin-bottom: 40px;
   width: auto;
-
-  ${myMedia.lessThan("iphone5")`
-    font-size: 10px;
-  `}
-
-  ${myMedia.between("iphone5", "iphone678plus")`
-    font-size: 12px;
-    width: auto;
-  `}
-
-  ${myMedia.between("iphone678plus", "ipad")`
-    font-size: 12px;
-    width: auto;
-  `}
-
-  ${myMedia.between("ipad", "medium")`
-    font-size: 14px;
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-  `}
-
-  ${myMedia.greaterThan("medium")`
-    font-size: 14px;
-    width: 500px;
-    margin-right: auto;
-    margin-left: auto;
-  `}
 `;
 
 export default function SelfSummary() {
   return (
-    <Container width={500}>
+    <Container>
       <Summary>Self Summary</Summary>
       <Details>
         Experienced software engineer with wide range of technologies. Skills
