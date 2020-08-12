@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import MySummary from "./AboutMeSummary";
-import SittingRobotImg from "@static/home/sitting-robot.png";
+import SittingRobotImg from "@static/home/sitting-robot-min.png";
 import StarImg from "@static/home/star.png";
 import { myMedia } from "@src/styles/custom-media";
 

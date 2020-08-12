@@ -36,7 +36,7 @@ const UnderDevelopment = (props: Props) => {
         title={props.pageTitle}
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      ;<MainBox>Under development</MainBox>
+      <MainBox>Under development</MainBox>
     </Layout>
   );
 };

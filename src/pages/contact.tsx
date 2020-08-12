@@ -1,11 +1,31 @@
 import React from "react";
-import { PageRendererProps } from "gatsby";
-import UnderDevelopment from "@src/components/under-development";
+import { Layout } from "@src/components/layout";
+import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
+import { SEO } from "@src/components/seo";
 
-type Props = PageRendererProps;
+type Props = PageRendererProps & { pageTitle: string };
 
 const Contact = (props: Props) => {
-  return <UnderDevelopment location={props.location} pageTitle="Contact" />;
+  const data = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  const siteTitle = data.site.siteMetadata.title;
+
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        title={props.pageTitle}
+        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+      />
+    </Layout>
+  );
 };
 
 export default Contact;
