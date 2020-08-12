@@ -3,6 +3,7 @@ import styled from "styled-components";
 import KeyValue from "./SkillKeyValue";
 import { myMedia } from "@src/styles/custom-media";
 import { Title } from "./Title";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
   margin-right: auto;
@@ -33,24 +34,30 @@ const KeyValueBox = styled.div`
 `;
 
 export default function SkillTools() {
+  const result = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          self {
+            others {
+              title
+              name
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Container>
       <Title>Others</Title>
       <KeyValueBox>
-        <KeyValue title="Framework" name={["Vue", "Nuxt", "React", "Gatsby"]} />
-        <KeyValue title="DB" name={["MariaDB", "DynamoDB", "Redus", "MySQL"]} />
-        <KeyValue
-          title="DevTools"
-          name={["VScode", "Github", "Actions", "Circle CI"]}
-        />
-        <KeyValue
-          title="Environment"
-          name={["Linux", "Docker", "ECS", "Sentry"]}
-        />
-        <KeyValue title="Unit Test" name={["jest", "pytest"]} />
-        <KeyValue title="Architecture" name={["Serverless", "SPA"]} />
-        <KeyValue title="API" name={["REST", "GraphQL"]} />
-        <KeyValue title="Communication" name={["Slack", "MS Teams"]} />
+        {result.site.siteMetadata.self.others.map(
+          (tool: { title: string; name: string[] }) => (
+            <KeyValue title={tool.title} name={tool.name} />
+          )
+        )}
       </KeyValueBox>
     </Container>
   );

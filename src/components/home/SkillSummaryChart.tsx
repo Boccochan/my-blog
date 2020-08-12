@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import { Title } from "./Title";
 import { mediaType } from "@src/styles/custom-media";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
   width: ${(props: { width: number }) => `${props.width}px`};
@@ -103,32 +104,20 @@ export default function SkillSummaryChart() {
     return () => window.removeEventListener("resize", resizeWindow);
   }, []);
 
-  const data = [
-    {
-      subject: "Front-End",
-      A: 60,
-    },
-    {
-      subject: "Back-End",
-      A: 78,
-    },
-    {
-      subject: "AWS",
-      A: 68,
-    },
-    {
-      subject: "DB",
-      A: 60,
-    },
-    {
-      subject: "Network",
-      A: 40,
-    },
-    {
-      subject: "Security",
-      A: 50,
-    },
-  ];
+  const result = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          self {
+            skillSummary {
+              subject
+              level
+            }
+          }
+        }
+      }
+    }
+  `);
 
   return (
     <Container width={width}>
@@ -139,14 +128,14 @@ export default function SkillSummaryChart() {
         outerRadius={outerRadius}
         width={width}
         height={height}
-        data={data}
+        data={result.site.siteMetadata.self.skillSummary}
       >
         <PolarGrid />
         <PolarAngleAxis dataKey="subject" tick={customTick} />
         <PolarRadiusAxis domain={[0, 100]} />
         <Radar
           name="Yasuhiro"
-          dataKey="A"
+          dataKey="level"
           stroke={theme.colors.blue}
           fill={theme.colors.blue}
           fillOpacity={0.7}

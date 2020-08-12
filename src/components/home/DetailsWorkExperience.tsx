@@ -4,6 +4,7 @@ import WorkTimeline from "./DetailsWorkTimeline";
 import WorkHistory from "./DetailsWorkHistory";
 import { myMedia } from "@src/styles/custom-media";
 import { Title } from "./Title";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
   width: auto;
@@ -78,48 +79,44 @@ const History = styled.div`
 `;
 
 export default function WorkExperience() {
-  const history = [
-    {
-      company: "Qualitia.co.ltd.,",
-      term: "1.5 years",
-      title: "Software Engineer",
-      details:
-        "Developing managed DNS service and new services from scratch. Researching and building automated deploying and testing systems on a cloud infrastructure.",
-    },
-    {
-      company: "deBit.co.ltd.,",
-      term: "9 months",
-      title: "Software Engineer",
-      details: "Developed a core part of a trading virtual currency system.",
-    },
-    {
-      company: "B.U.G.co.ltd.,",
-      term: "6 months",
-      title: "Software Engineer",
-      details: "Developed a mail monitoring system and supported customers",
-    },
-    {
-      company: "Hagiwara Solutions.co.ltd.,",
-      term: "10 years",
-      title: "Software / Firmware Engineer",
-      details:
-        "Developed a part of SSD firmware. Builded SSD and NAND flash memory testing system.",
-    },
-  ];
+  const result = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          self {
+            history {
+              company
+              term
+              title
+              details
+            }
+          }
+        }
+      }
+    }
+  `);
+
   return (
-    <Container width={500}>
+    <Container>
       <Title>Work Experience</Title>
       <Experience>
         <WorkTimeline />
         <History>
-          {history.map((data) => (
-            <WorkHistory
-              company={data.company}
-              term={data.term}
-              title={data.title}
-              details={data.details}
-            />
-          ))}
+          {result.site.siteMetadata.self.history.map(
+            (data: {
+              company: string;
+              term: string;
+              title: string;
+              details: string;
+            }) => (
+              <WorkHistory
+                company={data.company}
+                term={data.term}
+                title={data.title}
+                details={data.details}
+              />
+            )
+          )}
         </History>
       </Experience>
     </Container>

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import { myMedia } from "@src/styles/custom-media";
 import { T1, T4 } from "@src/styles/typography";
+import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
   text-align: center;
@@ -42,10 +43,22 @@ const Summary = styled(T4)`
 `;
 
 export default function AboutMeSummary() {
+  const result = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          self {
+            email
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Container>
       <Name>Yasuhiro Ito</Name>
-      <Summary>yasuhiro0312q@gamil.com</Summary>
+      <Summary>{result.site.siteMetadata.self.email}</Summary>
       <Job>
         <Summary>Software Engineer</Summary>
         <Summary>Over 14 years professional experience</Summary>

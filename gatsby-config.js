@@ -8,6 +8,114 @@ module.exports = {
     social: {
       twitter: `itoq`,
     },
+    self: {
+      email: "yasuhiro0312q@gmail.com",
+      skillSummary: [
+        { subject: "Front-end", level: 60 },
+        { subject: "Back-End", level: 78 },
+        { subject: "Cloud", level: 68 },
+        { subject: "DB", level: 60 },
+        { subject: "Network", level: 40 },
+        { subject: "Security", level: 50 },
+      ],
+      programmingLevels: [
+        {
+          name: "Typescript",
+          level: 70,
+        },
+        {
+          name: "Javascript",
+          level: 40,
+        },
+        {
+          name: "Python3",
+          level: 65,
+        },
+        {
+          name: "Rust",
+          level: 40,
+        },
+        {
+          name: "HTML/CSS",
+          level: 50,
+        },
+        {
+          name: "C",
+          level: 84,
+        },
+        {
+          name: "SQL",
+          level: 28,
+        },
+        {
+          name: "Bash",
+          level: 34,
+        },
+      ],
+      others: [
+        {
+          title: "Framework",
+          name: ["Vue", "Nuxt", "React", "Gatsby"],
+        },
+        {
+          title: "DB",
+          name: ["MariaDB", "DynamoDB", "Redis", "MySQL"],
+        },
+        {
+          title: "DevTools",
+          name: ["VScode", "Github", "Actions", "Circle CI"],
+        },
+        {
+          title: "Environment",
+          name: ["Linux", "Docker", "AWS", "Sentry"],
+        },
+        {
+          title: "Unit Test",
+          name: ["jest", "pytest"],
+        },
+        {
+          title: "Architecture",
+          name: ["Serverless", "SPA"],
+        },
+        {
+          title: "API",
+          name: ["REST", "GraphQL"],
+        },
+        {
+          title: "Communication",
+          name: ["Slack", "MS Teams"],
+        },
+      ],
+      history: [
+        {
+          company: "Qualitia.co.ltd.,",
+          term: "1.5 years",
+          title: "Software Engineer",
+          details:
+            "Developing managed DNS service and new services from scratch. Researching and building automated deploying and testing systems on a cloud infrastructure.",
+        },
+        {
+          company: "deBit.co.ltd.,",
+          term: "9 months",
+          title: "Software Engineer",
+          details:
+            "Developed a core part of a trading virtual currency system.",
+        },
+        {
+          company: "B.U.G.co.ltd.,",
+          term: "6 months",
+          title: "Software Engineer",
+          details: "Developed a mail monitoring system and supported customers",
+        },
+        {
+          company: "Hagiwara Solutions.co.ltd.,",
+          term: "10 years",
+          title: "Software / Firmware Engineer",
+          details:
+            "Developed a part of SSD firmware. Builded SSD and NAND flash memory testing system.",
+        },
+      ],
+    },
   },
   plugins: [
     `gatsby-plugin-sass`,
