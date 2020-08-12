@@ -115,7 +115,7 @@ const StyledNavLinks = styled.ul`
           transform: translateX(100%);
         `}
 
-  ${media.lessThan("large")`
+  ${myMedia.lessThan("medium")`
     position: absolute;
     right: 0px;
     height: 92vh;

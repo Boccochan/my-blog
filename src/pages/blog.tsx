@@ -105,7 +105,15 @@ const BlogIndex = (props: Props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="All posts"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        keywords={[
+          `blog`,
+          `gatsby`,
+          `javascript`,
+          `react`,
+          "IT",
+          "programming",
+          "typescript",
+        ]}
       />
       <MainBox>
         <NewestBlogsTag id="newest-blog">
