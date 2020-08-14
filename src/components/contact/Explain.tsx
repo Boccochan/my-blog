@@ -36,7 +36,7 @@ const Fadein = keyframes`
 const Ballon = styled.div`
   position: relative;
   display: inline-block;
-  margin: 8em 0;
+  margin: 4em 0;
   padding: 7px 10px;
   min-width: 120px;
   max-width: 100%;
