@@ -103,7 +103,7 @@ export default function Intro(props: { ready: () => void }) {
         <IntroNav />
       </IntroBox>
       <CharactorsBox>
-        <MascotIntro ready={props.ready} />
+        <MascotIntro />
       </CharactorsBox>
     </IntroLayer>
   );

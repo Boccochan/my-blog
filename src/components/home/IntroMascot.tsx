@@ -5,14 +5,6 @@ import YellowRobotImg from "@static/home/small-yellow-robot-min.png";
 import OrangeRobotImg from "@static/home/orange-robot-min.png";
 import { myMedia } from "@src/styles/custom-media";
 
-const Img = styled.img`
-  background-color: transparent;
-  // ${myMedia.between("ipad", "max")`
-  //   width: 180px;
-  //   height: auto;
-  // `}
-`;
-
 const ImgGreen = styled.img`
   background-color: transparent;
   ${myMedia.between("ipad", "max")`
