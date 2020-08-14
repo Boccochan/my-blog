@@ -4,9 +4,10 @@ import GreenRobotImg from "@static/home/green-robot-min.png";
 import YellowRobotImg from "@static/home/small-yellow-robot-min.png";
 import OrangeRobotImg from "@static/home/orange-robot-min.png";
 import { myMedia } from "@src/styles/custom-media";
+import { PreloadImg } from "@src/components/lib/Img";
 
-const Img = styled.img`
-  background-color: transparent;
+const Img = styled(PreloadImg)`
+  // background-color: transparent;
   ${myMedia.between("ipad", "max")`
     width: 180px;
     height: auto;
@@ -38,10 +39,10 @@ export class MascotIntro extends Component {
   constructor(props: any) {
     super(props);
 
-    const imag = new Image();
-    imag.src = GreenRobotImg;
-    imag.src = OrangeRobotImg;
-    imag.src = YellowRobotImg;
+    // const imag = new Image();
+    // imag.src = GreenRobotImg;
+    // imag.src = OrangeRobotImg;
+    // imag.src = YellowRobotImg;
   }
 
   render() {
