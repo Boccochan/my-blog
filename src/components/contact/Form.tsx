@@ -83,7 +83,11 @@ export default () => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    console.log(name);
+    console.log(email);
+    console.log(message);
     const form = e.target;
+    // console.log(form.getAttribute("name"));
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
