@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import TextareaAutosize from "react-textarea-autosize";
+import { navigate } from "gatsby";
 
 const Form = styled.form`
   width: 100%;
@@ -56,9 +57,9 @@ const EnabledButton = styled.button`
 `;
 
 export default () => {
-  const [name, setName] = useState(0);
-  const [email, setEmail] = useState(0);
-  const [message, setMessage] = useState(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const Button = (props: { disable: boolean }) => {
     if (props.disable) {
@@ -68,24 +69,55 @@ export default () => {
     }
   };
 
-  const onChangeName = (num: number) => setName(num);
-  const onChangeEmail = (num: number) => setEmail(num);
-  const onChangeMessage = (num: number) => setMessage(num);
+  const onChangeName = (value: string) => setName(value);
+  const onChangeEmail = (value: string) => setEmail(value);
+  const onChangeMessage = (value: string) => setMessage(value);
+
+  const encode = (data: any) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const form = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        name: name,
+        email: email,
+        message: message,
+      }),
+    })
+      .then(() => navigate("/"))
+      .catch((error: any) => alert(error));
+  };
 
   return (
-    <Form name="contact" method="POST" data-netlify="true">
+    <Form
+      name="contact"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      onSubmit={handleSubmit}
+    >
       <Layout>
         <Input
           placeholder="Plase enter your name"
           maxLength={30}
-          onChange={(e) => onChangeName(e.target.value.length)}
+          onChange={(e) => onChangeName(e.target.value)}
         />
       </Layout>
       <Layout>
         <Input
           placeholder="your.email.address@gmail.com"
           type="email"
-          onChange={(e) => onChangeEmail(e.target.value.length)}
+          onChange={(e) => onChangeEmail(e.target.value)}
           maxLength={256}
         />
       </Layout>
@@ -94,7 +126,7 @@ export default () => {
           placeholder="Please enter your message. English or Japanese"
           minRows={20}
           maxRows={100}
-          onChange={(e: any) => onChangeMessage(e.target.value.length)}
+          onChange={(e: any) => onChangeMessage(e.target.value)}
         />
       </Layout>
       <Layout>
