@@ -22,14 +22,22 @@ const Home = (props: Props) => {
 
   const siteTitle = data.site.siteMetadata.title;
 
+  let total = 0;
+  const ready = () => {
+    total += 1;
+    if (total === 2) {
+      console.log("Ready!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
+  };
+
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
-      <Intro />
-      <AboutMe />
+      <Intro ready={ready} />
+      <AboutMe ready={ready} />
       <SkillSummary />
       <Details />
     </Layout>

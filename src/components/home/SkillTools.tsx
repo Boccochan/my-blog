@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import KeyValue from "./SkillKeyValue";
 import { myMedia } from "@src/styles/custom-media";
-import { Title } from "./Title";
+import { Title } from "@src/components/lib/Title";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`

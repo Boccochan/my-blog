@@ -95,7 +95,7 @@ const CharactorsBox = styled.div`
   `}
 `;
 
-export default function Intro() {
+export default function Intro(props: { ready: () => void }) {
   return (
     <IntroLayer>
       <BackgroundBox />
@@ -103,7 +103,7 @@ export default function Intro() {
         <IntroNav />
       </IntroBox>
       <CharactorsBox>
-        <MascotIntro />
+        <MascotIntro ready={props.ready} />
       </CharactorsBox>
     </IntroLayer>
   );

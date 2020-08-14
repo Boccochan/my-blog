@@ -59,17 +59,28 @@ const Img = styled.img`
   background-color: transparent;
 `;
 
-export default function AboutMe() {
+export default function AboutMe(props: { ready: () => void }) {
+  const images = [SittingRobotImg, StarImg];
+  let srcList = [] as any[];
+
+  const load = (src: any) => {
+    srcList.push(src);
+
+    if (srcList.length === images.length) {
+      props.ready();
+    }
+  };
+
   return (
     <Container>
       <BlockSittingRobot>
-        <Img src={SittingRobotImg} />
+        <Img src={images[0]} onLoad={() => load(images[0])} />
       </BlockSittingRobot>
       <Block>
         <MySummary />
       </Block>
       <BlockStar>
-        <Img src={StarImg} />
+        <Img src={images[1]} onLoad={() => load(images[1])} />
       </BlockStar>
     </Container>
   );

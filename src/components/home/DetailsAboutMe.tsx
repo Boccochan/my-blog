@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SelfSummary from "./DetailsSelfSummary";
-import { Title } from "./Title";
+import { Title } from "@src/components/lib/Title";
 
 const Container = styled.div`
   margin-right: auto;

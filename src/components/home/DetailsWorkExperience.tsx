@@ -3,7 +3,7 @@ import styled from "styled-components";
 import WorkTimeline from "./DetailsWorkTimeline";
 import WorkHistory from "./DetailsWorkHistory";
 import { myMedia } from "@src/styles/custom-media";
-import { Title } from "./Title";
+import { Title } from "@src/components/lib/Title";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`

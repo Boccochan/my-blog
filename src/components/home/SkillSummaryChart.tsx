@@ -8,7 +8,7 @@ import {
 } from "recharts";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
-import { Title } from "./Title";
+import { Title } from "@src/components/lib/Title";
 import { mediaType } from "@src/styles/custom-media";
 import { graphql, useStaticQuery } from "gatsby";
 

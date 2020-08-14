@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BarChart from "./SkillBarChart";
-import { Title } from "./Title";
+import { Title } from "@src/components/lib/Title";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
