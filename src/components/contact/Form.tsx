@@ -87,15 +87,16 @@ export default () => {
     console.log(email);
     console.log(message);
     const form = e.target;
-    // console.log(form.getAttribute("name"));
+    console.log(form.getAttribute("name"));
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": form.getAttribute("name"),
-        name: name,
-        email: email,
-        message: message,
+        "bot-field": "",
+        name,
+        email,
+        message,
       }),
     })
       .then(() => navigate("/"))
@@ -110,6 +111,7 @@ export default () => {
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
+      <input type="hidden" name="form-name" value="contact" />
       <Layout>
         <Input
           placeholder="Plase enter your name"
