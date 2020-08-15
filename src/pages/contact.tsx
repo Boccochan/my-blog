@@ -7,6 +7,7 @@ import Explain from "@src/components/contact/Explain";
 import styled from "styled-components";
 import { myMedia } from "@src/styles/custom-media";
 import { theme } from "@src/styles/color";
+import Thanks from "@src/components/contact/Thanks";
 
 type Props = PageRendererProps & { pageTitle: string };
 
@@ -36,16 +37,20 @@ const Contact = (props: Props) => {
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={props.location} title={siteTitle}>
-      <SEO
-        title={props.pageTitle}
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
-      <Container>
-        <Explain />
-        <Form />
-      </Container>
-    </Layout>
+    <React.Fragment>
+      <Thanks />
+      <Layout location={props.location} title={siteTitle}>
+        <SEO
+          title={props.pageTitle}
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
+
+        <Container>
+          <Explain />
+          <Form />
+        </Container>
+      </Layout>
+    </React.Fragment>
   );
 };
 

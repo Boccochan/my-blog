@@ -82,7 +82,6 @@ const Description = styled.div`
 const ImgBox = styled.div`
   position: absolute;
   bottom: 0;
-  // top: 30px;
 `;
 
 const Img = styled.img`

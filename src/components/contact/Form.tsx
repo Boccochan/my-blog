@@ -1,5 +1,4 @@
 import React from "react";
-import { navigateTo } from "gatsby-link";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import TextareaAutosize from "react-textarea-autosize";
