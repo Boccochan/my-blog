@@ -34,7 +34,7 @@ const Contact = (props: Props) => {
     }
   `);
 
-  const sent = () => {
+  const openHandler = () => {
     setClose(false);
   };
 
@@ -55,7 +55,7 @@ const Contact = (props: Props) => {
 
         <Container>
           <Explain />
-          <Form sent={sent} />
+          <Form sent={openHandler} />
         </Container>
       </Layout>
     </React.Fragment>
