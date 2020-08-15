@@ -62,31 +62,46 @@ function encode(data: any) {
     .join("&");
 }
 
-const Button = (props: { state: any }) => {
-  if (
-    !props.state["name"] ||
-    !props.state["email"] ||
-    !props.state["message"]
-  ) {
+type Props = {
+  sent: () => void;
+};
+
+type State = {
+  name: string;
+  email: string;
+  message: string;
+};
+
+const Button = (state: State) => {
+  console.log("Button!!");
+  console.log(44, state);
+  if (!state.name || !state.email || !state.message) {
     return <DisbaledButton>Send</DisbaledButton>;
   } else {
     return <EnabledButton type="submit">Send</EnabledButton>;
   }
 };
 
-export default class Contact extends React.Component {
-  constructor(props: any) {
+export default class Contact extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-    this.state = {};
+    this.state = {} as State;
   }
 
-  handleChange = (e: any) => {
-    console.log(this.state);
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  // handleChange = (e: any) => {
+  //   console.log(this.state);
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
 
   handleSubmit = (e: any) => {
     e.preventDefault();
+    console.log(111, { ...this.state });
+    // this.props.sent();
+    // this.setState({ name: "" });
+    // this.setState({ email: "" });
+    // this.setState({ message: "" });
+    // e.target.reset();
+    // console.log(333, this.state);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -95,7 +110,12 @@ export default class Contact extends React.Component {
         ...this.state,
       }),
     })
-      .then(() => navigate("/"))
+      .then(() => {
+        this.props.sent();
+        this.setState({ name: "" });
+        this.setState({ email: "" });
+        this.setState({ message: "" });
+      })
       .catch((error) => alert(error));
   };
 
@@ -112,39 +132,50 @@ export default class Contact extends React.Component {
         <input type="hidden" name="form-name" value="contact" />
         <p hidden>
           <label>
-            Don’t fill this out:{" "}
-            <input name="bot-field" onChange={this.handleChange} />
+            Don’t fill this out: <input name="bot-field" />
           </label>
         </p>
         <Layout>
           <Input
             type="text"
             name="name"
+            value={this.state.name}
             placeholder="Plase enter your name"
             maxLength={30}
-            onChange={this.handleChange}
+            onChange={(e) => this.setState({ name: e.target.value })}
           />
         </Layout>
         <Layout>
           <Input
             name="email"
+            value={this.state.email}
             placeholder="your.email.address@gmail.com"
             type="email"
-            onChange={this.handleChange}
+            onChange={(e) => this.setState({ email: e.target.value })}
+            // onChange={this.handleChange}
             maxLength={256}
           />
         </Layout>
         <Layout>
           <TextArea
             placeholder="Please enter your message. English or Japanese"
+            value={this.state.message}
             minRows={20}
             maxRows={100}
             name="message"
-            onChange={this.handleChange}
+            onChange={(e) => {
+              console.log("test");
+              this.setState({ message: e.target.value });
+            }}
+            // onChange={this.handleChange}
           />
         </Layout>
         <Layout>
-          <Button state={this.state} />
+          <Button
+            name={this.state.name}
+            email={this.state.email}
+            message={this.state.message}
+          />
         </Layout>
       </Form>
     );

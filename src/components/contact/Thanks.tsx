@@ -5,16 +5,8 @@ import { T2 } from "@src/styles/typography";
 import { myMedia } from "@src/styles/custom-media";
 import GrayDogRobot from "@static/home/gray-dog-robot-min.png";
 import { Ballon } from "./Ballon";
-
-const Close = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-    z-index: 0;
-  }
-`;
+import { navigate } from "gatsby";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -22,7 +14,6 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  animation: ${Close} 1s ease forwards 3.6s;
   z-index: 10000;
 `;
 
@@ -62,7 +53,7 @@ const Dialog = styled.div`
   border: 1px solid rgba(255, 255, 255, 1);
   border-radius: 5px;
   animation: ${Open} 1s ease forwards 0.8s;
-  padding: 20px 20px;
+  padding: 10px 20px;
 
   ${myMedia.greaterThan("ipad")`
     width: 400px;
@@ -97,17 +88,27 @@ const Img = styled.img`
   background-color: transparent;
 `;
 
-export default class Thanks extends React.Component {
-  constructor(props: any) {
+type Props = {
+  close: () => void;
+};
+
+export default class Thanks extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
-    this.state = {};
+    console.log(2343333, props);
   }
+
+  closeHandler = () => {
+    console.log("close");
+    this.props.close();
+  };
 
   render() {
     return (
       <Wrapper>
         <Cover />
         <Dialog>
+          <CloseIcon onClick={this.closeHandler} />
           <Greeting>Thank you!!</Greeting>
           {/* <Telling>I am going to reply you as soon as possible.</Telling> */}
           <Ballon time="2.2s" margin="2em 0">
