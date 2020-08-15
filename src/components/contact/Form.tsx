@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import TextareaAutosize from "react-textarea-autosize";
-import { navigate } from "gatsby";
 
 const Form = styled.form`
   width: 100%;
@@ -73,8 +72,6 @@ type State = {
 };
 
 const Button = (state: State) => {
-  console.log("Button!!");
-  console.log(44, state);
   if (!state.name || !state.email || !state.message) {
     return <DisbaledButton>Send</DisbaledButton>;
   } else {
@@ -88,20 +85,13 @@ export default class Contact extends React.Component<Props, State> {
     this.state = {} as State;
   }
 
-  // handleChange = (e: any) => {
-  //   console.log(this.state);
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
+  handleChange = (e: any) => {
+    this.setState({ [e.target.name]: e.targe.value } as State);
+  };
 
   handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(111, { ...this.state });
-    // this.props.sent();
-    // this.setState({ name: "" });
-    // this.setState({ email: "" });
-    // this.setState({ message: "" });
-    // e.target.reset();
-    // console.log(333, this.state);
+
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -112,9 +102,9 @@ export default class Contact extends React.Component<Props, State> {
     })
       .then(() => {
         this.props.sent();
-        this.setState({ name: "" });
-        this.setState({ email: "" });
-        this.setState({ message: "" });
+        Object.keys(this.state).forEach((key) =>
+          this.setState({ [key]: "" } as State)
+        );
       })
       .catch((error) => alert(error));
   };
@@ -142,7 +132,7 @@ export default class Contact extends React.Component<Props, State> {
             value={this.state.name}
             placeholder="Plase enter your name"
             maxLength={30}
-            onChange={(e) => this.setState({ name: e.target.value })}
+            onChange={this.handleChange}
           />
         </Layout>
         <Layout>
@@ -151,8 +141,7 @@ export default class Contact extends React.Component<Props, State> {
             value={this.state.email}
             placeholder="your.email.address@gmail.com"
             type="email"
-            onChange={(e) => this.setState({ email: e.target.value })}
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
             maxLength={256}
           />
         </Layout>
@@ -163,11 +152,7 @@ export default class Contact extends React.Component<Props, State> {
             minRows={20}
             maxRows={100}
             name="message"
-            onChange={(e) => {
-              console.log("test");
-              this.setState({ message: e.target.value });
-            }}
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
           />
         </Layout>
         <Layout>

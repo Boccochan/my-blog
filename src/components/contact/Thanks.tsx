@@ -5,7 +5,6 @@ import { T2 } from "@src/styles/typography";
 import { myMedia } from "@src/styles/custom-media";
 import GrayDogRobot from "@static/home/gray-dog-robot-min.png";
 import { Ballon } from "./Ballon";
-import { navigate } from "gatsby";
 import CloseIcon from "@material-ui/icons/Close";
 
 const Wrapper = styled.div`
@@ -95,11 +94,9 @@ type Props = {
 export default class Thanks extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    console.log(2343333, props);
   }
 
   closeHandler = () => {
-    console.log("close");
     this.props.close();
   };
 
@@ -110,7 +107,6 @@ export default class Thanks extends React.Component<Props> {
         <Dialog>
           <CloseIcon onClick={this.closeHandler} />
           <Greeting>Thank you!!</Greeting>
-          {/* <Telling>I am going to reply you as soon as possible.</Telling> */}
           <Ballon time="2.2s" margin="2em 0">
             I AM GOING TO REPLY YOU AS SOON AS POSSIBLE. BOW BOW!
           </Ballon>
