@@ -294,7 +294,7 @@ function MenuBar() {
   return (
     <StyledNav>
       <StyledMainMenu>
-        <StyeldH4>Yasuhiro blog</StyeldH4>
+        <StyeldH4>Yasuhiro Lab</StyeldH4>
       </StyledMainMenu>
       <StyledNavLinks visible={visibleMenu}>
         <StyledNavLi index={0} visible={visibleMenu}>

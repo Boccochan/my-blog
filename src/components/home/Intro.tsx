@@ -95,7 +95,7 @@ const CharactorsBox = styled.div`
   `}
 `;
 
-export default function Intro(props: { ready: () => void }) {
+export default function Intro() {
   return (
     <IntroLayer>
       <BackgroundBox />
