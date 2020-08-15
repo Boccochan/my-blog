@@ -88,20 +88,8 @@ export default class Contact extends React.Component<Props, State> {
     this.state = {} as State;
   }
 
-  // handleChange = (e: any) => {
-  //   console.log(this.state);
-  //   this.setState({ [e.target.name]: e.target.value });
-  // };
-
   handleSubmit = (e: any) => {
     e.preventDefault();
-    console.log(111, { ...this.state });
-    // this.props.sent();
-    // this.setState({ name: "" });
-    // this.setState({ email: "" });
-    // this.setState({ message: "" });
-    // e.target.reset();
-    // console.log(333, this.state);
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -152,7 +140,6 @@ export default class Contact extends React.Component<Props, State> {
             placeholder="your.email.address@gmail.com"
             type="email"
             onChange={(e) => this.setState({ email: e.target.value })}
-            // onChange={this.handleChange}
             maxLength={256}
           />
         </Layout>
@@ -167,7 +154,6 @@ export default class Contact extends React.Component<Props, State> {
               console.log("test");
               this.setState({ message: e.target.value });
             }}
-            // onChange={this.handleChange}
           />
         </Layout>
         <Layout>
