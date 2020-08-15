@@ -304,7 +304,7 @@ function MenuBar() {
           <StyledLink to="/blog">Blog</StyledLink>
         </StyledNavLi>
         <StyledNavLi index={2} visible={visibleMenu}>
-          <StyledLink to="/playground">Playground</StyledLink>
+          <StyledLink to="/lab">Lab</StyledLink>
         </StyledNavLi>
         <StyledNavLi index={3} visible={visibleMenu}>
           <StyledLink to="/contact">Contact</StyledLink>

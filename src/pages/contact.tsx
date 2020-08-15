@@ -42,14 +42,12 @@ const Contact = (props: Props) => {
     setClose(true);
   };
 
-  const siteTitle = data.site.siteMetadata.title;
-
   return (
     <React.Fragment>
       {!closeFlag && <Thanks close={closeHandler} />}
-      <Layout location={props.location} title={siteTitle}>
+      <Layout location={props.location} title="Contact">
         <SEO
-          title={props.pageTitle}
+          title="Contact"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
 

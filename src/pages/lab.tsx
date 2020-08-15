@@ -4,8 +4,8 @@ import UnderDevelopment from "@src/components/under-development";
 
 type Props = PageRendererProps;
 
-const About = (props: Props) => {
-  return <UnderDevelopment location={props.location} pageTitle="About" />;
+const Lab = (props: Props) => {
+  return <UnderDevelopment location={props.location} pageTitle="Lab" />;
 };
 
-export default About;
+export default Lab;

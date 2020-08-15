@@ -96,12 +96,13 @@ export default function IntroNav() {
       <Container>
         <Introduction>
           Hello there! I am Yasuhiro Ito who is a software engineer.
-          <br /> I have been posting tech blogs and creating playground.
+          <br /> I have been posting tech blogs and creating lab to study tech
+          things.
         </Introduction>
       </Container>
       <Container>
         <Button to="/blog" name="Blog" />
-        <Button to="/playground" name="Playground" />
+        <Button to="/lab" name="Lab" />
       </Container>
     </Box>
   );

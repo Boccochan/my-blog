@@ -25,7 +25,7 @@ const Home = (props: Props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title="Lab"
+        title="Home"
         keywords={[
           `portfolio`,
           `typescript`,

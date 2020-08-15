@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Yasuhiro's blog`,
+    title: `Yasuhiro Lab`,
     author: `Yas Ito`,
     description: `Introducing technology, porfolio.`,
-    siteUrl: `https://yas-ito.com/`,
+    siteUrl: `https://www.yas-ito.com/`,
     // siteUrl: `http://localhost:8000`,
     social: {
       twitter: `itoq`,
