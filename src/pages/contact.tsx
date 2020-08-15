@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout } from "@src/components/layout";
 import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
 import { SEO } from "@src/components/seo";
@@ -6,12 +6,12 @@ import Form from "@src/components/contact/Form";
 import Explain from "@src/components/contact/Explain";
 import styled from "styled-components";
 import { myMedia } from "@src/styles/custom-media";
-import { theme } from "@src/styles/color";
+// import { theme } from "@src/styles/color";
+import Thanks from "@src/components/contact/Thanks";
 
 type Props = PageRendererProps & { pageTitle: string };
 
 const Container = styled.div`
-  // background-color: ${theme.colors.gray};
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -22,7 +22,20 @@ const Container = styled.div`
   `}
 `;
 
+const ThanksDialog = (props: {
+  closeFlag: boolean;
+  closeHandler: () => void;
+}) => {
+  if (!props.closeFlag) {
+    return <Thanks close={props.closeHandler} />;
+  } else {
+    return <div></div>;
+  }
+};
+
 const Contact = (props: Props) => {
+  const [closeFlag, setClose] = useState(true);
+
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -33,19 +46,32 @@ const Contact = (props: Props) => {
     }
   `);
 
+  const sent = () => {
+    console.log(566666666, "Thanks!!!!!!!!!!!");
+    setClose(false);
+  };
+
+  const closeHandler = () => {
+    setClose(true);
+  };
+
   const siteTitle = data.site.siteMetadata.title;
 
   return (
-    <Layout location={props.location} title={siteTitle}>
-      <SEO
-        title={props.pageTitle}
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
-      <Container>
-        <Explain />
-        <Form />
-      </Container>
-    </Layout>
+    <React.Fragment>
+      <ThanksDialog closeFlag={closeFlag} closeHandler={closeHandler} />
+      <Layout location={props.location} title={siteTitle}>
+        <SEO
+          title={props.pageTitle}
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
+
+        <Container>
+          <Explain />
+          <Form sent={sent} />
+        </Container>
+      </Layout>
+    </React.Fragment>
   );
 };
 
