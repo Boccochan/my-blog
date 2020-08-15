@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout } from "@src/components/layout";
-import { graphql, PageRendererProps, useStaticQuery } from "gatsby";
+import { PageRendererProps } from "gatsby";
 import { SEO } from "@src/components/seo";
 import Form from "@src/components/contact/Form";
 import Explain from "@src/components/contact/Explain";
@@ -23,16 +23,6 @@ const Container = styled.div`
 
 const Contact = (props: Props) => {
   const [closeFlag, setClose] = useState(true);
-
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   const openHandler = () => {
     setClose(false);

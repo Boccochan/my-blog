@@ -5,8 +5,8 @@ import Button from "./IntroNavButton";
 import { myMedia, mediaType } from "@src/styles/custom-media";
 
 const Box = styled.div`
-  ${myMedia.lessThan("iphone5")`
-    width: ${mediaType.iphone5};
+  ${myMedia.lessThan("galaxyFold")`
+    width: ${mediaType.galaxyFold};
   `}
 `;
 
