@@ -45,7 +45,7 @@ type Props = {
 };
 
 export default function Node(props: Props) {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   const shift = props.shift;
 
   const toggle = () => {
