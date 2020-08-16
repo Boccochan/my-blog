@@ -3,6 +3,7 @@ import styled, { css, keyframes } from "styled-components";
 import { Link } from "gatsby";
 import { myMedia } from "@src/styles/custom-media";
 import { theme } from "@src/styles/color";
+import Burger from "@src/components/lib/Burger";
 
 type Props = {
   visible: boolean;
@@ -34,49 +35,6 @@ const StyledBurger = styled.div`
     opacity: 1;
     z-index: 100;
   `}
-`;
-
-const StyledBurgerLine1 = styled.div`
-  width: 25px;
-  height: 3px;
-  background-color: ${theme.colors.white};
-  margin: 5px;
-
-  ${(props: { visible: boolean }) =>
-    props.visible
-      ? css`
-          transform: rotate(-45deg) translate(-5px, 6px);
-        `
-      : css``}
-`;
-
-const StyledBurgerLine2 = styled.div`
-  width: 25px;
-  height: 3px;
-
-  background-color: ${theme.colors.white};
-  margin: 5px;
-  ${(props: { visible: boolean }) =>
-    props.visible
-      ? css`
-          opacity: 0;
-        `
-      : css``}
-`;
-
-const StyledBurgerLine3 = styled.div`
-  width: 25px;
-  height: 3px;
-
-  background-color: ${theme.colors.white};
-  margin: 5px;
-
-  ${(props: { visible: boolean }) =>
-    props.visible
-      ? css`
-          transform: rotate(45deg) translate(-5px, -6px);
-        `
-      : css``}
 `;
 
 const StyledMainMenu = styled.div`
@@ -310,10 +268,8 @@ function MenuBar() {
           <StyledLink to="/contact">Contact</StyledLink>
         </StyledNavLi>
       </StyledNavLinks>
-      <StyledBurger onClick={toggleMenu}>
-        <StyledBurgerLine1 visible={visibleMenu} />
-        <StyledBurgerLine2 visible={visibleMenu} />
-        <StyledBurgerLine3 visible={visibleMenu} />
+      <StyledBurger>
+        <Burger color={theme.colors.white} openHandler={toggleMenu} />
       </StyledBurger>
       <StyledSearchBox>
         <StyledSearchBar type="text" placeholder="Search..." />
