@@ -24,12 +24,22 @@ const Bar = styled.div`
 
 type Props = {
   show: boolean;
+  tree: string[];
+  click: (key: string) => void;
 };
 
 export default (props: Props) => {
+  const click = (key: string) => {
+    props.click(key);
+    1;
+  };
   return (
     <React.Fragment>
-      <Bar show={props.show}>hello</Bar>
+      <Bar show={props.show}>
+        {props.tree.map((key) => (
+          <div onClick={() => click(key)}>{key}</div>
+        ))}
+      </Bar>
     </React.Fragment>
   );
 };

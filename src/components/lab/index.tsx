@@ -47,11 +47,15 @@ const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
 
 export default () => {
   const [showSideBar, setShowSideBar] = useState(false);
-  const [key, setKey] = useState("components/calender");
+  const [key, setKey] = useState("");
   const studyList = getStudyList();
 
   const handleOpen = () => {
     setShowSideBar(!showSideBar);
+  };
+
+  const click = (key: string) => {
+    setKey(key);
   };
 
   return (
@@ -64,7 +68,11 @@ export default () => {
         />
       </LyBurger>
       <LyContainer>
-        <SideBar show={showSideBar} />
+        <SideBar
+          show={showSideBar}
+          tree={studyList.map((study) => study.key)}
+          click={click}
+        />
         <SelectedComponent select={key} studyList={studyList} />
       </LyContainer>
     </Wrapper>
