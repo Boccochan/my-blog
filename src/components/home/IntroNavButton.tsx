@@ -18,6 +18,7 @@ const StyledBtn = styled.button`
 
   &:hover {
     font-weight: bold;
+    cursor: pointer;
   }
 
   ${myMedia.lessThan("iphone5")`
