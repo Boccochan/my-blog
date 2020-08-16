@@ -16,13 +16,10 @@ const Bar = styled.div`
   `}
 
   ${(props: { show: boolean }) =>
-    props.show
-      ? css`
-          transform: translateX(0%);
-        `
-      : css`
-          transform: translateX(-100%);
-        `}
+    !props.show &&
+    css`
+      display: none;
+    `}
 `;
 
 type Props = {

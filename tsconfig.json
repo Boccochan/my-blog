@@ -17,7 +17,8 @@
     "baseUrl": "./",
     "paths": {
       "@src/*": ["src/*"],
-      "@static/*": ["static/*"]
+      "@static/*": ["static/*"],
+      "@lab/*": ["src/components/lab/study/*"]
     },
     "types": ["node"],
     "typeRoots": ["./node_modules/@types"],

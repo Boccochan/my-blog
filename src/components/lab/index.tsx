@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import Burger from "@src/components/lib/Burger";
 import SideBar from "./SideBar";
+import { getStudyList, Study } from "./study";
 
 const Wrapper = styled.div`
   position: relative;
@@ -15,13 +16,39 @@ const Wrapper = styled.div`
 const LyBurger = styled.div`
   border-top: 1px solid ${theme.colors.graySuperLight};
   border-bottom: 1px solid ${theme.colors.graySuperLight};
-
   background-color: ${theme.colors.whiteSuperLight};
   padding: 6px 1em;
 `;
 
+const LyContainer = styled.div`
+  position: relative;
+  display: flex;
+`;
+
+const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
+  const { select, studyList } = props;
+
+  const study: Study[] = studyList.filter((study) => study.key === select);
+
+  if (study.length === 0) {
+    return <div></div>;
+  } else if (study.length > 1) {
+    throw Error(`Found some keys ${select} ${study}`);
+  }
+
+  const Obj = study[0].component;
+
+  return (
+    <Suspense fallback="loading..">
+      <Obj />
+    </Suspense>
+  );
+};
+
 export default () => {
   const [showSideBar, setShowSideBar] = useState(false);
+  const [key, setKey] = useState("components/calender");
+  const studyList = getStudyList();
 
   const handleOpen = () => {
     setShowSideBar(!showSideBar);
@@ -36,7 +63,10 @@ export default () => {
           openHandler={handleOpen}
         />
       </LyBurger>
-      <SideBar show={showSideBar} />
+      <LyContainer>
+        <SideBar show={showSideBar} />
+        <SelectedComponent select={key} studyList={studyList} />
+      </LyContainer>
     </Wrapper>
   );
 };
