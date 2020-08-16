@@ -103,9 +103,7 @@ export default ({
     >
       <Box>
         <LineTop color={color} close={close} height={lineHeight} />
-        {/* <Line color="transparent" height={lineHeight * 1.4} /> */}
         <LineCenter color={color} close={close} height={lineHeight} />
-        {/* <Line color="transparent" height={lineHeight * 1.4} /> */}
         <LineBottom color={color} close={close} height={lineHeight} />
       </Box>
     </Container>

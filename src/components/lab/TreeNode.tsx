@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from "react";
+import React, { useState } from "react";
 import { Tree } from "@src/types";
 import styled, { css } from "styled-components";
 import { T5 } from "@src/styles/typography";
