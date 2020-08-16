@@ -28,3 +28,8 @@ export type BlogInfo = {
   date: any;
   description: string | null | undefined;
 };
+
+export type Tree = {
+  key: string;
+  node?: Tree[];
+};

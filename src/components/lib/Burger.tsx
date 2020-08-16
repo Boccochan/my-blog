@@ -75,11 +75,17 @@ const Box = styled.div`
 type Props = {
   width?: number;
   color?: string;
+  isClose?: boolean;
   openHandler: () => void;
 };
 
-export default ({ width = 40, color = "#333", ...props }: Props) => {
-  const [close, setClose] = useState(false);
+export default ({
+  width = 40,
+  color = "#333",
+  isClose = false,
+  ...props
+}: Props) => {
+  const [close, setClose] = useState(isClose);
   const border = width / 20 === 0 ? 1 : width / 20;
   const lineHeight = width / 10 === 0 ? 1 : width / 10;
 

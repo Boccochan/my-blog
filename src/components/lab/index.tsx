@@ -46,7 +46,7 @@ const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
 };
 
 export default () => {
-  const [showSideBar, setShowSideBar] = useState(false);
+  const [showSideBar, setShowSideBar] = useState(true);
   const [key, setKey] = useState("");
   const studyList = getStudyList();
 
@@ -62,6 +62,7 @@ export default () => {
     <Wrapper>
       <LyBurger>
         <Burger
+          isClose={showSideBar}
           width={20}
           color={theme.colors.blueLight}
           openHandler={handleOpen}
