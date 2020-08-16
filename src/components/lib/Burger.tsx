@@ -56,6 +56,9 @@ const Container = styled.div`
   width: ${(props: ContainerProps) => props.width}px;
   height: ${(props: ContainerProps) => props.width}px;
   background-color: transparent;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Box = styled.div`
