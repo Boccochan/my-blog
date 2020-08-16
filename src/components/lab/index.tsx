@@ -20,16 +20,10 @@ export default () => {
   return (
     <Wrapper>
       <Burger
-        width={200}
-        color={theme.colors.grayDark}
-        openHandler={handleOpen}
-      />
-      <Burger
         width={20}
         color={theme.colors.blueLight}
         openHandler={handleOpen}
       />
-      <Burger openHandler={() => console.log("Test desu!!")} />
     </Wrapper>
   );
 };
