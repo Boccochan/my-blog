@@ -54,8 +54,8 @@ export default function SkillTools() {
       <Title>Others</Title>
       <KeyValueBox>
         {result.site.siteMetadata.self.others.map(
-          (tool: { title: string; name: string[] }) => (
-            <KeyValue title={tool.title} name={tool.name} />
+          (tool: { title: string; name: string[] }, index: any) => (
+            <KeyValue title={tool.title} name={tool.name} key={index} />
           )
         )}
       </KeyValueBox>

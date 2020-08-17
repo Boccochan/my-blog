@@ -55,8 +55,8 @@ export default function KeyValue(props: Props) {
   return (
     <Container>
       <Title>{props.title}</Title>
-      {props.name.map((name: string) => (
-        <Value>{name}</Value>
+      {props.name.map((name: string, index) => (
+        <Value key={index}>{name}</Value>
       ))}
     </Container>
   );

@@ -21,8 +21,8 @@ const Child = (props: Props) => {
 
   return (
     <div>
-      {data.map((tree) => (
-        <Node tree={tree} shift={0} callback={callback} />
+      {data.map((tree, index) => (
+        <Node tree={tree} shift={0} callback={callback} key={index} />
       ))}
     </div>
   );

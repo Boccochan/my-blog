@@ -35,7 +35,7 @@ export const Breadcrumbs = (props: Props) => {
         page = page === "/" ? "home" : page;
 
         return (
-          <div>
+          <div key={index}>
             {index !== lastPage ? (
               <Flex>
                 <History to={linkPath}>{page}</History>

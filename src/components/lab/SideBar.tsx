@@ -2,8 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { myMedia } from "@src/styles/custom-media";
 import { theme } from "@src/styles/color";
-import { T4 } from "@src/styles/typography";
 import Tree from "./Tree";
+import { parseLabTree } from "@src/lib/parse";
 
 const Bar = styled.div`
   position: relative;
@@ -36,24 +36,12 @@ type Props = {
   click: (key: string) => void;
 };
 
-const treeData = [
-  {
-    key: "components",
-    node: [
-      {
-        key: "calender",
-      },
-      {
-        key: "clock",
-      },
-    ],
-  },
-];
-
 export default (props: Props) => {
   const click = (key: string) => {
     props.click(key);
   };
+
+  const treeData = parseLabTree(props.tree);
 
   return (
     <React.Fragment>

@@ -12,8 +12,9 @@ const NodeContainer = styled.div`
 
 type ArrowProps = {
   open: boolean;
-  child: boolean;
+  lastleaf: Tree[] | undefined;
 };
+
 const Arrow = styled(ArrowRightIcon)`
   ${(props: ArrowProps) =>
     props.open &&
@@ -21,7 +22,7 @@ const Arrow = styled(ArrowRightIcon)`
       transform: rotate(90deg);
     `}
   ${(props: ArrowProps) =>
-    props.child &&
+    !props.lastleaf &&
     css`
       opacity: 0;
     `}
@@ -36,8 +37,8 @@ const Key = styled(T5)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  ${(props: { child: boolean }) =>
-    props.child &&
+  ${(props: { lastleaf: Tree[] | undefined }) =>
+    !props.lastleaf &&
     css`
       &:hover {
         cursor: pointer;
@@ -71,19 +72,20 @@ export default function Node(props: Props) {
   return (
     <React.Fragment>
       <NodeContainer shift={shift}>
-        <Arrow onClick={toggle} open={open} child={!props.tree.node} />
+        <Arrow onClick={toggle} open={open} lastleaf={props.tree.node} />
         <KeyBox>
-          <Key onClick={callback} child={!props.tree.node}>
+          <Key onClick={callback} lastleaf={props.tree.node}>
             {props.tree.key}
           </Key>
         </KeyBox>
       </NodeContainer>
       {open &&
-        props.tree.node?.map((node) => (
+        props.tree.node?.map((node, index) => (
           <Node
             tree={node}
             shift={shift + 12}
             callback={(key) => clickEvent(`${key}`)}
+            key={index}
           />
         ))}
     </React.Fragment>
