@@ -56,6 +56,9 @@ const Container = styled.div`
   width: ${(props: ContainerProps) => props.width}px;
   height: ${(props: ContainerProps) => props.width}px;
   background-color: transparent;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Box = styled.div`
@@ -72,11 +75,17 @@ const Box = styled.div`
 type Props = {
   width?: number;
   color?: string;
+  isClose?: boolean;
   openHandler: () => void;
 };
 
-export default ({ width = 40, color = "#333", ...props }: Props) => {
-  const [close, setClose] = useState(false);
+export default ({
+  width = 40,
+  color = "#333",
+  isClose = false,
+  ...props
+}: Props) => {
+  const [close, setClose] = useState(isClose);
   const border = width / 20 === 0 ? 1 : width / 20;
   const lineHeight = width / 10 === 0 ? 1 : width / 10;
 
@@ -94,9 +103,7 @@ export default ({ width = 40, color = "#333", ...props }: Props) => {
     >
       <Box>
         <LineTop color={color} close={close} height={lineHeight} />
-        {/* <Line color="transparent" height={lineHeight * 1.4} /> */}
         <LineCenter color={color} close={close} height={lineHeight} />
-        {/* <Line color="transparent" height={lineHeight * 1.4} /> */}
         <LineBottom color={color} close={close} height={lineHeight} />
       </Box>
     </Container>
