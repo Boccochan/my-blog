@@ -30,8 +30,8 @@ export default function SkillProgramming() {
     <Container>
       <Title>Programming Skills</Title>
       {result.site.siteMetadata.self.programmingLevels.map(
-        (prog: { name: string; level: number }) => {
-          return <BarChart title={prog.name} level={prog.level} />;
+        (prog: { name: string; level: number }, index: any) => {
+          return <BarChart title={prog.name} level={prog.level} key={index} />;
         }
       )}
     </Container>

@@ -38,7 +38,7 @@ function customTick({
         stroke={stroke}
         x={x}
         y={y}
-        text-anchor={textAnchor}
+        textAnchor={textAnchor}
         fontSize="12px"
         fill="#666666"
       >

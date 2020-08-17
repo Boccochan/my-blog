@@ -103,17 +103,21 @@ export default function WorkExperience() {
         <WorkTimeline />
         <History>
           {result.site.siteMetadata.self.history.map(
-            (data: {
-              company: string;
-              term: string;
-              title: string;
-              details: string;
-            }) => (
+            (
+              data: {
+                company: string;
+                term: string;
+                title: string;
+                details: string;
+              },
+              index
+            ) => (
               <WorkHistory
                 company={data.company}
                 term={data.term}
                 title={data.title}
                 details={data.details}
+                key={index}
               />
             )
           )}
