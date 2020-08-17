@@ -4,6 +4,7 @@ import Node from "./TreeNode";
 
 type Props = {
   data?: Tree[];
+  callback: (key: string) => void;
 };
 
 const Child = (props: Props) => {
@@ -15,6 +16,7 @@ const Child = (props: Props) => {
 
   const callback = (key: string) => {
     console.log(key);
+    props.callback(key);
   };
 
   return (
@@ -27,5 +29,5 @@ const Child = (props: Props) => {
 };
 
 export default (props: Props) => {
-  return <Child data={props.data} />;
+  return <Child data={props.data} callback={props.callback} />;
 };

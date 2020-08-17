@@ -38,29 +38,13 @@ type Props = {
 
 const treeData = [
   {
-    key: "parent1",
+    key: "components",
     node: [
       {
-        key: "child1",
+        key: "calender",
       },
       {
-        key: "child2",
-        node: [
-          {
-            key: "grandChild1",
-          },
-          {
-            key: "grandCild2",
-          },
-        ],
-      },
-    ],
-  },
-  {
-    key: "parent2",
-    node: [
-      {
-        key: "child3",
+        key: "clock",
       },
     ],
   },
@@ -68,6 +52,7 @@ const treeData = [
 
 export default (props: Props) => {
   const click = (key: string) => {
+    console.log(99999, key);
     props.click(key);
   };
 
@@ -75,7 +60,7 @@ export default (props: Props) => {
     <React.Fragment>
       <Bar show={props.show}>
         <LyTree>
-          <Tree data={treeData} />
+          <Tree data={treeData} callback={click} />
         </LyTree>
       </Bar>
     </React.Fragment>
