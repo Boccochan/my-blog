@@ -36,6 +36,13 @@ const Key = styled(T5)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  ${(props: { child: boolean }) =>
+    props.child &&
+    css`
+      &:hover {
+        cursor: pointer;
+      }
+    `}
 `;
 
 type Props = {
@@ -66,7 +73,9 @@ export default function Node(props: Props) {
       <NodeContainer shift={shift}>
         <Arrow onClick={toggle} open={open} child={!props.tree.node} />
         <KeyBox>
-          <Key onClick={callback}>{props.tree.key}</Key>
+          <Key onClick={callback} child={!props.tree.node}>
+            {props.tree.key}
+          </Key>
         </KeyBox>
       </NodeContainer>
       {open &&

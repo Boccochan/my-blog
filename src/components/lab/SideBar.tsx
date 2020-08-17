@@ -52,7 +52,6 @@ const treeData = [
 
 export default (props: Props) => {
   const click = (key: string) => {
-    console.log(99999, key);
     props.click(key);
   };
 
