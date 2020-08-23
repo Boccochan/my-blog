@@ -25,6 +25,12 @@ const LyContainer = styled.div`
   display: flex;
 `;
 
+const LyObj = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
   const { select, studyList } = props;
 
@@ -40,7 +46,9 @@ const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
 
   return (
     <Suspense fallback="loading..">
-      <Obj />
+      <LyObj>
+        <Obj />
+      </LyObj>
     </Suspense>
   );
 };
