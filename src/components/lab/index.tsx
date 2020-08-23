@@ -34,20 +34,14 @@ const LyObj = styled.div`
 const SelectedComponent = (props: { select: string; studyList: Study[] }) => {
   const { select, studyList } = props;
 
-  const study: Study[] = studyList.filter((study) => study.key === select);
-
-  if (study.length === 0) {
-    return <div></div>;
-  } else if (study.length > 1) {
-    throw Error(`Found some keys ${select} ${study}`);
-  }
-
-  const Obj = study[0].component;
-
   return (
     <Suspense fallback="loading..">
       <LyObj>
-        <Obj />
+        {studyList.map((study) => {
+          if (study.key === select) {
+            return <study.component />;
+          }
+        })}
       </LyObj>
     </Suspense>
   );
@@ -63,7 +57,11 @@ export default () => {
   };
 
   const click = (key: string) => {
-    setKey(key);
+    const result = studyList.some((study) => study.key === key);
+
+    if (result) {
+      setKey(key);
+    }
   };
 
   return (
