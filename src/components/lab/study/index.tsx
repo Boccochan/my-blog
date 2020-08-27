@@ -1,8 +1,10 @@
 import React from "react";
+import Calender from "./components/calender";
+import Clock from "./components/clock";
 
 export type Study = {
   key: string;
-  component: React.LazyExoticComponent<() => JSX.Element>;
+  component: () => JSX.Element;
 };
 
 export const getStudyList = () => {
@@ -12,14 +14,23 @@ export const getStudyList = () => {
   // VARIABLES for it.
   // This is not REACT things, but it is from bandler.
   // ************************************************************
+  // studyList.push({
+  //   key: "components/calender",
+  //   component: React.lazy(() => import("./components/calender")),
+  // });
+
+  // studyList.push({
+  //   key: "components/clock",
+  //   component: React.lazy(() => import("./components/clock")),
+  // });
   studyList.push({
     key: "components/calender",
-    component: React.lazy(() => import("./components/calender")),
+    component: () => <Calender />,
   });
 
   studyList.push({
     key: "components/clock",
-    component: React.lazy(() => import("./components/clock")),
+    component: () => <Clock />,
   });
 
   return studyList;

@@ -11,7 +11,7 @@ const Bar = styled.div`
   width: 20%;
   border-right: 1px solid ${theme.colors.graySuperLight};
   transition: transform 0.5s ease;
-
+  z-index: 1000;
   background-color: ${theme.colors.whiteSuperLight};
   ${myMedia.lessThan("ipadpro")`
     width: 90%;

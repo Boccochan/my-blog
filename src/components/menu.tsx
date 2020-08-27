@@ -19,7 +19,7 @@ const StyledNav = styled.nav`
   top: 0px;
   width: 100%;
   position: fixed;
-  z-index: 1000;
+  z-index: 3000;
 
   ${myMedia.lessThan("iphone5")`
     width: 320px;
