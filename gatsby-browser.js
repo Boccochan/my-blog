@@ -5,3 +5,4 @@ import "prismjs/themes/prism-okaidia.css";
 import "prismjs/plugins/command-line/prism-command-line.css";
 import "./src/styles/remark-copy.css";
 import "./src/styles/remark-code-title.css";
+import "./wydr";
