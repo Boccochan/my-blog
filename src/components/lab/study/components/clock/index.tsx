@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
-import styled, { keyframes, css } from "styled-components";
+import styled from "styled-components";
 import WorldMap from "@static/worldmap.jpg";
-import { theme } from "@src/styles/color";
 import Location from "@src/components/lab/study/components/clock/location";
-import Time, {
-  TIMEZONE,
-} from "@src/components/lab/study/components/clock/time";
+import { TIMEZONE } from "@src/components/lab/study/components/clock/time";
 
 const Container = styled.div`
-  // position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 `;
@@ -29,6 +28,7 @@ const WorldMapImg = styled.img`
   width: 100%;
   height: auto;
 `;
+
 export default () => {
   const [time, setTime] = useState(new Date());
   useEffect(() => {
@@ -41,7 +41,6 @@ export default () => {
   return (
     <Container>
       <Box>
-        {/* <Time now={new Date()} timezone={TIMEZONE.TOKYO} /> */}
         <WorldMapImg src={WorldMap} alt="World map" />
 
         <Location

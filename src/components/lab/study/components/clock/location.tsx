@@ -191,7 +191,7 @@ const Background = styled.div`
   position: absolute;
   top: ${(props: TimeLocationProps) => props.top - 8}px;
   left: ${(props: TimeLocationProps) => props.left + 8}px;
-  width: 64px;
+  width: 70px;
   height: 50px;
   background-color: black;
   opacity: 0;
