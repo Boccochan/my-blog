@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { myMedia } from "./custom-media";
 
-export const T1 = styled.div`
+export const T1 = styled.h1`
   font-weight: 300;
 
   ${myMedia.lessThan("iphone5")`
@@ -25,7 +25,7 @@ export const T1 = styled.div`
   `}
 `;
 
-export const T2 = styled.div`
+export const T2 = styled.h2`
   font-weight: 300;
 
   ${myMedia.lessThan("iphone5")`
@@ -49,7 +49,7 @@ export const T2 = styled.div`
   `}
 `;
 
-export const T3 = styled.div`
+export const T3 = styled.h3`
   font-weight: 300;
 
   ${myMedia.lessThan("iphone5")`
@@ -73,7 +73,7 @@ export const T3 = styled.div`
   `}
 `;
 
-export const T4 = styled.div`
+export const T4 = styled.h4`
   font-weight: 300;
 
   ${myMedia.lessThan("iphone5")`
@@ -97,7 +97,7 @@ export const T4 = styled.div`
   `}
 `;
 
-export const T5 = styled.div`
+export const T5 = styled.h5`
   ${myMedia.lessThan("iphone5")`
     font-size: 8px;
   `}
@@ -119,8 +119,7 @@ export const T5 = styled.div`
   `}
 `;
 
-export const T6 = styled.div`
-
+export const T6 = styled.h6`
   ${myMedia.lessThan("iphone5")`
     font-size: 8px;
   `}
@@ -142,25 +141,30 @@ export const T6 = styled.div`
   `}
 `;
 
-export const D1 = styled.div`
+export const D1 = styled.p`
   font-weight: 300;
   ${myMedia.lessThan("iphone5")`
+    line-height: 12px;
     font-size: 10px;
   `}
 
   ${myMedia.between("iphone5", "iphone678plus")`
+    line-height: 14px;
     font-size: 12px;
   `}
 
   ${myMedia.between("iphone678plus", "ipad")`
+    line-height: 14px;
     font-size: 12px;
   `}
 
   ${myMedia.between("ipad", "medium")`
+    line-height: 16px;
     font-size: 14px;
   `}
 
   ${myMedia.greaterThan("medium")`
+    line-height: 16px;
     font-size: 14px;
   `}
 
