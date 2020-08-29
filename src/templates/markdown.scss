@@ -1,38 +1,38 @@
-body h1,
-body h2,
-body h3,
-body h4,
-body h5,
-body h6,
-body p {
+body .github-ish h1,
+body .github-ish h2,
+body .github-ish h3,
+body .github-ish h4,
+body .github-ish h5,
+body .github-ish h6,
+body .github-ish p {
   margin-top: 18px;
   margin-bottom: 14px;
 }
 
-body h1,
-body h2 {
+body .github-ish h1,
+body .github-ish h2 {
   padding-bottom: 0.3em;
   border-bottom: 1px solid #eaecef;
 }
 
-body h1 {
+body .github-ish h1 {
   font-size: 30px;
 }
 
-body h2 {
+body .github-ish h2 {
   font-size: 26px;
 }
 
-body p {
+body .github-ish p {
   font-weight: 300;
 }
 
-body ul {
+body .github-ish ul {
   margin-left: 16px;
   list-style-type: square;
 }
 
-body li {
+body .github-ish li {
   font-weight: 300;
   padding-top: 4px;
   padding-bottom: 4px;

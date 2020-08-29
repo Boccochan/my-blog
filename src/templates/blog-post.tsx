@@ -9,7 +9,6 @@ import { Query, SitePageContext } from "@src/graphql-types";
 import { rhythm, styledScale } from "@src/utils/typography";
 import { Social } from "@src/components/social";
 import { theme } from "@src/styles/color";
-// import "./blog-post-style.scss";
 import "./markdown.scss";
 
 interface Props extends PageRendererProps {
@@ -39,7 +38,6 @@ const PostNavigator = styled.ul`
   list-style: none;
   padding: 0;
   padding-bottom: 20px;
-  // margin-bottom: 20px;
 `;
 
 const StyledContainer = styled.div`
@@ -65,16 +63,12 @@ const BlogPostTemplate = (props: Props) => {
   console.log(url.split("/").slice(-2)[0]);
 
   return (
-    <Layout
-      location={props.location}
-      title={siteTitle}
-      crumbLabel={url.split("/").slice(-2)[0]}
-    >
+    <Layout location={props.location} title={siteTitle}>
       <SEO
         title={frontmatter.title!}
         description={frontmatter.description || excerpt}
       />
-      <Box>
+      <Box className="github-ish">
         <StyledContainer>
           <Date>{frontmatter.date}</Date>
           <h1>{title}</h1>
