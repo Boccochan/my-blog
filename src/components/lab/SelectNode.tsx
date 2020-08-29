@@ -1,6 +1,7 @@
 import React from "react";
 import Calender from "@src/components/lab/study/components/calender";
 import Clock from "@src/components/lab/study/components/clock";
+import Intro from "./Intro";
 
 export const studyList = ["components/calender", "components/clock"];
 
@@ -13,6 +14,6 @@ export default (props: { select: string }) => {
     case studyList[1]:
       return <Clock />;
     default:
-      return <div>Hello</div>;
+      return <Intro />;
   }
 };
