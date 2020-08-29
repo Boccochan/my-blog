@@ -26,14 +26,7 @@ const Home = (props: Props) => {
     <Layout location={props.location} title={siteTitle}>
       <SEO
         title="Home"
-        keywords={[
-          `portfolio`,
-          `typescript`,
-          `javascript`,
-          `react`,
-          `engineer`,
-          `programmer`,
-        ]}
+        keywords={[`Yasuhiro Ito`, `Software Engineer`, `Programmer`]}
       />
       <Intro />
       <AboutMe />

@@ -10,7 +10,7 @@ const Box = styled.div`
   `}
 `;
 
-const Title = styled.div`
+const Title = styled.h1`
   color: ${theme.colors.grayDark};
   font-family: "Roboto", sans-serif;
 
@@ -35,7 +35,7 @@ const Title = styled.div`
   `}
 `;
 
-const Introduction = styled.div`
+const Introduction = styled.h2`
   color: ${theme.colors.grayDark};
   font-weight: 300;
   font-family: "Roboto", sans-serif;
