@@ -72,7 +72,6 @@ const Container = styled.div`
   `}
 
   ${myMedia.between("iphone5", "iphone678plus")`
-
     margin-bottom: 30px;
   `}
 
