@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { T1, D1 } from "@src/styles/typography";
 import WorldMap from "@static/worldmap-min.jpg";
 import Location from "@src/components/lab/study/components/clock/location";
 import { TIMEZONE } from "@src/components/lab/study/components/clock/time";
@@ -34,11 +35,16 @@ const WorldMapImg = styled.img`
   height: auto;
 `;
 
-const Title = styled.div`
+const Title = styled(T1)`
   padding-top: 12px;
   padding-bottom: 12px;
   font-size: 48px;
   font-weight: 300;
+`;
+
+const Description = styled(D1)`
+  padding-top: 20px;
+  padding-bottom: 20px;
 `;
 
 export default () => {
@@ -54,6 +60,10 @@ export default () => {
     <Container>
       <Wrapper>
         <Title>World's clock map</Title>
+        <Description>
+          This component is for studying a simple css animation and the way of
+          the interaction between React components.
+        </Description>
         <Box>
           <WorldMapImg src={WorldMap} alt="World map" />
 
