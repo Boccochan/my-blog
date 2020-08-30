@@ -39,9 +39,9 @@ export default () => {
   };
 
   const click = (key: string) => {
-    if (studyList.includes(key)) {
-      setKey(key);
-    }
+    // if (studyList.includes(key)) {
+    setKey(key);
+    // }
   };
 
   return (

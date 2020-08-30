@@ -10,16 +10,6 @@ type PointerProps = {
   left: number;
 };
 
-const Ripple = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-`;
-
 const Pointer = styled.div`
   position: absolute;
   top: ${(props: PointerProps) => props.top}px;
