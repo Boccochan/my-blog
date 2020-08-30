@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import Burger from "@src/components/lib/Burger";
 import SideBar from "./SideBar";
-import SelectNode, { studyList } from "./SelectNode";
+import SelectNode, { StudyList } from "./SelectNode";
 
 const Wrapper = styled.div`
   position: relative;
@@ -30,6 +30,9 @@ const LyContainer = styled.div`
 export default () => {
   const [showSideBar, setShowSideBar] = useState(true);
   const [key, setKey] = useState("");
+  const studyList: string[] = Object.entries(StudyList).map(
+    ([key, value]) => value
+  );
 
   const handleOpen = () => {
     setShowSideBar(!showSideBar);
