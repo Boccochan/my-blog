@@ -3,7 +3,7 @@ import styled, { keyframes, css } from "styled-components";
 import { theme } from "@src/styles/color";
 import Time, {
   TIMEZONE,
-} from "@src/components/lab/study/components/clock/time";
+} from "@src/components/lab/study/components/clock/Time";
 
 type PointerProps = {
   top: number;

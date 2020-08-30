@@ -27,6 +27,7 @@ export const theme: Theme = {
     whiteSuperLight: "#fffdfd",
     blue: "#2f80ed",
     blueLight: "#21bef0",
+    blueDark: "#10416F",
     gray: "#4f4f4f",
     grayLight: "#bdbdbd",
     graySuperLight: "#e0e0e0",
@@ -38,5 +39,6 @@ export const theme: Theme = {
     yellow: "#F2C94C",
     red: "#eb5757",
     green: "#05D15B",
+    black: "#0D0E0E",
   },
 } as Theme;
