@@ -3,15 +3,15 @@ import Calender from "@src/components/lab/study/components/calender";
 import Clock from "@src/components/lab/study/components/clock";
 import Intro from "./Intro";
 
-export const studyList = ["components/calender", "components/clock"];
+export enum StudyList {
+  CLOCK = "components/clock",
+}
 
 export default (props: { select: string }) => {
   const { select } = props;
 
   switch (select) {
-    case studyList[0]:
-      return <Calender />;
-    case studyList[1]:
+    case StudyList.CLOCK:
       return <Clock />;
     default:
       return <Intro />;
