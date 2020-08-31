@@ -4,13 +4,16 @@ import { theme } from "@src/styles/color";
 import Burger from "@src/components/lib/Burger";
 import SideBar from "./SideBar";
 import SelectNode, { StudyList } from "./SelectNode";
+import Clock from "@src/components/lab/study/components/clock";
 
 const Wrapper = styled.div`
-  position: relative;
+  // position: relative;
   width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
+  height: auto;
+  overflow-x: visible;
+  overflow-y: visible;
+  // left: 0;
+  // top: 0;
 `;
 
 const LyBurger = styled.div`
@@ -24,7 +27,8 @@ const LyContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
+  // min-height: calc(100vh - 50px);
+  height: auto;
 `;
 
 export default () => {
@@ -59,5 +63,6 @@ export default () => {
         <SelectNode select={key} />
       </LyContainer>
     </Wrapper>
+    // <Clock />
   );
 };

@@ -27,6 +27,9 @@ const NewestBlogsTag = styled.div`
   margin-left: auto;
   margin-right: auto;
   padding-top: 30px;
+  ${myMedia.lessThan("ipadpro")`
+    width: 100%;
+  `}
 `;
 
 const NewestBlogs = styled.div`

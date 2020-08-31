@@ -6,19 +6,21 @@ import Location from "@src/components/lab/study/components/clock/Location";
 import { locations } from "./LocationList";
 import TableColumn from "./TableColumn";
 
-// const Container = styled.div`
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: auto;
-// `;
-
 const Wrapper = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  height: auto:
+`;
+
+const Container = styled.div`
   position: relative;
   margin-right: auto;
   margin-left: auto;
   width: 1000px;
+  height: auto;
 `;
 
 const Box = styled.div`
@@ -58,9 +60,10 @@ export default () => {
   }, []);
 
   return (
-    // <Container>
-    <Wrapper>
+    // <Wrapper>
+    <Container>
       <Title>World's clock map</Title>
+
       <Description>
         This component is for studying a simple css animation and the way of the
         interaction between React components.
@@ -77,7 +80,7 @@ export default () => {
           />
         ))}
       </Box>
-      <Title>Time table</Title>
+      <Title>World Time table</Title>
       {locations.map((location) => (
         <TableColumn
           country={location.country}
@@ -87,8 +90,7 @@ export default () => {
           time={time}
         />
       ))}
-      {/* <Table /> */}
-    </Wrapper>
-    // </Container>
+    </Container>
+    // </Wrapper>
   );
 };

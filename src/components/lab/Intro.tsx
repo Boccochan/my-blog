@@ -6,15 +6,17 @@ import { theme } from "@src/styles/color";
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  // height: 100%;
   left: 0;
   top: 0;
+  min-height: 100vh;
 `;
 
 const Box = styled.div`
   position: relative;
   // top: 0;
   // left: 0;
+  // min-height: calc(100vh - 50px);
   min-width: 320px;
   width: 50%;
   margin-right: auto;
@@ -43,20 +45,20 @@ const SubTitle = styled(T2)`
 
 export default () => {
   return (
-    <Wrapper>
-      <Box>
-        <Title>Yasuhiro Lab</Title>
-        <Description>
-          Yasuhiro Lab is for studying Front-End, Back-End, Frameworks,
-          Architecture, Programming Language and so forth. You can see them by
-          clicking the tree diagram on the left side bar.
-        </Description>
-        <SubTitle>Components</SubTitle>
-        <D1>
-          Creating React components to study React, typescript, css animation
-          and interaction with API.
-        </D1>
-      </Box>
-    </Wrapper>
+    // <Wrapper>
+    <Box>
+      <Title>Yasuhiro Lab</Title>
+      <Description>
+        Yasuhiro Lab is for studying Front-End, Back-End, Frameworks,
+        Architecture, Programming Language and so forth. You can see them by
+        clicking the tree diagram on the left side bar.
+      </Description>
+      <SubTitle>Components</SubTitle>
+      <D1>
+        Creating React components to study React, typescript, css animation and
+        interaction with API.
+      </D1>
+    </Box>
+    // </Wrapper>
   );
 };
