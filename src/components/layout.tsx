@@ -5,6 +5,8 @@ import MenuBar from "./menu";
 import BaseStyles from "@src/styles/base-style";
 import { theme } from "@src/styles/color";
 import { Breadcrumbs } from "./breadcrumbs";
+import { myMedia } from "@src/styles/custom-media";
+import Clock from "@src/components/lab/study/components/clock";
 
 interface Props extends PageRendererProps {
   title: string;
@@ -13,12 +15,14 @@ interface Props extends PageRendererProps {
 
 const Background = styled.div`
   background-color: ${theme.colors.blogBackground};
+  // background-color: ${theme.colors.grayLight};
 `;
 
 const Wrapper = styled.div`
-  min-height: calc(100vh - 50px);
-  min-height: 100vh;
-  max-height: auto;
+  // min-height: calc(100vh - 50px);
+  // min-height: 100vh;
+  // max-height: auto;
+  // height: auto;
 `;
 
 const Footer = styled.footer`
@@ -30,12 +34,15 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   z-index: 100;
-  margin-top: auto;
+  // margin-top: auto;
 `;
 
 const Main = styled.div`
   position: relative;
   margin-top: 80px;
+  height: auto;
+  // overflow-x: visible;
+  // overflow-y: visible;
 `;
 
 const BreadcrumbsLayout = styled.div`
@@ -43,6 +50,13 @@ const BreadcrumbsLayout = styled.div`
   width: 980px;
   margin-right: auto;
   margin-left: auto;
+  ${myMedia.lessThan("ipadpro")`
+    width: auto;
+  `}
+`;
+
+const Children = styled.div`
+  position: relative;
 `;
 
 export const Layout = (props: Props) => {
@@ -68,7 +82,11 @@ export const Layout = (props: Props) => {
                 <Breadcrumbs currentPath={path} />
               </BreadcrumbsLayout>
             )}
-            <div>{children}</div>
+            <Children>
+              {children}
+
+              {/* <Footer>© {new Date().getFullYear()}, Yasuhiro Ito</Footer> */}
+            </Children>
           </Main>
         </Wrapper>
 

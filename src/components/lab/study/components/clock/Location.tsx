@@ -3,22 +3,12 @@ import styled, { keyframes, css } from "styled-components";
 import { theme } from "@src/styles/color";
 import Time, {
   TIMEZONE,
-} from "@src/components/lab/study/components/clock/time";
+} from "@src/components/lab/study/components/clock/Time";
 
 type PointerProps = {
   top: number;
   left: number;
 };
-
-const Ripple = keyframes`
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(4);
-    opacity: 0;
-  }
-`;
 
 const Pointer = styled.div`
   position: absolute;
