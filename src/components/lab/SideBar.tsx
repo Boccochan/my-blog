@@ -29,8 +29,8 @@ const Bar = styled.div`
 
 const LyTree = styled.div`
   position: relative;
-  top: 1%;
-  left: 5%;
+  top: 10px;
+  left: 10px;
 `;
 
 type Props = {
