@@ -17,13 +17,14 @@ const StyledNav = styled.nav`
   height: 80px;
   background-color: ${theme.colors.grayDark};
   top: 0px;
-  width: 100%;
+  // width: 100%;
+  width: 100vw;
   position: fixed;
   z-index: 3000;
 
-  ${myMedia.lessThan("iphone5")`
-    width: 320px;
-  `}
+  // ${myMedia.lessThan("iphone5")`
+  //   width: 320px;
+  // `}
 `;
 
 const StyledBurger = styled.div`

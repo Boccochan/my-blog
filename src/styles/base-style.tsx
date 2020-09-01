@@ -8,6 +8,7 @@ const BaseStyles = createGlobalStyle`
     position: relative; //disable gatsby base-style
     // overflow-x: hidden; //disable gatsby base-style
     
+    overflow: hidden;
     font-family: "Roboto", sans-serif;
     background-color: ${theme.colors.blogBackground};
   }

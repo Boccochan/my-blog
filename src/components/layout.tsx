@@ -34,6 +34,8 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
   z-index: 100;
+  // width: 100vw;
+  width: 100%;
   // margin-top: auto;
 `;
 
