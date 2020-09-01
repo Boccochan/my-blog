@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { T1, T2, D1 } from "@src/styles/typography";
 import { theme } from "@src/styles/color";
+import { myMedia } from "@src/styles/custom-media";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -18,11 +19,15 @@ const Box = styled.div`
   // left: 0;
   // min-height: calc(100vh - 50px);
   min-width: 320px;
+  min-height: 100vh;
   width: 50%;
   margin-right: auto;
   margin-left: auto;
   height: auto;
   padding: 2px 2px;
+  ${myMedia.lessThan("ipadpro")`
+    overflow-x: auto;
+  `}
 `;
 
 const Title = styled(T1)`

@@ -9,6 +9,9 @@ import { myMedia } from "@src/styles/custom-media";
 import Thanks from "@src/components/contact/Thanks";
 
 type Props = PageRendererProps & { pageTitle: string };
+const Box = styled.div`
+  min-height: calc(100vh - 80px);
+`;
 
 const Container = styled.div`
   border-radius: 10px;
@@ -40,11 +43,12 @@ const Contact = (props: Props) => {
           title="Contact"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-
-        <Container>
-          <Explain />
-          <Form sent={openHandler} />
-        </Container>
+        <Box>
+          <Container>
+            <Explain />
+            <Form sent={openHandler} />
+          </Container>
+        </Box>
       </Layout>
     </React.Fragment>
   );

@@ -17,6 +17,9 @@ const Wrapper = styled.div`
 `;
 
 const LyBurger = styled.div`
+  // position: fixed;
+  width: 100vw;
+  // width: 100%;
   border-top: 1px solid ${theme.colors.graySuperLight};
   border-bottom: 1px solid ${theme.colors.graySuperLight};
   background-color: ${theme.colors.whiteSuperLight};

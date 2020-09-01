@@ -5,6 +5,7 @@ import WorldMap from "@static/worldmap-min.jpg";
 import Location from "@src/components/lab/study/components/clock/Location";
 import { locations } from "./LocationList";
 import TableColumn from "./TableColumn";
+import { myMedia } from "@src/styles/custom-media";
 
 const Wrapper = styled.div`
   position: absolute;
@@ -20,7 +21,11 @@ const Container = styled.div`
   margin-right: auto;
   margin-left: auto;
   width: 1000px;
+  min-height: 100vh;
   height: auto;
+  ${myMedia.lessThan("ipadpro")`
+    overflow-x: auto;
+  `}
 `;
 
 const Box = styled.div`
@@ -43,11 +48,13 @@ const Title = styled(T1)`
   padding-bottom: 12px;
   font-size: 48px;
   font-weight: 300;
+  width: 1000px;
 `;
 
 const Description = styled(D1)`
   padding-top: 20px;
   padding-bottom: 20px;
+  width: 1000px;
 `;
 
 export default () => {
