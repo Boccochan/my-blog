@@ -7,19 +7,11 @@ import { locations } from "./LocationList";
 import TableColumn from "./TableColumn";
 import { myMedia } from "@src/styles/custom-media";
 
-const Wrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  // height: 100%;
-  height: auto:
-`;
-
 const Container = styled.div`
   position: relative;
   margin-right: auto;
   margin-left: auto;
+  margin-bottom: 20px;
   width: 1000px;
   min-height: 100vh;
   height: auto;
@@ -59,6 +51,8 @@ const Description = styled(D1)`
 
 export default () => {
   const [time, setTime] = useState(new Date());
+  const [selectedCity, setSelectedCity] = useState("");
+
   useEffect(() => {
     const id = setInterval(() => setTime(new Date()), 1000);
     return () => {
@@ -66,8 +60,12 @@ export default () => {
     };
   }, []);
 
+  const mouseOver = (city: string) => {
+    setSelectedCity(city);
+    // console.log(city);
+  };
+
   return (
-    // <Wrapper>
     <Container>
       <Title>World's clock map</Title>
 
@@ -77,15 +75,30 @@ export default () => {
       </Description>
       <Box>
         <WorldMapImg src={WorldMap} alt="World map" />
-        {locations.map((location) => (
-          <Location
-            top={location.top}
-            left={location.left}
-            city={location.city}
-            time={time}
-            timezone={location.timezone}
-          />
-        ))}
+        {locations.map((location) => {
+          if (location.city === selectedCity) {
+            return (
+              <Location
+                top={location.top}
+                left={location.left}
+                city={location.city}
+                time={time}
+                timezone={location.timezone}
+                selected={true}
+              />
+            );
+          }
+          return (
+            <Location
+              top={location.top}
+              left={location.left}
+              city={location.city}
+              time={time}
+              timezone={location.timezone}
+              selected={false}
+            />
+          );
+        })}
       </Box>
       <Title>World Time table</Title>
       {locations.map((location) => (
@@ -95,9 +108,9 @@ export default () => {
           utc={location.utc}
           timezone={location.timezone}
           time={time}
+          mouseOver={mouseOver}
         />
       ))}
     </Container>
-    // </Wrapper>
   );
 };

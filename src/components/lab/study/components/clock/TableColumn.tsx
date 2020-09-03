@@ -11,6 +11,7 @@ type Props = {
   utc: number;
   timezone: TIMEZONE;
   time: Date;
+  mouseOver: (city: string) => void;
 };
 
 type BoxProps = {
@@ -25,31 +26,50 @@ const Box = styled.div`
   background-color: ${(props: BoxProps) => props.backgroundColor};
   color: ${(props: BoxProps) => props.color};
   padding: 3px 3px;
+  &:hover {
+    background-color: ${theme.colors.grayLight};
+    cursor: pointer;
+  }
 `;
 
 const Country = styled.div`
   width: 20%;
   padding-left: 2%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const City = styled.div`
   width: 20%;
   padding-left: 2%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Date = styled.div`
   width: 20%;
   padding-left: 2%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Time = styled.div`
   width: 20%;
   padding-left: 2%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Utc = styled.div`
   width: 20%;
   padding-left: 2%;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export default (props: Props) => {
@@ -79,8 +99,21 @@ export default (props: Props) => {
     backgroundColor = theme.colors.black;
   }
 
+  const mouseOver = () => {
+    props.mouseOver(props.location);
+  };
+
+  const mouseLeave = () => {
+    props.mouseOver("");
+  };
+
   return (
-    <Box backgroundColor={backgroundColor} color={color}>
+    <Box
+      backgroundColor={backgroundColor}
+      color={color}
+      onMouseEnter={mouseOver}
+      onMouseLeave={mouseLeave}
+    >
       <Country>
         <D1>{props.country}</D1>
       </Country>

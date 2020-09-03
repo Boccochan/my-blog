@@ -8,7 +8,14 @@ import Time, {
 type PointerProps = {
   top: number;
   left: number;
+  selected: boolean;
 };
+
+const CircleKeyframe = keyframes`
+  0%   { transform: scale(1, 1); }
+  50%  { opacity: 0.8; }
+  100% { transform: scale(8, 8); opacity: 0.0; }
+`;
 
 const Pointer = styled.div`
   position: absolute;
@@ -25,6 +32,12 @@ const Pointer = styled.div`
     top: ${(props: PointerProps) => props.top - 1.5}px;
     left: ${(props: PointerProps) => props.left - 1.5}px;
   }
+
+  ${(props: PointerProps) =>
+    props.selected &&
+    css`
+      animation: ${CircleKeyframe} 1s ease-out 0.2s infinite;
+    `}
 `;
 
 const LocationKeyframe = keyframes`
@@ -198,6 +211,7 @@ export default (props: {
   city: string;
   timezone: TIMEZONE;
   time: Date;
+  selected: boolean;
 }) => {
   const [clicked, setClick] = useState(true);
   const locationTop = props.top - 22;
@@ -206,10 +220,14 @@ export default (props: {
   const click = () => {
     setClick(!clicked);
   };
-
   return (
     <React.Fragment>
-      <Pointer top={props.top} left={props.left} onClick={click} />
+      <Pointer
+        top={props.top}
+        left={props.left}
+        onClick={click}
+        selected={props.selected}
+      />
 
       <Background top={locationTop} left={locationLeft} click={clicked} />
       <Location
