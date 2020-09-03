@@ -37,6 +37,7 @@ const Key = styled(T5)`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 120px;
   &:hover {
     cursor: pointer;
   }
