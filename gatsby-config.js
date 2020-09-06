@@ -37,7 +37,7 @@ module.exports = {
         },
         {
           name: "HTML/CSS",
-          level: 50,
+          level: 53,
         },
         {
           name: "C",
