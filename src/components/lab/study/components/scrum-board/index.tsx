@@ -7,7 +7,15 @@ const Wrapper = styled.div`
 `;
 
 export default () => {
-  const menuList = [{ name: "hello", callback: () => {} }];
+  const menuList = [
+    { name: "Board", callback: () => {} },
+    { name: "Progress", callback: () => {} },
+    { name: "Ready", callback: () => {} },
+    { name: "Backlog", callback: () => {} },
+    { name: "Productivity", callback: () => {} },
+    { name: "Bug", callback: () => {} },
+    { name: "Released", callback: () => {} },
+  ];
   return (
     <Wrapper>
       <Sidebar menuList={menuList} />
