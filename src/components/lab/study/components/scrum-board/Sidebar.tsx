@@ -32,7 +32,7 @@ const StyledMenu = styled.div`
 
 type Menu = {
   name: string;
-  callback: () => void;
+  callback: (index: number) => void;
 };
 
 export default (props: { menuList: Menu[] }) => {
@@ -43,7 +43,10 @@ export default (props: { menuList: Menu[] }) => {
       {props.menuList.map((menu, index) => {
         return (
           <StyledMenu
-            onClick={() => setCurrent(index)}
+            onClick={() => {
+              menu.callback(index);
+              setCurrent(index);
+            }}
             selected={current === index}
           >
             <T5>{menu.name}</T5>
