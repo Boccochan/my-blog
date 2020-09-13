@@ -79,7 +79,8 @@
     "tslint-loader": "^3.5.4",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^5.0.0",
-    "typescript": "^3.9.7"
+    "typescript": "^3.9.7",
+    "typescript-styled-plugin": "^0.15.0"
   },
   "homepage": "https://github.com/gperl27/Gatsby-Starter-Blog-Typescript#readme",
   "keywords": [
