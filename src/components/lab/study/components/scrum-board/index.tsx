@@ -25,6 +25,7 @@ const menuList = [
   { name: "Productivity", component: NotSupportYet },
   { name: "Bug", component: NotSupportYet },
   { name: "Released", component: NotSupportYet },
+  { name: "Log", component: NotSupportYet },
 ] as Menu[];
 
 const SelectedComponent = (props: { index: number }) => {
