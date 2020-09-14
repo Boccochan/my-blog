@@ -31,7 +31,16 @@ type Task = {
 const SelectedTask = (selected: boolean) => {
   if (selected) {
     console.log("Selectedd !!!!!!!!!!!!!");
-    return <UserStory />;
+    return (
+      <UserStory
+        no={120}
+        userStory="Let's make hello world by serverless"
+        point={3}
+        project="scrum board"
+        projectBackgroundColor={theme.colors.green}
+        projectColor={theme.colors.white}
+      />
+    );
   }
   return null;
 };
