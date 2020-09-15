@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import { T3 } from "@src/styles/typography";
 import { useDrop } from "react-dnd";
+import BoardUserStory, { UserStoryInfo } from "./BoardUserStory";
 
 const Wrapper = styled.div`
   width: ${(props: { width: number }) => props.width}px;
@@ -21,7 +22,7 @@ type Props = {
   width: number;
   index: number;
   onDrop: (index: number) => void;
-  task: any;
+  userStories: UserStoryInfo[];
 };
 
 export default (props: Props) => {
@@ -33,13 +34,21 @@ export default (props: Props) => {
   });
 
   console.log(isOver);
+  console.log(props.userStories);
 
   return (
     <Wrapper ref={drop} width={props.width}>
       <Title color={props.color}>
         <T3>{props.title}</T3>
       </Title>
-      {props.task}
+      {props.userStories.map((userStory) => (
+        <BoardUserStory {...userStory} />
+      ))}
+      {/* {props.userStories} */}
+      {/* 
+      {props.userStories.map((userStory) => (
+        <div>{userStory}</div>
+      ))} */}
     </Wrapper>
   );
 };

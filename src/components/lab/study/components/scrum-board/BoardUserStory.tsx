@@ -54,7 +54,7 @@ const UserStory = styled.div`
   margin-top: 5px;
 `;
 
-type Props = {
+export type UserStoryInfo = {
   no: number;
   project: string;
   projectBackgroundColor: string;
@@ -63,7 +63,7 @@ type Props = {
   point: number;
 };
 
-export default (props: Props) => {
+export default (props: UserStoryInfo) => {
   const [{ isDragging }, drag] = useDrag({
     item: { type: "test" },
     collect: (monitor) => ({
