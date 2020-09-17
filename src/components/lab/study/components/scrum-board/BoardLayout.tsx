@@ -5,6 +5,7 @@ import { T3, D1 } from "@src/styles/typography";
 
 const Layout = styled.div`
   margin: 12px;
+  margin-bottom: 40px;
 `;
 
 const Title = styled.div`
