@@ -6,10 +6,8 @@ import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 
 const Container = styled.div`
-  // background-color: red;
   position: relative;
   width: 100%;
-  // height: 100px;
 `;
 
 const Box = styled.div`
