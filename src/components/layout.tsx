@@ -84,11 +84,7 @@ export const Layout = (props: Props) => {
                 <Breadcrumbs currentPath={path} />
               </BreadcrumbsLayout>
             )}
-            <Children>
-              {children}
-
-              {/* <Footer>© {new Date().getFullYear()}, Yasuhiro Ito</Footer> */}
-            </Children>
+            <Children>{children}</Children>
           </Main>
         </Wrapper>
 

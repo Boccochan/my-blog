@@ -6,7 +6,7 @@ import { T5 } from "@src/styles/typography";
 const Container = styled.div`
   background-color: ${theme.colors.white};
   border-right: 1px solid ${theme.colors.graySuperLight};
-  height: 100%;
+  height: auto;
   min-width: 200px;
   padding-top: 30px;
 `;

@@ -4,7 +4,6 @@ import { theme } from "@src/styles/color";
 import Burger from "@src/components/lib/Burger";
 import SideBar from "./SideBar";
 import SelectNode, { StudyList } from "./SelectNode";
-import Clock from "@src/components/lab/study/components/clock";
 
 const Wrapper = styled.div`
   // position: relative;
@@ -46,10 +45,9 @@ export default () => {
   };
 
   const click = (key: string) => {
-    // if (studyList.includes(key)) {
     setKey(key);
-    // }
   };
+  console.log("Hi");
 
   return (
     <Wrapper>
@@ -66,6 +64,5 @@ export default () => {
         <SelectNode select={key} />
       </LyContainer>
     </Wrapper>
-    // <Clock />
   );
 };
