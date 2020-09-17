@@ -1,120 +1,111 @@
 import React, { useState } from "react";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
-// import Sample from "./Sample";
-import SampleDrage from "./SampleDrag";
-
-// export default () => {
-//   return (
-//     <DndProvider backend={HTML5Backend}>
-//       <Sample />
-//     </DndProvider>
-//   );
-// };
-
-import styled from "styled-components";
 import Layout from "./BoardLayout";
-import TaskList from "./BoardTaskList";
-import UserStory, { UserStoryInfo } from "./BoardUserStory";
-import { theme } from "@src/styles/color";
-import { Container } from "./Container";
+import { DragDropContext } from "react-beautiful-dnd";
+import BoardDroppable from "./BoardDroppable";
+import { v4 as uuid } from "uuid";
+import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
 `;
 
-type Task = {
-  title: string;
-  color: string;
-  width: number;
-  userStories: UserStoryInfo[];
+const itemsFromBackend = [
+  { id: uuid(), content: "First task" },
+  { id: uuid(), content: "Second task" },
+  { id: uuid(), content: "Third task" },
+  { id: uuid(), content: "Fourth task" },
+  { id: uuid(), content: "Fifth task" },
+];
+
+const columnsFromBackend = {
+  [uuid()]: {
+    name: "Requested",
+    items: itemsFromBackend,
+  },
+  [uuid()]: {
+    name: "To do",
+    items: [],
+  },
+  [uuid()]: {
+    name: "In Progress",
+    items: [],
+  },
+  [uuid()]: {
+    name: "Done",
+    items: [],
+  },
 };
 
-const SelectedTask = (selected: boolean) => {
-  if (selected) {
-    console.log("Selectedd !!!!!!!!!!!!!");
-    return (
-      <UserStory
-        no={120}
-        userStory="Let's make hello world by serverless"
-        point={3}
-        project="scrum board"
-        projectBackgroundColor={theme.colors.green}
-        projectColor={theme.colors.white}
-      />
-    );
+const onDragEnd = (result: any, columns: any, setColumns: any) => {
+  if (!result.destination) return;
+  const { source, destination } = result;
+
+  if (source.droppableId !== destination.droppableId) {
+    const sourceColumn = columns[source.droppableId];
+    const destColumn = columns[destination.droppableId];
+    const sourceItems = [...sourceColumn.items];
+    const destItems = [...destColumn.items];
+    const [removed] = sourceItems.splice(source.index, 1);
+    destItems.splice(destination.index, 0, removed);
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...sourceColumn,
+        items: sourceItems,
+      },
+      [destination.droppableId]: {
+        ...destColumn,
+        items: destItems,
+      },
+    });
+  } else {
+    const column = columns[source.droppableId];
+    const copiedItems = [...column.items];
+    const [removed] = copiedItems.splice(source.index, 1);
+    copiedItems.splice(destination.index, 0, removed);
+    setColumns({
+      ...columns,
+      [source.droppableId]: {
+        ...column,
+        items: copiedItems,
+      },
+    });
   }
-  return null;
 };
 
 export default () => {
-  const [selected, setSelected] = useState(0);
-  const width = 300;
-  const taskList = [
-    {
-      title: "User Story",
-      color: theme.colors.purple,
-      width,
-      userStories: [
-        {
-          no: 120,
-          userStory: "Let's make our future!",
-          point: 3,
-          project: "Future",
-          projectBackgroundColor: theme.colors.purple,
-          projectColor: theme.colors.white,
-        },
-        {
-          no: 121,
-          userStory: "I do not know what I should do",
-          point: 4,
-          project: "Lost children",
-          projectBackgroundColor: theme.colors.blue,
-          projectColor: theme.colors.white,
-        },
-        {
-          no: 122,
-          userStory: "Heyhey mymy",
-          point: 4,
-          project: "Neil Young",
-          projectBackgroundColor: theme.colors.red,
-          projectColor: theme.colors.white,
-        },
-      ],
-    },
-    {
-      title: "In Progress",
-      color: theme.colors.yellow,
-      width,
-      userStories: [],
-    },
-    { title: "Review", color: theme.colors.red, width, userStories: [] },
-    { title: "Done", color: theme.colors.green, width, userStories: [] },
-  ] as Task[];
+  const [columns, setColumns] = useState(columnsFromBackend);
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div>
-        <Layout
-          sprint={102}
-          description="Improve sql query performance and user experience"
-        />
-        <Wrapper>
-          {/* {taskList.map((task, index) => {
+    <div>
+      <Layout
+        sprint={102}
+        description="Improve sql query performance and user experience"
+      />
+
+      <Wrapper>
+        <DragDropContext
+          onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
+        >
+          {Object.entries(columns).map(([columnId, column], index) => {
             return (
-              <TaskList
-                title={task.title}
-                color={task.color}
-                width={task.width}
-                index={index}
-                onDrop={(index: number) => setSelected(index)}
-                userStories={task.userStories}
-              />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+                key={columnId}
+              >
+                <h2>{column.name}</h2>
+                <div style={{ margin: 8 }}>
+                  <BoardDroppable column={column} columnId={columnId} />
+                </div>
+              </div>
             );
-          })} */}
-          <Container />
-        </Wrapper>
-      </div>
-    </DndProvider>
+          })}
+        </DragDropContext>
+      </Wrapper>
+    </div>
   );
 };
