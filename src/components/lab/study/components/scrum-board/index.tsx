@@ -5,7 +5,7 @@ import Board from "./Board";
 
 const Wrapper = styled.div`
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
 `;
 
@@ -36,6 +36,7 @@ const SelectedComponent = (props: { index: number }) => {
 };
 
 export default () => {
+  console.log("Hello world");
   const [selected, setSelect] = useState(0);
 
   const mList = menuList.map((menu) => {

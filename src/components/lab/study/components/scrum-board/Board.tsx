@@ -6,17 +6,18 @@ import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 
 const Container = styled.div`
+  // background-color: red;
   position: relative;
   width: 100%;
-  height: 100%;
+  // height: 100px;
 `;
 
 const Box = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 20px;
+  // position: absolute;
+  // width: 100%;
+  // height: auto;
+  // left: 0;
+  // top: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -36,6 +37,19 @@ const itemsFromBackend = [
   { id: uuid(), content: "Third task" },
   { id: uuid(), content: "Fourth task" },
   { id: uuid(), content: "Fifth task" },
+  { id: uuid(), content: "6 task" },
+  { id: uuid(), content: "7 task" },
+  { id: uuid(), content: "8 task" },
+  { id: uuid(), content: "9 task" },
+  { id: uuid(), content: "10 task" },
+  { id: uuid(), content: "11 task" },
+  { id: uuid(), content: "12 task" },
+  { id: uuid(), content: "13 task" },
+  { id: uuid(), content: "14 task" },
+  { id: uuid(), content: "15 task" },
+  { id: uuid(), content: "16 task" },
+  { id: uuid(), content: "17 task" },
+  { id: uuid(), content: "18 task" },
 ];
 
 const columnsFromBackend = {
