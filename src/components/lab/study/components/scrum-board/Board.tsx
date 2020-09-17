@@ -5,7 +5,28 @@ import BoardDroppable from "./BoardDroppable";
 import { v4 as uuid } from "uuid";
 import styled from "styled-components";
 
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
+
+const Box = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 20px;
+`;
+
 const Wrapper = styled.div`
+  position: relative;
+  width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+const Flex = styled.div`
   display: flex;
 `;
 
@@ -77,35 +98,39 @@ export default () => {
   const [columns, setColumns] = useState(columnsFromBackend);
 
   return (
-    <div>
-      <Layout
-        sprint={102}
-        description="Improve sql query performance and user experience"
-      />
+    <Container>
+      <Box>
+        <Wrapper>
+          <Layout
+            sprint={102}
+            description="Improve sql query performance and user experience"
+          />
 
-      <Wrapper>
-        <DragDropContext
-          onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
-        >
-          {Object.entries(columns).map(([columnId, column], index) => {
-            return (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-                key={columnId}
-              >
-                <h2>{column.name}</h2>
-                <div style={{ margin: 8 }}>
-                  <BoardDroppable column={column} columnId={columnId} />
-                </div>
-              </div>
-            );
-          })}
-        </DragDropContext>
-      </Wrapper>
-    </div>
+          <Flex>
+            <DragDropContext
+              onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
+            >
+              {Object.entries(columns).map(([columnId, column], index) => {
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    key={columnId}
+                  >
+                    <h2>{column.name}</h2>
+                    <div style={{ margin: 8 }}>
+                      <BoardDroppable column={column} columnId={columnId} />
+                    </div>
+                  </div>
+                );
+              })}
+            </DragDropContext>
+          </Flex>
+        </Wrapper>
+      </Box>
+    </Container>
   );
 };
