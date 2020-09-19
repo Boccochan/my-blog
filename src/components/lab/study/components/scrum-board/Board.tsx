@@ -108,41 +108,52 @@ const onDragEnd = (result: any, columns: any, setColumns: any) => {
 
 export default () => {
   const [columns, setColumns] = useState(columnsFromBackend);
+  let maxLength = 0;
+
+  Object.entries(columns).forEach(([, column]) => {
+    if (column.items.length > maxLength) {
+      maxLength = column.items.length;
+    }
+  });
+
+  const height = maxLength * 66;
 
   return (
     <Container>
-      <Box>
-        <Wrapper>
-          <Layout
-            sprint={102}
-            description="Improve sql query performance and user experience"
-          />
+      <Wrapper>
+        <Layout
+          sprint={102}
+          description="Improve sql query performance and user experience"
+        />
 
-          <Flex>
-            <DragDropContext
-              onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
-            >
-              {Object.entries(columns).map(([columnId, column], index) => {
-                return (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                    key={columnId}
-                  >
-                    <h2>{column.name}</h2>
-                    <div style={{ margin: 8 }}>
-                      <BoardDroppable column={column} columnId={columnId} />
-                    </div>
+        <Flex>
+          <DragDropContext
+            onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
+          >
+            {Object.entries(columns).map(([columnId, column], index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                  key={columnId}
+                >
+                  <h2>{column.name}</h2>
+                  <div style={{ margin: 8 }}>
+                    <BoardDroppable
+                      column={column}
+                      columnId={columnId}
+                      height={height}
+                    />
                   </div>
-                );
-              })}
-            </DragDropContext>
-          </Flex>
-        </Wrapper>
-      </Box>
+                </div>
+              );
+            })}
+          </DragDropContext>
+        </Flex>
+      </Wrapper>
     </Container>
   );
 };

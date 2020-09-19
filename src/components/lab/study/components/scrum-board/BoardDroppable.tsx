@@ -4,9 +4,10 @@ import { Draggable, Droppable } from "react-beautiful-dnd";
 type Props = {
   column: any;
   columnId: string;
+  height: number;
 };
 
-export default ({ column, columnId }: Props) => {
+export default ({ column, columnId, height }: Props) => {
   return (
     <Droppable droppableId={columnId} key={columnId}>
       {(provided, snapshot) => {
@@ -18,7 +19,7 @@ export default ({ column, columnId }: Props) => {
               background: snapshot.isDraggingOver ? "lightblue" : "lightgrey",
               padding: 4,
               width: 250,
-              minHeight: 500,
+              minHeight: height,
             }}
           >
             {column.items.map((item: any, index: number) => {
