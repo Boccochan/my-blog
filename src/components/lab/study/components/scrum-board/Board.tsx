@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import Layout from "./BoardLayout";
 import { DragDropContext } from "react-beautiful-dnd";
 import BoardDroppable from "./BoardDroppable";
+import { StoryType } from "./UserStory";
 import { v4 as uuid } from "uuid";
 import styled from "styled-components";
+import { theme } from "@src/styles/color";
 
 const Container = styled.div`
   position: relative;
@@ -29,25 +31,49 @@ const Flex = styled.div`
   display: flex;
 `;
 
+type Project = {
+  name: string;
+  backgroundColor: string;
+  color: string;
+};
+
 const itemsFromBackend = [
-  { id: uuid(), content: "First task" },
-  { id: uuid(), content: "Second task" },
-  { id: uuid(), content: "Third task" },
-  { id: uuid(), content: "Fourth task" },
-  { id: uuid(), content: "Fifth task" },
-  { id: uuid(), content: "6 task" },
-  { id: uuid(), content: "7 task" },
-  { id: uuid(), content: "8 task" },
-  { id: uuid(), content: "9 task" },
-  { id: uuid(), content: "10 task" },
-  { id: uuid(), content: "11 task" },
-  { id: uuid(), content: "12 task" },
-  { id: uuid(), content: "13 task" },
-  { id: uuid(), content: "14 task" },
-  { id: uuid(), content: "15 task" },
-  { id: uuid(), content: "16 task" },
-  { id: uuid(), content: "17 task" },
-  { id: uuid(), content: "18 task" },
+  {
+    id: uuid(),
+    storyNo: 120,
+    point: 3,
+    content: "Create new card, the card should be square and around.",
+    type: StoryType.DEVELOP,
+    project: {
+      name: "Scrum Board",
+      backgroundColor: theme.colors.green,
+      color: theme.colors.white,
+    },
+  },
+  {
+    id: uuid(),
+    storyNo: 11,
+    point: 5,
+    content: "Support smile, angry Emoji",
+    type: StoryType.DEVELOP,
+    project: {
+      name: "SNS",
+      backgroundColor: theme.colors.blue,
+      color: theme.colors.white,
+    },
+  },
+  {
+    id: uuid(),
+    storyNo: 32,
+    point: 2,
+    content: "Fix get and post user data API",
+    type: StoryType.BUG,
+    project: {
+      name: "Slack",
+      backgroundColor: theme.colors.red,
+      color: theme.colors.white,
+    },
+  },
 ];
 
 const columnsFromBackend = {

@@ -1,5 +1,6 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
+import UserStory, { StoryType } from "./UserStory";
 
 type Props = {
   column: any;
@@ -27,24 +28,11 @@ export default ({ column, columnId, height }: Props) => {
                 <Draggable key={item.id} draggableId={item.id} index={index}>
                   {(provided, snapshot) => {
                     return (
-                      <div
-                        ref={provided.innerRef}
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        style={{
-                          userSelect: "none",
-                          padding: 16,
-                          margin: "0 0 8px 0",
-                          minHeight: "50px",
-                          backgroundColor: snapshot.isDragging
-                            ? "#263B4A"
-                            : "#456C86",
-                          color: "white",
-                          ...provided.draggableProps.style,
-                        }}
-                      >
-                        {item.content}
-                      </div>
+                      <UserStory
+                        provided={provided}
+                        snapshot={snapshot}
+                        item={item}
+                      />
                     );
                   }}
                 </Draggable>
