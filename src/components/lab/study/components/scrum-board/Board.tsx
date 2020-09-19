@@ -108,6 +108,15 @@ const onDragEnd = (result: any, columns: any, setColumns: any) => {
 
 export default () => {
   const [columns, setColumns] = useState(columnsFromBackend);
+  let maxLength = 0;
+
+  Object.entries(columns).forEach(([, column]) => {
+    if (column.items.length > maxLength) {
+      maxLength = column.items.length;
+    }
+  });
+
+  const height = maxLength * 66;
 
   return (
     <Container>
@@ -134,7 +143,11 @@ export default () => {
                   >
                     <h2>{column.name}</h2>
                     <div style={{ margin: 8 }}>
-                      <BoardDroppable column={column} columnId={columnId} />
+                      <BoardDroppable
+                        column={column}
+                        columnId={columnId}
+                        height={height}
+                      />
                     </div>
                   </div>
                 );
