@@ -120,42 +120,40 @@ export default () => {
 
   return (
     <Container>
-      <Box>
-        <Wrapper>
-          <Layout
-            sprint={102}
-            description="Improve sql query performance and user experience"
-          />
+      <Wrapper>
+        <Layout
+          sprint={102}
+          description="Improve sql query performance and user experience"
+        />
 
-          <Flex>
-            <DragDropContext
-              onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
-            >
-              {Object.entries(columns).map(([columnId, column], index) => {
-                return (
-                  <div
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                    }}
-                    key={columnId}
-                  >
-                    <h2>{column.name}</h2>
-                    <div style={{ margin: 8 }}>
-                      <BoardDroppable
-                        column={column}
-                        columnId={columnId}
-                        height={height}
-                      />
-                    </div>
+        <Flex>
+          <DragDropContext
+            onDragEnd={(result) => onDragEnd(result, columns, setColumns)}
+          >
+            {Object.entries(columns).map(([columnId, column], index) => {
+              return (
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                  key={columnId}
+                >
+                  <h2>{column.name}</h2>
+                  <div style={{ margin: 8 }}>
+                    <BoardDroppable
+                      column={column}
+                      columnId={columnId}
+                      height={height}
+                    />
                   </div>
-                );
-              })}
-            </DragDropContext>
-          </Flex>
-        </Wrapper>
-      </Box>
+                </div>
+              );
+            })}
+          </DragDropContext>
+        </Flex>
+      </Wrapper>
     </Container>
   );
 };
