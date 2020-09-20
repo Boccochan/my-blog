@@ -9,6 +9,8 @@ type Props = {
 };
 
 export default ({ column, columnId, height }: Props) => {
+  const minHeight = height < 500 ? 500 : height;
+
   return (
     <Droppable droppableId={columnId} key={columnId}>
       {(provided, snapshot) => {
@@ -20,7 +22,7 @@ export default ({ column, columnId, height }: Props) => {
               background: snapshot.isDraggingOver ? "lightblue" : "lightgrey",
               padding: 4,
               width: 250,
-              minHeight: height,
+              minHeight,
             }}
           >
             {column.items.map((item: any, index: number) => {
