@@ -45,7 +45,7 @@ module.exports = {
         },
         {
           name: "SQL",
-          level: 28,
+          level: 50,
         },
         {
           name: "Bash",

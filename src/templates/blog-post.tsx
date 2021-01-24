@@ -41,11 +41,11 @@ const PostNavigator = styled.ul`
 `;
 
 const StyledContainer = styled.div`
-  max-width: 980px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 1em;
+  padding-right: 1em;
   background-color: ${theme.colors.whiteSuperLight};
 `;
 

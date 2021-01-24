@@ -5,26 +5,59 @@ body .github-ish h4,
 body .github-ish h5,
 body .github-ish h6,
 body .github-ish p {
-  margin-top: 18px;
-  margin-bottom: 14px;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 body .github-ish h1,
-body .github-ish h2 {
+// body .github-ish h2,
+body .github-ish h3 {
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #eaecef;
+  // border-bottom: 1px solid #eaecef;
+
+  padding: 0.25em 0.5em; /*上下 左右の余白*/
+  color: #494949; /*文字色*/
+  background: transparent; /*背景透明に*/
+  border-left: solid 5px #7db4e6; /*左線*/
+}
+body .github-ish h2 {
+  padding: 0.5em; /*文字周りの余白*/
+  color: #494949; /*文字色*/
+  background: #f6f3f3; /*背景色*/
+  border-left: solid 5px #7db4e6; /*左線（実線 太さ 色）*/
 }
 
+// body .github-ish h2:after {
+//   position: absolute;
+//   content: "";
+//   left: -7px;
+//   top: -7px;
+//   border-width: 0 0 15px 15px;
+//   border-style: solid;
+//   border-color: #fff #fff #a8d4ff;
+//   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+// }
 body .github-ish h1 {
-  font-size: 30px;
+  font-size: 1.8em;
+  line-height: 1em;
 }
 
 body .github-ish h2 {
-  font-size: 26px;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+
+body .github-ish h3 {
+  font-size: 1.2em;
+  line-height: 1.2em;
 }
 
 body .github-ish p {
   font-weight: 300;
+  font-size: 1em;
+  line-height: 2em;
+  margin-top: 2em;
+  margin-bottom: 4em;
 }
 
 body .github-ish ul {
@@ -36,4 +69,18 @@ body .github-ish li {
   font-weight: 300;
   padding-top: 4px;
   padding-bottom: 4px;
+}
+
+body .github-ish ul,
+body .github-ish ol {
+  color: #1e366a;
+  border-top: solid #1e366a 1px; /*上のボーダー*/
+  border-bottom: solid #1e366a 1px; /*下のボーダー*/
+  padding: 0.5em 0 0.5em 1.5em;
+}
+
+body .github-ish ul li,
+body .github-ish ol li {
+  line-height: 1.5;
+  padding: 0.5em 0;
 }
