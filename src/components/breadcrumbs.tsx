@@ -2,6 +2,7 @@ import React from "react";
 import path from "path";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import { theme } from "@src/styles/color";
 
 type Props = {
   currentPath: string[];
@@ -14,6 +15,7 @@ const Break = styled.div`
 
 const History = styled(Link)`
   box-shadow: none;
+  color: #a70101;
 `;
 
 const Flex = styled.div`
