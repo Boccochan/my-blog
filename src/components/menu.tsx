@@ -27,7 +27,7 @@ const StyledBurger = styled.div`
   right: 2%;
   opacity: 0;
   z-index: 1;
-  ${myMedia.lessThan("ipadpro")`
+  ${myMedia.lessThan("medium")`
     opacity: 1;
     z-index: 100;
   `}
