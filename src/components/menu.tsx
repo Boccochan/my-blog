@@ -42,7 +42,7 @@ const StyledMainMenu = styled.div`
   width: 100%;
 `;
 
-const StyeldH4 = styled.div`
+const StyeldH4 = styled.h1`
   display: table-cell;
   vertical-align: middle;
   font-weight: 600;
@@ -248,7 +248,7 @@ function MenuBar() {
   return (
     <StyledNav>
       <StyledMainMenu>
-        <StyeldH4>Yasuhiro Lab</StyeldH4>
+        <StyeldH4>Yasuhiro Ito </StyeldH4>
       </StyledMainMenu>
       <StyledNavLinks visible={visibleMenu}>
         <StyledNavLi index={0} visible={visibleMenu}>
@@ -267,10 +267,10 @@ function MenuBar() {
       <StyledBurger>
         <Burger color={theme.colors.white} openHandler={toggleMenu} />
       </StyledBurger>
-      <StyledSearchBox>
+      {/* <StyledSearchBox>
         <StyledSearchBar type="text" placeholder="Search..." />
         <StyledSearchIcon />
-      </StyledSearchBox>
+      </StyledSearchBox> */}
     </StyledNav>
   );
 }
