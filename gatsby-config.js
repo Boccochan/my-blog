@@ -280,7 +280,7 @@ module.exports = {
     // `gatsby-plugin-transition-link`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-google-fonts-v2`,
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
