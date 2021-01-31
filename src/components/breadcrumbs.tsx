@@ -2,7 +2,6 @@ import React from "react";
 import path from "path";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { theme } from "@src/styles/color";
 
 type Props = {
   currentPath: string[];
@@ -25,12 +24,20 @@ const Flex = styled.div`
 export const Breadcrumbs = (props: Props) => {
   let linkPath = "";
 
-  const lastPage =
-    props.currentPath.length > 0 ? props.currentPath.length - 1 : 0;
+  // Temparaly fix
+  const getPath = () => {
+    if (props.currentPath[1] === "blog") {
+      return props.currentPath.slice(0, props.currentPath.length - 1);
+    }
+    return props.currentPath;
+  };
+
+  const currentPath = getPath();
+  const lastPage = currentPath.length > 0 ? currentPath.length - 1 : 0;
 
   return (
     <Flex>
-      {props.currentPath.map((page, index) => {
+      {currentPath.map((page, index) => {
         linkPath = path.join(linkPath, page);
 
         // If your home url is not /, you do not need the blowing
