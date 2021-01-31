@@ -11,7 +11,8 @@ body .github-ish p {
 
 body .github-ish h1,
 // body .github-ish h2,
-body .github-ish h3 {
+body .github-ish h3, 
+body .github-ish h4 {
   padding-bottom: 0.3em;
   // border-bottom: 1px solid #eaecef;
 
@@ -27,16 +28,6 @@ body .github-ish h2 {
   border-left: solid 5px #7db4e6; /*左線（実線 太さ 色）*/
 }
 
-// body .github-ish h2:after {
-//   position: absolute;
-//   content: "";
-//   left: -7px;
-//   top: -7px;
-//   border-width: 0 0 15px 15px;
-//   border-style: solid;
-//   border-color: #fff #fff #a8d4ff;
-//   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-// }
 body .github-ish h1 {
   font-size: 1.8em;
   line-height: 1em;
