@@ -10,6 +10,7 @@ import { rhythm, styledScale } from "@src/utils/typography";
 import { Social } from "@src/components/social";
 import { theme } from "@src/styles/color";
 import "./markdown.scss";
+import Img from "gatsby-image";
 
 interface Props extends PageRendererProps {
   pageContext: SitePageContext;
@@ -60,6 +61,10 @@ const BlogPostTemplate = (props: Props) => {
   const { previous, next } = props.pageContext;
   const url = location.href ? location.href : "";
   const title = post.frontmatter!.title ? post.frontmatter!.title : "";
+  const fluid =
+    frontmatter!.featuredImage == null
+      ? undefined
+      : frontmatter!.featuredImage.childImageSharp.fluid;
   console.log(url.split("/").slice(-2)[0]);
 
   return (
@@ -72,6 +77,7 @@ const BlogPostTemplate = (props: Props) => {
         <StyledContainer>
           <Date>{frontmatter.date}</Date>
           <h1>{title}</h1>
+          {fluid !== undefined && <Img fluid={fluid} />}
           <div dangerouslySetInnerHTML={{ __html: html }} />
 
           <Social title={title} url={url} />
@@ -117,6 +123,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 800) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
