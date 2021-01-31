@@ -279,24 +279,25 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     // `gatsby-plugin-transition-link`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Oswald`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Roboto`,
-            variants: [`100`, `300`, `500`],
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-google-fonts-v2`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Oswald`,
+    //         subsets: [`latin`],
+    //       },
+    //       {
+    //         family: `Open Sans`,
+    //         variants: [`400`, `700`],
+    //       },
+    //       {
+    //         family: `Roboto`,
+    //         variants: [`100`, `300`, `500`],
+    //       },
+    //     ],
+    //     display: "swap",
+    //   },
+    // },
   ],
 };
