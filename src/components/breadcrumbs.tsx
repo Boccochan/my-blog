@@ -26,7 +26,7 @@ export const Breadcrumbs = (props: Props) => {
 
   // Temparaly fix
   const getPath = () => {
-    if (props.currentPath[1] === "blog") {
+    if (props.currentPath[1] === "blog" && props.currentPath.length > 2) {
       return props.currentPath.slice(0, props.currentPath.length - 1);
     }
     return props.currentPath;
