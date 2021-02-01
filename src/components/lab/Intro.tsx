@@ -7,7 +7,6 @@ import { myMedia } from "@src/styles/custom-media";
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  // height: 100%;
   left: 0;
   top: 0;
   min-height: 100vh;
@@ -15,9 +14,6 @@ const Wrapper = styled.div`
 
 const Box = styled.div`
   position: relative;
-  // top: 0;
-  // left: 0;
-  // min-height: calc(100vh - 50px);
   min-width: 320px;
   min-height: 100vh;
   width: 50%;
@@ -50,7 +46,6 @@ const SubTitle = styled(T2)`
 
 export default () => {
   return (
-    // <Wrapper>
     <Box>
       <Title>Yasuhiro Lab</Title>
       <Description>
@@ -64,6 +59,5 @@ export default () => {
         interaction with API.
       </D1>
     </Box>
-    // </Wrapper>
   );
 };

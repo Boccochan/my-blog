@@ -45,7 +45,6 @@ export const createPages: GatsbyCreatePages = async ({
   posts.forEach((post: Post, index: number) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1].node;
     const next = index === 0 ? null : posts[index - 1].node;
-    console.log(post.node.fields.slug);
 
     createPage({
       path: `/blog${post.node.fields.slug}`,

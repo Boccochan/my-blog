@@ -6,19 +6,14 @@ import SideBar from "./SideBar";
 import SelectNode, { StudyList } from "./SelectNode";
 
 const Wrapper = styled.div`
-  // position: relative;
   width: 100%;
   height: auto;
   overflow-x: visible;
   overflow-y: visible;
-  // left: 0;
-  // top: 0;
 `;
 
 const LyBurger = styled.div`
-  // position: fixed;
   width: 100vw;
-  // width: 100%;
   border-top: 1px solid ${theme.colors.graySuperLight};
   border-bottom: 1px solid ${theme.colors.graySuperLight};
   background-color: ${theme.colors.whiteSuperLight};
@@ -29,7 +24,6 @@ const LyContainer = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  // min-height: calc(100vh - 50px);
   height: auto;
 `;
 
