@@ -36,7 +36,7 @@ const NewestBlogs = styled.div`
   position: relative;
   left: 10px;
   width: 230px;
-  height: 70px;
+  height: 43px;
   padding: 5px;
   font-size: 32px;
   font-weight: 300;

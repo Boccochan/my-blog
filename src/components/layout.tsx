@@ -19,8 +19,8 @@ const Background = styled.div`
 `;
 
 const Wrapper = styled.div`
-  // min-height: calc(100vh - 50px);
-  // min-height: 100vh;
+  min-height: calc(100vh - 50px);
+  /* // min-height: 100vh; */
   // max-height: auto;
   // height: auto;
 `;
