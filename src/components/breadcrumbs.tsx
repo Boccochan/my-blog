@@ -23,21 +23,12 @@ const Flex = styled.div`
 
 export const Breadcrumbs = (props: Props) => {
   let linkPath = "";
-
-  // Temparaly fix
-  const getPath = () => {
-    if (props.currentPath[1] === "blog" && props.currentPath.length > 2) {
-      return props.currentPath.slice(0, props.currentPath.length - 1);
-    }
-    return props.currentPath;
-  };
-
-  const currentPath = getPath();
-  const lastPage = currentPath.length > 0 ? currentPath.length - 1 : 0;
+  const lastPage =
+    props.currentPath.length > 0 ? props.currentPath.length - 1 : 0;
 
   return (
     <Flex>
-      {currentPath.map((page, index) => {
+      {props.currentPath.map((page, index) => {
         linkPath = path.join(linkPath, page);
 
         // If your home url is not /, you do not need the blowing
