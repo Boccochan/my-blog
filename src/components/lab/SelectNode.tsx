@@ -1,5 +1,4 @@
 import React from "react";
-import Calender from "@src/components/lab/study/components/calender";
 import Clock from "@src/components/lab/study/components/clock";
 import ScrumBoard from "@src/components/lab/study/components/scrum-board";
 import Intro from "./Intro";

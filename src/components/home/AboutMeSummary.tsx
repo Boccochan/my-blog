@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "@src/styles/color";
 import { myMedia } from "@src/styles/custom-media";
-import { T1, T4, T3 } from "@src/styles/typography";
+import { T1, T4 } from "@src/styles/typography";
 import { graphql, useStaticQuery } from "gatsby";
 
 const Container = styled.div`
@@ -44,7 +44,7 @@ const Summary = styled(T4)`
 
 const Email = styled.h2`
   font-weight: 300;
-  font-size; 20px;
+  font-size: 20px;
   color: ${theme.colors.gray};
   line-height: 22px;
 `;

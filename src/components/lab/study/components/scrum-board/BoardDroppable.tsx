@@ -1,6 +1,6 @@
 import React from "react";
 import { Draggable, Droppable } from "react-beautiful-dnd";
-import UserStory, { StoryType } from "./UserStory";
+import UserStory from "./UserStory";
 
 type Props = {
   column: any;

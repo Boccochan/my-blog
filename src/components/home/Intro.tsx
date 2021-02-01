@@ -64,11 +64,11 @@ const IntroBox = styled.div`
 `;
 
 const IntroLayer = styled.div`
-  postion: relative;
+  position: relative;
   width: 100%;
-  height; auto;
+  height: auto;
   z-index: 3;
-  
+
   ${myMedia.lessThan("iphone5")`
     width: 320px;
     max-width: 320px;

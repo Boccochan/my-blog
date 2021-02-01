@@ -12,14 +12,6 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const Box = styled.div`
-  // position: absolute;
-  // width: 100%;
-  // height: auto;
-  // left: 0;
-  // top: 20px;
-`;
-
 const Wrapper = styled.div`
   position: relative;
   width: 1200px;
@@ -30,12 +22,6 @@ const Wrapper = styled.div`
 const Flex = styled.div`
   display: flex;
 `;
-
-type Project = {
-  name: string;
-  backgroundColor: string;
-  color: string;
-};
 
 const itemsFromBackend = [
   {

@@ -62,7 +62,6 @@ export default () => {
 
   const mouseOver = (city: string) => {
     setSelectedCity(city);
-    // console.log(city);
   };
 
   return (

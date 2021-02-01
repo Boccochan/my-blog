@@ -7,9 +7,7 @@ import { parseLabTree } from "@src/lib/parse";
 
 const Bar = styled.div`
   position: relative;
-  // min-height: calc(100vh-50px);
   min-height: 100vh;
-  // height: 100%;
   min-width: 310px;
   width: 20%;
   border-right: 1px solid ${theme.colors.graySuperLight};
