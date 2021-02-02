@@ -19,7 +19,7 @@ featuredImage: ./code-2.jpg
 
 プログラミングを学習する方法を紹介していきたいと思います。
 
-[前回](https://www.yas-ito.com/blog/learning-programming-language/learning-programming-language/)では、プログラミング言語の選び方を紹介しました。
+[前回](https://www.yas-ito.com/blog/learning-programming-language/)では、プログラミング言語の選び方を紹介しました。
 今回はどういうサイトを使って学んでいくかを紹介します。
 
 こちらで紹介するサイトは基本的に無料のものなのでご安心下さい。
