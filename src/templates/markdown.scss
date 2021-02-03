@@ -3,19 +3,15 @@ body .github-ish h2,
 body .github-ish h3,
 body .github-ish h4,
 body .github-ish h5,
-body .github-ish h6,
-body .github-ish p {
-  margin-top: 1em;
+body .github-ish h6 {
+  margin-top: 3em;
   margin-bottom: 1em;
 }
 
 body .github-ish h1,
-// body .github-ish h2,
-body .github-ish h3, 
+body .github-ish h3,
 body .github-ish h4 {
   padding-bottom: 0.3em;
-  // border-bottom: 1px solid #eaecef;
-
   padding: 0.25em 0.5em; /*上下 左右の余白*/
   color: #494949; /*文字色*/
   background: transparent; /*背景透明に*/
@@ -30,7 +26,7 @@ body .github-ish h2 {
 
 body .github-ish h1 {
   font-size: 1.8em;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 body .github-ish h2 {
@@ -47,8 +43,6 @@ body .github-ish p {
   font-weight: 300;
   font-size: 1em;
   line-height: 2em;
-  margin-top: 2em;
-  margin-bottom: 4em;
 }
 
 body .github-ish ul {
@@ -70,7 +64,7 @@ body .github-ish ol {
   padding: 0.5em 0 0.5em 1.5em;
 }
 
-body .github-ish ul li,
+// body .github-ish ul li,
 body .github-ish ol li {
   line-height: 1.5;
   padding: 0.5em 0;
@@ -82,4 +76,36 @@ body .github-ish a {
 
 body .github-ish strong {
   font-weight: bold;
+}
+
+body .github-ish {
+  a {
+    text-decoration: none;
+  }
+  .mt-8 {
+    margin-top: 2em;
+  }
+  .mt-16 {
+    margin-top: 4em;
+  }
+  .mb-8 {
+    margin-bottom: 2em;
+  }
+  .mb-16 {
+    margin-bottom: 4em;
+  }
+  // .gatsby-highlight {
+  //   margin-top: 1em;
+  //   margin-bottom: 1em;
+  // }
+
+  table {
+    border-collapse: collapse;
+  }
+  table th,
+  table td {
+    border: solid 1px black;
+    padding: 10px;
+    /*実線 1px 黒*/
+  }
 }
