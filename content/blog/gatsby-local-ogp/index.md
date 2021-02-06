@@ -1,6 +1,6 @@
 ---
 title: GatsbyのOGP(Twitter Card)をlocalhostでテスト
-date: "2021-02-04T11:40:32.169Z"
+date: "2021-02-06T11:40:32.169Z"
 description: GatsbyのOGPをローカルホストでテストしてみた
 featuredImage: ./twitter-logo.png
 ---
