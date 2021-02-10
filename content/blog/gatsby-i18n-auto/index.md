@@ -5,7 +5,7 @@ description: Gatsby＋Typescriptで多言語対応(i18n)
 featuredImage: ./world.jpg
 ---
 
-## Gatsby＋Typescriptで多言語対応(i18n)
+## Gatsby ＋ Typescript で多言語対応(i18n)
 
 <div class="mt-8 mb-8">
 
@@ -13,16 +13,16 @@ featuredImage: ./world.jpg
 - 必要なパッケージをインストールする
 - ディレクトリ構成
 - 各言語用のファイルを用意
-- config.tsの作成
-- React Contextで現在の言語を取得
-- gatsby-config.jsに設定を追加
-- gatsby-node.jsの準備
-- gatsby-ssr.jsの準備
-- gatsby-browser.jsの準備
-- Seo対応
-- Linkをi18nへ対応
-- _redirectsの中身を見てみる
-- i18nを使って文字を表示してみる
+- config.ts の作成
+- React Context で現在の言語を取得
+- gatsby-config.js に設定を追加
+- gatsby-node.js の準備
+- gatsby-ssr.js の準備
+- gatsby-browser.js の準備
+- Seo 対応
+- Link を i18n へ対応
+- \_redirects の中身を見てみる
+- i18n を使って文字を表示してみる
 - 動作確認
 
 </div>
@@ -42,11 +42,10 @@ urlのパスから、netlify上でredirectをする方法まで紹介します�
 ## 極力自動化して多言語化するには
 
 <p class="mt-8 mb-8">
-GatsbyはSSRなので、ビルド時にファイルをすべて用意する必要があります。gatsby-plugin-i18nを使うと、各言語用にファイルを用意することになります。
+GatsbyはSSGなので、ビルド時にファイルをすべて用意する必要があります。gatsby-plugin-i18nを使うと、各言語用にファイルを用意することになります。
 しかしながら、ミスが出る上に、いちいちファイルを用意するのは面倒です。そこで、自動的に言語ごとに各ページをビルドするように、gatsby-node.js/gatsby-ssr.jsを作成します。
 netlifyは_redirectsというファイルを元にリダイレクトが定義できます。gatsbyのプラグインで_redirectを生成してくれるものがあるのでそれも導入します。
 </p>
-
 
 ## 必要なパッケージをインストールする
 
@@ -58,8 +57,8 @@ netlifyは_redirectsというファイルを元にリダイレクトが定義で
 ```bash
 yarn add i18next react-i18next gatsby-plugin-netlify
 ```
-## ディレクトリ構成
 
+## ディレクトリ構成
 
 <p class="mt-8 mb-8">
 私のディレクトリ構造は以下です。お使いの環境に合わせていただいてかまいせん。
@@ -98,7 +97,7 @@ yarn add i18next react-i18next gatsby-plugin-netlify
 }
 ```
 
-## config.tsの作成
+## config.ts の作成
 
 <p class="mt-8 mb-8">
 下記はi18nを初期化するコードです。resourcesのところでファイルを指定しています。<br/>
@@ -106,64 +105,62 @@ yarn add i18next react-i18next gatsby-plugin-netlify
 </p>
 
 ```ts:title=config.ts
-import i18next from 'i18next'
+import i18next from "i18next";
 
 i18next.init({
-  fallbackLng: 'en',
+  fallbackLng: "en",
   resources: {
     ja: {
-      translations: require('./locales/ja.json'),
+      translations: require("./locales/ja.json"),
     },
     en: {
-      translations: require('./locales/en.json'),
+      translations: require("./locales/en.json"),
     },
   },
-  ns: ['translations'],
-  defaultNS: 'translations',
+  ns: ["translations"],
+  defaultNS: "translations",
   returnObjects: true,
-  debug: process.env.NODE_ENV === 'development',
+  debug: process.env.NODE_ENV === "development",
   interpolation: {
     escapeValue: false, // not needed for react!!
   },
   react: {
     wait: true,
   },
-})
+});
 
-i18next.languages = ['ja', 'en']
+i18next.languages = ["ja", "en"];
 
-export default i18next
-
+export default i18next;
 ```
 
-## React Contextで現在の言語を取得
+## React Context で現在の言語を取得
 
 <p class="mt-8 mb-8">
 Contextによって、現在の言語の設定をどの階層からも取得できるようにします。
 
 </p>
 
-
 ```tsx:title=PageContext.jsx
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from "react";
+import { useTranslation } from "react-i18next";
 
-const PageContext = React.createContext({})
+const PageContext = React.createContext({});
 
-export const usePageContext = () => React.useContext(PageContext)
+export const usePageContext = () => React.useContext(PageContext);
 
 export const PageContextProvider = ({ value, children }) => {
-  const { i18n } = useTranslation()
+  const { i18n } = useTranslation();
 
   if (i18n.language !== value.lang) {
-    i18n.changeLanguage(value.lang)
+    i18n.changeLanguage(value.lang);
   }
 
-  return <PageContext.Provider value={value}>{children}</PageContext.Provider>
-}
+  return <PageContext.Provider value={value}>{children}</PageContext.Provider>;
+};
 ```
 
-## gatsby-config.jsに設定を追加
+## gatsby-config.js に設定を追加
 
 <p class="mt-8 mb-8">
 gatsby-plugin-netlifyと、言語の設定を追加します。
@@ -186,14 +183,14 @@ module.exports = {
 
 ```
 
-## gatsby-node.jsの準備
+## gatsby-node.js の準備
 
 <p class="mt-8 mb-8">
 こちらで各言語ごとのファイルを生成するように記述します。
 </p>
 
 ```js:title=gatsby-node.js
-require('ts-node').register({ files: true })
+require("ts-node").register({ files: true });
 
 /**
  * Implement Gatsby's Node APIs in this file.
@@ -202,7 +199,7 @@ require('ts-node').register({ files: true })
  */
 
 // You can delete this file if you're not using it
-const config = require('./gatsby-config')
+const config = require("./gatsby-config");
 /**
  * Makes sure to create localized paths for each file in the /pages folder.
  * For example, pages/404.js will be converted to /en/404.js and /el/404.js and
@@ -212,16 +209,16 @@ exports.onCreatePage = async ({
   page,
   actions: { createPage, deletePage, createRedirect },
 }) => {
-  const isEnvDevelopment = process.env.NODE_ENV === 'development'
-  const originalPath = page.path
+  const isEnvDevelopment = process.env.NODE_ENV === "development";
+  const originalPath = page.path;
 
   // Delete the original page (since we are gonna create localized versions of it) and add a
   // redirect header
-  await deletePage(page)
+  await deletePage(page);
 
   await Promise.all(
     config.siteMetadata.supportedLanguages.map(async (lang) => {
-      const localizedPath = `/${lang}${page.path}`
+      const localizedPath = `/${lang}${page.path}`;
 
       // create a redirect based on the accept-language header
       createRedirect({
@@ -231,7 +228,7 @@ exports.onCreatePage = async ({
         isPermanent: false,
         redirectInBrowser: isEnvDevelopment,
         statusCode: 301,
-      })
+      });
 
       await createPage({
         ...page,
@@ -241,9 +238,9 @@ exports.onCreatePage = async ({
           originalPath,
           lang,
         },
-      })
+      });
     })
-  )
+  );
 
   // Create a fallback redirect if the language is not supported or the
   // Accept-Language header is missing for some reason
@@ -253,31 +250,28 @@ exports.onCreatePage = async ({
     isPermanent: false,
     redirectInBrowser: isEnvDevelopment,
     statusCode: 301,
-  })
-}
-
-
+  });
+};
 ```
 
-## gatsby-ssr.jsの準備
+## gatsby-ssr.js の準備
 
 <p class="mt-8 mb-8">
 各エレメントをContextでWrapします。
 </p>
 
 ```js:title=gatsby-ssr.js
-
-import React from 'react'
-import { PageContextProvider } from './src/i18n/PageContext'
-import i18n from '@/i18n/config'
-import { I18nextProvider } from 'react-i18next'
+import React from "react";
+import { PageContextProvider } from "./src/i18n/PageContext";
+import i18n from "@/i18n/config";
+import { I18nextProvider } from "react-i18next";
 
 /**
  * Wrap all pages with a Translation provider and set the language on SSR time
  */
 export const wrapRootElement = ({ element }) => {
-  return <I18nextProvider i18n={i18n}>{element}</I18nextProvider>
-}
+  return <I18nextProvider i18n={i18n}>{element}</I18nextProvider>;
+};
 
 /**
  * Wrap all pages with a Translation provider and set the language on SSR time
@@ -287,12 +281,11 @@ export const wrapPageElement = ({ element, props }) => {
     <PageContextProvider value={props.pageContext}>
       {element}
     </PageContextProvider>
-  )
-}
-
+  );
+};
 ```
 
-## gatsby-browser.jsの準備
+## gatsby-browser.js の準備
 
 ```js:title=gatsby-browser.js
 /**
@@ -302,10 +295,10 @@ export const wrapPageElement = ({ element, props }) => {
  */
 
 // You can delete this file if you're not using it
-export { wrapPageElement, wrapRootElement } from './gatsby-ssr'
+export { wrapPageElement, wrapRootElement } from "./gatsby-ssr";
 ```
 
-## seo対応
+## seo 対応
 
 <p class="mt-8 mb-8">
 React helmetに以下のように設定します。
@@ -396,28 +389,28 @@ export default SEO
 
 
 ```
-## Linkをi18nへ対応
+
+## Link を i18n へ対応
 
 <p class="mt-8 mb-8">
 Linkに渡すパスを以下のように設定します。今回はLinkは使いませんが、もし必要なりましたら、下記コードを参考にして下さい。
 </p>
 
 ```tsx:title=Link.tsx
-import React from 'react'
-import { Link as GatsbyLink } from 'gatsby'
-import { usePageContext } from '../i18n/PageContext'
+import React from "react";
+import { Link as GatsbyLink } from "gatsby";
+import { usePageContext } from "../i18n/PageContext";
 
 const Link = ({ to, ...rest }) => {
-  const { lang } = usePageContext()
+  const { lang } = usePageContext();
 
-  return <GatsbyLink {...rest} to={`/${lang}${to}`} />
-}
+  return <GatsbyLink {...rest} to={`/${lang}${to}`} />;
+};
 
-export default Link
-
+export default Link;
 ```
 
-## _redirectsの中身を見てみる
+## \_redirects の中身を見てみる
 
 <p class="mt-8 mb-8">
 ここまで来たら準備OKです。gatsby buildを実行すると、publicディレクトリ(ビルド成果物が出力されるディレクトリ)に_redirectsというファイルができています。
@@ -443,19 +436,18 @@ export default Link
 /lab/  /en/lab/  301
 ```
 
-## i18nを使って文字を表示してみる
+## i18n を使って文字を表示してみる
 
 ```tsx:title=index.tsx
-import React from 'react'
-import { useTranslation } from 'react-i18next'
+import React from "react";
+import { useTranslation } from "react-i18next";
 
 const IndexPage = () => {
-  const [t] = useTranslation()
-  return <h1 >{t('blog')}</h1>
-}
+  const [t] = useTranslation();
+  return <h1>{t("blog")}</h1>;
+};
 
-export default IndexPage
-
+export default IndexPage;
 ```
 
 <p class="mt-8 mb-8">
@@ -465,7 +457,6 @@ gatsby developで起動し、ブラウザのurlへlocalhost:8000/ja/と入力す
 
 ![blog-ja-image](./blog-ja.png)
 
-
 ## 動作確認
 
 <p class="mt-8 mb-8">
@@ -473,4 +464,3 @@ netlifyへデプロイすれば、自動でブラウザの言語を理解して�
 なお、netlifyのバグっぽいのですが、ブラウザの言語に複数設定している場合redirectが正しく動作しないようです。<br/>
 ローカルでは自動判定はしないようです。デバッグする場合は、ブラウザのURLに直接入力する必要があります。
 </p>
-
