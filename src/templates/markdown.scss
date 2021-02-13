@@ -20,7 +20,8 @@ body .github-ish h4 {
 body .github-ish h2 {
   padding: 0.5em; /*文字周りの余白*/
   color: #494949; /*文字色*/
-  background: #f6f3f3; /*背景色*/
+  // background: #f6f3f3; /*背景色*/
+  border-bottom: 2px solid #f6f3f3;
   border-left: solid 5px #7db4e6; /*左線（実線 太さ 色）*/
 }
 
@@ -45,43 +46,11 @@ body .github-ish p {
   line-height: 2em;
 }
 
-body .github-ish ul {
-  margin-left: 16px;
-  list-style-type: square;
-}
-
-body .github-ish li {
-  font-weight: 300;
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-body .github-ish ul,
-body .github-ish ol {
-  color: #1e366a;
-  border-top: solid #1e366a 1px; /*上のボーダー*/
-  border-bottom: solid #1e366a 1px; /*下のボーダー*/
-  padding: 0.5em 0 0.5em 1.5em;
-}
-
-// body .github-ish ul li,
-body .github-ish ol li {
-  line-height: 1.5;
-  padding: 0.5em 0;
-}
-
-body .github-ish a {
-  color: #1941d2;
-}
-
 body .github-ish strong {
   font-weight: bold;
 }
 
 body .github-ish {
-  a {
-    text-decoration: none;
-  }
   .mt-8 {
     margin-top: 2em;
   }
@@ -94,10 +63,84 @@ body .github-ish {
   .mb-16 {
     margin-bottom: 4em;
   }
-  // .gatsby-highlight {
-  //   margin-top: 1em;
-  //   margin-bottom: 1em;
-  // }
+  a {
+    box-shadow: none;
+    text-decoration: none;
+    color: #1941d2;
+  }
+
+  ul.cp_list {
+    padding: 0.5em;
+    list-style-type: none;
+  }
+  ul.cp_list li {
+    position: relative;
+    padding: 0.3em 0.3em 0.3em 1.3em;
+  }
+  ul.cp_list li:after,
+  ul.cp_list li:before {
+    position: absolute;
+    content: "";
+    display: block;
+    background: #ffc107;
+    top: 0.43em;
+    left: 0.5em;
+    height: 11px;
+    width: 4px;
+    border-radius: 10px;
+    transform: rotate(45deg);
+  }
+  ul.cp_list li:before {
+    top: 0.6em;
+    left: 0.2em;
+    height: 8px;
+    transform: rotate(-45deg);
+  }
+  .blog-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .inner {
+      padding: 0.4em 2em 2em 2em;
+      width: 480px;
+      background-color: #f3f5f6;
+      border-radius: 0.5em;
+
+      ol {
+        list-style-type: decimal;
+      }
+      li {
+        padding: 0.5em 1em;
+      }
+      p {
+        color: #4b4b4b;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.4em;
+      }
+      a {
+        color: #4b4b4b;
+        box-shadow: none;
+        font-weight: 700;
+        font-size: 0.9em;
+      }
+      a:hover {
+        color: #828282;
+      }
+      .top-ol {
+        counter-reset: li; /* li のカウンタを 0 にセット */
+        list-style: none;
+      }
+      .top-li:before {
+        padding-right: 1em;
+
+        color: #03a9f4;
+        font-weight: bold;
+        counter-increment: li; /* li の数を一つずつ増加 */
+        content: counter(li) ". "; /* 数を表示 */
+      }
+    }
+  }
 
   table {
     border-collapse: collapse;
