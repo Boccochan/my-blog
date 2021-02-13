@@ -8,23 +8,28 @@ featuredImage: ./world.jpg
 ## Gatsby ＋ Typescript で多言語対応(i18n)
 
 <div class="mt-8 mb-8">
-
-- 極力自動化して多言語化するには
-- 必要なパッケージをインストールする
-- ディレクトリ構成
-- 各言語用のファイルを用意
-- config.ts の作成
-- React Context で現在の言語を取得
-- gatsby-config.js に設定を追加
-- gatsby-node.js の準備
-- gatsby-ssr.js の準備
-- gatsby-browser.js の準備
-- Seo 対応
-- Link を i18n へ対応
-- \_redirects の中身を見てみる
-- i18n を使って文字を表示してみる
-- 動作確認
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">極力自動化して多言語化するには</li>
+      <li class="top-li">必要なパッケージをインストールする</li>
+      <li class="top-li">ディレクトリ構成</li>
+      <li class="top-li">各言語用のファイルを用意</li>
+      <li class="top-li">config.ts の作成</li>
+      <li class="top-li">React Context で現在の言語を取得</li>
+      <li class="top-li">gatsby-config.js に設定を追加</li>
+      <li class="top-li">gatsby-node.js の準備</li>
+      <li class="top-li">gatsby-ssr.js の準備</li>
+      <li class="top-li">gatsby-browser.js の準備</li>
+      <li class="top-li">Seo 対応</li>
+      <li class="top-li">Link を i18n へ対応</li>
+      <li class="top-li">_redirects の中身を見てみる</li>
+      <li class="top-li">i18n を使って文字を表示してみる</li>
+      <li class="top-li">動作確認</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-8">

@@ -7,17 +7,21 @@ featuredImage: ./top.png
 
 ## Aleph.jsとは。Denoで動くReactフレームワークです。
 
-<div class="mt-8 mb-8">
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">Aleph.jsはReactのフレームワーク</li>
+      <li class="top-li">Denoをインストール</li>
+      <li class="top-li">Aleph.jsのセットアップ方法</li>
+      <li class="top-li">感想</li>
+    </ol>
+  </div>
+</nav>
 
-- Aleph.jsはReactのフレームワーク
-- Denoをインストール
-- Aleph.jsのセットアップ方法
-- 感想
-
-</div>
-
+<p class="mt-8 mb-8">
 本日はDenoで動くReactフレームワークのAleph.jsについて紹介します。
-
+</p>
 
 ## Aleph.jsはReactのフレームワーク
 <p class="mb-16">

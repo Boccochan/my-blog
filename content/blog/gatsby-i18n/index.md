@@ -9,14 +9,21 @@ featuredImage: ./world.jpg
 
 <div class="mt-8 mb-8">
 
-- 必要なパッケージをインストールする
-- 各言語用のファイルを用意
-- config.tsの作成
-- HOCの準備
-- Layoutへの組み込み
-- gatsby-plugin-layoutを使うと便利
-- i18nを使って文字を表示してみる
-- 動作確認
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">必要なパッケージをインストールする</li>
+      <li class="top-li">各言語用のファイルを用意</li>
+      <li class="top-li">config.tsの作成</li>
+      <li class="top-li">HOCの準備</li>
+      <li class="top-li">Layoutへの組み込み</li>
+      <li class="top-li">gatsby-plugin-layoutを使うと便利</li>
+      <li class="top-li">i18nを使って文字を表示してみる</li>
+      <li class="top-li">動作確認</li>
+    </ol>
+  </div>
+</nav>
 
 </div>
 
