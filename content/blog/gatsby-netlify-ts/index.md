@@ -6,11 +6,21 @@ description: How to deploy Gatsby with Typescript to Netlify
 
 It's easy to deploy Gatsby with Typescript to Netlify. You just need to follow the steps below:
 
-- Getting gatsby cli and starter kid
-- Creating your repository on Github, Gitlab or Bitbucket
-- Creating your Netlify account and deploying to it
-- Uploading your blog
-- Using custom domain
+<div class="mt-8 mb-8">
+
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>Index</p>
+    <ol class="top-ol">
+      <li class="top-li">Getting gatsby cli and starter kid</li>
+      <li class="top-li">Creating your repository on Github</li>
+      <li class="top-li">Creating your Netlify account and deploying to it</li>
+      <li class="top-li">Uploading your blog</li>
+      <li class="top-li">Using custom domain</li>
+    </ol>
+  </div>
+</nav>
+</div>
 
 ## Getting gatsby cli and starter kid
 

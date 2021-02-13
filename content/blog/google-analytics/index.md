@@ -9,11 +9,17 @@ featuredImage: ./logo.png
 
 <div class="mt-8 mb-8">
 
-- Google Analyticsの設定
-- gatsby-plugin-google-gtagの設定
-- Netlifyの設定
-- 動作確認
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">Google Analyticsの設定</li>
+      <li class="top-li">gatsby-plugin-google-gtagの設定</li>
+      <li class="top-li">Netlifyの設定</li>
+      <li class="top-li">動作確認</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 ネットで調査した方法だとなかなか上手く行かなかったので、Gatsby + Netlifyの組み合わせでのGoogle Analyticsの設定方法を紹介します。

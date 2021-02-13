@@ -12,6 +12,23 @@ There are a couple of ways to do that with React.
 2. Using react-responsive
 3. Using styled-media-query
 
+
+<div class="mt-8 mb-8">
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>Index</p>
+    <ol class="top-ol">
+      <li class="top-li">Write media query css</li>
+      <li class="top-li">Using react-responsive</li>
+      <li class="top-li">Using react-responsive</li>
+      <li class="top-li">Using react-responsive</li>
+      <li class="top-li">Using react-responsive</li>
+    </ol>
+  </div>
+</nav>
+</div>
+
+
 I'm going to tell you how to use styled-media-query here.
 
 ## Installing styled-components and styled-media-query

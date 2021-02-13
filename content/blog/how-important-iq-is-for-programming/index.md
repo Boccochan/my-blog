@@ -9,12 +9,18 @@ featuredImage: ./top.jpg
 
 <div class="mt-8 mb-8">
 
-- 才能は必要です
-- 弱点は克服できる
-- IQより性格
-- コツコツ取り組むことが重要
-- プログラミングが辛いのは人間関係が原因
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">才能は必要です</li>
+      <li class="top-li">弱点は克服できる</li>
+      <li class="top-li">IQより性格</li>
+      <li class="top-li">コツコツ取り組むことが重要</li>
+      <li class="top-li">プログラミングが辛いのは人間関係が原因</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-16">

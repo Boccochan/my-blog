@@ -9,11 +9,17 @@ featuredImage: ./tailwind.png
 
 <div class="mt-8 mb-8">
 
-- tailwindを使ってmedia query
-- tailwindのmedia queryを拡張する
-- media queryでcssファイルに記述する
-- Reactでmedia queryを利用する
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">tailwindを使ってmedia query</li>
+      <li class="top-li">tailwindのmedia queryを拡張する</li>
+      <li class="top-li">media queryでcssファイルに記述する</li>
+      <li class="top-li">Reactでmedia queryを利用する</li>
+    </ol>
+  </div>
+</nav>
 
 </div>
 

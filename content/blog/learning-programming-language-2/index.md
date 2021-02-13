@@ -13,14 +13,19 @@ featuredImage: ./code-2.jpg
 
 <div class="mt-8 mb-8">
 
-- Google 検索
-- Qiita
-- Youtube
-- Stack overflow
-- ドットインストール
-- オフィシャルページ
-- Github
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">Google 検索</li>
+      <li class="top-li">Qiita</li>
+      <li class="top-li">Youtube</li>
+      <li class="top-li">Stack overflow</li>
+      <li class="top-li">ドットインストール</li>
+      <li class="top-li">Github</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-16">

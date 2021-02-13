@@ -12,12 +12,19 @@ featuredImage: ./top.jpg
 </p>
 
 <div class="mt-8 mb-8">
-
-- Codepenのアカウント作成
-- HTMLでHello World
-- HTMLとは
-- ちょっとした文章を書いてみよう
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">Codepenのアカウント作成</li>
+      <li class="top-li">HTMLでHello World</li>
+      <li class="top-li">HTMLとは</li>
+      <li class="top-li">ちょっとした文章を書いてみよう</li>
+      <li class="top-li">ドットインストール</li>
+      <li class="top-li">Github</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-16">

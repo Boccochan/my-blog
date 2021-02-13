@@ -12,9 +12,15 @@ featuredImage: ./code.jpg
 
 <div class="mt-8 mb-8">
 
-- Web 系で必要な知識
-- スマホ系で必要な知識
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">Web 系で必要な知識</li>
+      <li class="top-li">スマホ系で必要な知識</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-16">

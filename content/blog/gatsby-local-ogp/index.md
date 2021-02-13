@@ -9,11 +9,16 @@ featuredImage: ./twitter-logo.png
 
 <div class="mt-8 mb-8">
 
-- 【結論】できませんでした
-- gatsby-plugin-react-helmetのセットアップ
-- gatsby-plugin-ngrok-tunnelingのセットアップ
-
-
+<nav class='blog-nav'> 
+  <div class='inner'>
+    <p>目次</p>
+    <ol class="top-ol">
+      <li class="top-li">【結論】できませんでした</li>
+      <li class="top-li">gatsby-plugin-react-helmetのセットアップ</li>
+      <li class="top-li">gatsby-plugin-ngrok-tunnelingのセットアップ</li>
+    </ol>
+  </div>
+</nav>
 </div>
 
 <p class="mb-8">
