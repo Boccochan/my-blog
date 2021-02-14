@@ -68,6 +68,58 @@ body .github-ish {
     text-decoration: none;
     color: #1941d2;
   }
+  .amazon {
+    padding: 1em 2%;
+    overflow: hidden;
+    .left {
+      float: left;
+    }
+    h5 {
+      margin: 0;
+      padding: 0;
+      margin-top: 1em;
+      margin-bottom: 1em;
+    }
+    .summary {
+      padding: 0 3em;
+      max-width: 320px;
+    }
+    .af-list {
+      clear: both;
+    }
+    .hardcover {
+      background-color: #e47911;
+    }
+    .kindle {
+      background-color: #565a5c;
+    }
+    .btn {
+      width: 8em;
+      height: 2em;
+      text-align: center;
+      display: table;
+      width: 8em;
+      border-radius: 4px;
+      margin-top: 0.3em;
+      margin-right: 1em;
+      margin-bottom: 1em;
+
+      a {
+        height: 3em;
+        color: #f3f5f6;
+        display: table-cell;
+        vertical-align: middle;
+      }
+    }
+  }
+  ol.cap_list {
+    list-style-type: decimal;
+    padding: 1em;
+
+    li {
+      padding: 0.5em 1em;
+    }
+  }
 
   ul.cp_list {
     padding: 0.5em;
