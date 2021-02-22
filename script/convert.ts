@@ -123,7 +123,7 @@ const resizeImages = async (source: string, to: string) => {
 
   const imagesMap = images.map(async (image) => {
     await sharp(`${source}${image}`)
-      .resize(512)
+      .resize(800)
       .toFile(`${to}image-${image}`, (err: any, info: any) => {
         if (err) {
           throw err;
